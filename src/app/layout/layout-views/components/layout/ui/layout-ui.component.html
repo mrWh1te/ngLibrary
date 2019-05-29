@@ -1,0 +1,8 @@
+<header class="layout">
+  <mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">
+    <mat-icon (click)="logoClick.emit()">home</mat-icon>
+    <!-- @todo add badge for number of items in cart -->
+    <mat-icon (click)="cartClick.emit()">shopping_basket</mat-icon>
+  </mat-toolbar>
+</header>
+<router-outlet></router-outlet>
