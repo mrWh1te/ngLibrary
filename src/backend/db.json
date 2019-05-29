@@ -1,0 +1,14 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "American Gods",
+      "author": "Neil Gaiman",
+      "genre": "",
+      "summary": "",
+      "description": "",
+      "released": "",
+      "photo": ""
+    }
+  ]
+}
