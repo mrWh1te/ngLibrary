@@ -29,7 +29,7 @@ import { RouterSimpleStateSerializer } from './serializers/router-state.serializ
       maxAge: 20,
       logOnly: environment.production
     }) : [],
-    StoreRouterConnectingModule.forRoot(),
+    StoreRouterConnectingModule.forRoot()
   ],
   providers: [{ provide: RouterStateSerializer, useClass: RouterSimpleStateSerializer }],
   exports: [
