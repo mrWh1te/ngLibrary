@@ -16,7 +16,7 @@ export const adapter: EntityAdapter<Book> =
 // But for now, since we're trying to avoid server rendering (backend in this example project), this will do:
 export const initialState: State = {
   activeBookId: -1, // no book selected
-  ids: [1, 2],
+  ids: [1, 2, 3, 4, 5, 6],
   entities: {
     1: {
       id: 1,
@@ -25,6 +25,22 @@ export const initialState: State = {
     2: {
       id: 2,
       isbn: '0439554934'
+    },
+    3: {
+      id: 3,
+      isbn: '0385333498'
+    },
+    4: {
+      id: 4,
+      isbn: '0812550706'
+    },
+    5: {
+      id: 5,
+      isbn: '0140441409'
+    },
+    6: {
+      id: 6,
+      isbn: '0374531269'
     }
   }
 }

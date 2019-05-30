@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core"
 import { CommonModule } from '@angular/common'
+import { MatCardModule } from '@angular/material'
 
 import { SelectedBookComponent } from './components/selected-book/smart/selected-book.component'
 import { SelectedBookUiComponent } from './components/selected-book/ui/selected-book-ui.component'
@@ -8,7 +9,8 @@ import { BookUiComponent } from './components/book/ui/book-ui.component'
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    MatCardModule
   ],
   declarations: [
     // Smart

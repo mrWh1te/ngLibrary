@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core"
 import { CommonModule } from '@angular/common'
+import { FlexLayoutModule } from '@angular/flex-layout'
 
 import { BooksDataModule } from '../books-data/books-data.module'
 
@@ -10,6 +11,7 @@ import { BookWidgetsModule } from 'src/app/book/book-widgets/book-widgets.module
 @NgModule({
   imports: [
     CommonModule,
+    FlexLayoutModule,
     BooksDataModule,
     BookWidgetsModule
   ],

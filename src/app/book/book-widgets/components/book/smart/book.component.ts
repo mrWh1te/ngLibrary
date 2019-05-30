@@ -14,7 +14,6 @@ export class BookComponent {
   constructor(private store: Store<any>) {}
   
   selected(): void {
-    console.log('[BookComponent] selected() has ISBN: ', this.book.isbn)
     this.store.dispatch(new BookSelected({bookId: this.book.id}))
   }
 }

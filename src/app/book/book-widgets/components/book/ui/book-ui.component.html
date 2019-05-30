@@ -1,4 +1,3 @@
-<article (click)="onSelect.emit()">
-  <h4>{{book.title}}</h4>
-  <p>{{book.isbn}}</p>
-</article>
+<mat-card (click)="onSelect.emit()">
+  <img [src]="book.cover?.medium" alt="{{ book.title }}" />
+</mat-card>
