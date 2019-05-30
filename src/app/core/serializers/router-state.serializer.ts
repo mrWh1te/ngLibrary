@@ -20,7 +20,7 @@ export class RouterSimpleStateSerializer implements RouterStateSerializer<Router
       root: { queryParams }
     } = routerState
 
-    const params = { ...route}
+    const params = { ...route.params}
   
     return { 
       url, 

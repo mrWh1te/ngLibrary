@@ -18,7 +18,6 @@ import { RouterSimpleStateSerializer } from './serializers/router-state.serializ
  * @description  A wrapper module for global services, basic Angular stuff, and NgRX setup
  *    Only to be imported at the root module level (only import this once)
  */
-
 @NgModule({
   imports: [
     BrowserModule,

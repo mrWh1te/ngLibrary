@@ -1,10 +1,14 @@
-import { NgModule } from "@angular/core";
+import { NgModule } from "@angular/core"
 
-import { BooksComponent } from './components/books/smart/books.component';
-import { BooksUiComponent } from './components/books/ui/books-ui.component';
+import { BooksDataModule } from '../books-data/books-data.module'
+
+import { BooksComponent } from './components/books/smart/books.component'
+import { BooksUiComponent } from './components/books/ui/books-ui.component'
 
 @NgModule({
-  imports: [],
+  imports: [
+    BooksDataModule
+  ],
   declarations: [
     // Smart
     BooksComponent,
