@@ -31,10 +31,9 @@ export const initialState: State = {
 
 export function reducer(state: State = initialState, action: BooksActions): State {
   switch (action.type) {
-    // case BooksActionTypes.RequestBooksHydrateSuccess: {
-    //   // @todo update this to an updateMany call
-    //   return adapter.addMany(action.payload, state)
-    // }
+    case BooksActionTypes.RequestBooksHydrateSuccess: {      
+      return adapter.updateMany(action.payload.map(book => ({id: book.id, changes: {...book}})), state)
+    }
     default: {
       return state
     }

@@ -1,4 +1,5 @@
 import { NgModule } from "@angular/core"
+import { CommonModule } from '@angular/common'
 
 import { BooksDataModule } from '../books-data/books-data.module'
 
@@ -7,6 +8,7 @@ import { BooksUiComponent } from './components/books/ui/books-ui.component'
 
 @NgModule({
   imports: [
+    CommonModule,
     BooksDataModule
   ],
   declarations: [

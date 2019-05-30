@@ -1,11 +1,28 @@
 export class Book {
-  id: number
-  title?: string
-  author?: string // @future make this an Author ID with new Author model, then hydrate downstream
-  genre?: string // @future make this a Genre ID with new Genre model, allows easier filtering, etc
-  isbn: string
-  summary?: string
-  description?: string
-  released?: Date
-  photo?: string
+
+  constructor(
+    public id: number,
+    public isbn: string,
+    public title?: string,
+    public author?: string, // @future make this an Author ID with new Author model, then hydrate downstream
+    public genre?: string, // @future make this a Genre ID with new Genre model, allows easier filtering, etc
+    public summary?: string,
+    public description?: string,
+    public released?: Date,
+    public photo?: string,
+  ) {}
+  
+  static fromJson(json: Partial<Book>): Book {
+    return new Book(
+      json.id,
+      json.isbn,
+      json.title,
+      json.author,
+      json.genre,
+      json.summary,
+      json.description,
+      json.released,
+      json.photo
+    )
+  }
 }

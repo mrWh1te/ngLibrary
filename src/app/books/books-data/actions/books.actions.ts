@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store'
 
-import { Book } from '../../../book/book-data/models/book.model'
+import { Book } from 'src/app/book/book-data/models/book.model'
 
 export enum BooksActionTypes {
   RequestBooksHydrate = '[Books] Request to Hydrate Books',
