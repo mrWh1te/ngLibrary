@@ -5,11 +5,13 @@ import { BooksDataModule } from '../books-data/books-data.module'
 
 import { BooksComponent } from './components/books/smart/books.component'
 import { BooksUiComponent } from './components/books/ui/books-ui.component'
+import { BookWidgetsModule } from 'src/app/book/book-widgets/book-widgets.module'
 
 @NgModule({
   imports: [
     CommonModule,
-    BooksDataModule
+    BooksDataModule,
+    BookWidgetsModule
   ],
   declarations: [
     // Smart

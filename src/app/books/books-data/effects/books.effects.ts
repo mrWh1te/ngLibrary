@@ -28,8 +28,8 @@ export class BooksEffects {
         return books.filter(book => !book.title).map(book => ({id: book.id, isbn: book.isbn}))
       }),
       exhaustMap(books => this.booksService.getBooksData(books)), // exhaustMap vs switchMap
-      tap(books => console.log('[BooksEffects] hydrateBooksFromAPI$ -> books = ', books)),
-      map(books => new RequestBooksHydrateSuccess(books)),
+      // tap(books => console.log('[BooksEffects] hydrateBooksFromAPI$ -> books = ', books)),
+      map(books => new RequestBooksHydrateSuccess({books})),
       catchError((err, caught) => {
         this.store.dispatch(new RequestBooksHydrateError())
         return caught

@@ -1,6 +1,6 @@
 <article>
   <h1>Inventory</h1>
-  <div *ngFor="let book of books">
-    {{ book.isbn }}
-  </div>
+  <ng-container *ngFor="let book of books">
+    <book [book]="book"></book>
+  </ng-container>
 </article>

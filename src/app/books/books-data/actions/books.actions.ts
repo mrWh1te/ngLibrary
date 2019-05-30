@@ -2,10 +2,12 @@ import { Action } from '@ngrx/store'
 
 import { Book } from 'src/app/book/book-data/models/book.model'
 
+// For Main Feature of Books Inventory (home page)
 export enum BooksActionTypes {
   RequestBooksHydrate = '[Books] Request to Hydrate Books',
   RequestBooksHydrateSuccess = '[Books] Request to Hydrate Books Success',
-  RequestBooksHydrateError = '[Books] Request to Hydrate Books Error'
+  RequestBooksHydrateError = '[Books] Request to Hydrate Books Error',
+  BookSelected = '[Book] Book Selected'
 }
 
 export class RequestBooksHydrate implements Action {
@@ -14,13 +16,20 @@ export class RequestBooksHydrate implements Action {
 export class RequestBooksHydrateSuccess implements Action {
   readonly type = BooksActionTypes.RequestBooksHydrateSuccess
 
-  constructor(public payload: Book[]) {}
+  constructor(public payload: {books: Book[]}) {}
 }
 export class RequestBooksHydrateError implements Action {
   readonly type = BooksActionTypes.RequestBooksHydrateError
 }
 
+export class BookSelected implements Action {
+  readonly type = BooksActionTypes.BookSelected
+
+  constructor(public payload: {bookId: number}) {}
+}
+
 export type BooksActions =
   RequestBooksHydrate |
   RequestBooksHydrateSuccess |
-  RequestBooksHydrateError
+  RequestBooksHydrateError |
+  BookSelected

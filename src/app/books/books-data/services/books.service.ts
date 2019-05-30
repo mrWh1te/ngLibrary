@@ -28,7 +28,7 @@ export class BooksService {
               isbn = responseObjectKey.substr(5)
             }
             
-            let book = books.find(book => book.isbn === isbn)
+            const book = books.find(book => book.isbn === isbn)
 
             normalizedResponse.push({
               id: book.id,
