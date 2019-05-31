@@ -10,7 +10,8 @@ import { selectActiveBookId, selectBooksCacheEntities } from 'src/app/books/book
 @Component({
   selector: 'selected-book',
   template: `<selected-book-ui 
-    [selectedBook]="selectedBook$ | async"></selected-book-ui>`
+    [selectedBook]="selectedBook$ | async"
+    (onAddToBasket)="addToBasket()"></selected-book-ui>`
 })
 export class SelectedBookComponent {
   selectedBook$: Observable<Book>
@@ -25,5 +26,9 @@ export class SelectedBookComponent {
         }
       })
     )
+  }
+
+  addToBasket(): void {
+    console.log('[SelectedBookComponent] addToBasket() TBI action to be dispatched')
   }
 }
