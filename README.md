@@ -6,25 +6,9 @@ Have fun!
 
 ## Overview
 
-This Angular app requires a demo API to operate. It was built that way to demonstrate as closely as possible to a real Production scenario. This is open-source, open to all.
+This Angular app was built to demonstrate as closely as possible to a real Production app. This is open-source, open to all.
 
-To get the app going, start the Backend and then start the Angular Development server. 
-
-## Backend json-server
-
-We use the `json-server` npm package to quickly build a demo API.
-
-To get it going, first install it globally:
-```
-$ npm install -g json-server
-```
-
-Run the server with this command:
-```
-$ json-server --watch db.json
-```
-
-For more, see this awesome [post](https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d).
+To get the app going, start the Angular Development server. 
 
 ## Frontend Angular
 
