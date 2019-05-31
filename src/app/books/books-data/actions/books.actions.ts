@@ -6,8 +6,7 @@ import { Book } from 'src/app/book/book-data/models/book.model'
 export enum BooksActionTypes {
   RequestBooksHydrate = '[Books] Request to Hydrate Books',
   RequestBooksHydrateSuccess = '[Books] Request to Hydrate Books Success',
-  RequestBooksHydrateError = '[Books] Request to Hydrate Books Error',
-  BookSelected = '[Book] Book Selected'
+  RequestBooksHydrateError = '[Books] Request to Hydrate Books Error'
 }
 
 export class RequestBooksHydrate implements Action {
@@ -22,14 +21,7 @@ export class RequestBooksHydrateError implements Action {
   readonly type = BooksActionTypes.RequestBooksHydrateError
 }
 
-export class BookSelected implements Action {
-  readonly type = BooksActionTypes.BookSelected
-
-  constructor(public payload: {bookId: number}) {}
-}
-
 export type BooksActions =
   RequestBooksHydrate |
   RequestBooksHydrateSuccess |
-  RequestBooksHydrateError |
-  BookSelected
+  RequestBooksHydrateError

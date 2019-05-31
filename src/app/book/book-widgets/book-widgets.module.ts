@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common'
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { MatCardModule, MatButtonModule } from '@angular/material'
 
+import { BookDataModule } from '../book-data/book-data.module'
 import { SelectedBookComponent } from './components/selected-book/smart/selected-book.component'
 import { SelectedBookUiComponent } from './components/selected-book/ui/selected-book-ui.component'
 import { BookComponent } from './components/book/smart/book.component'
@@ -13,7 +14,8 @@ import { BookUiComponent } from './components/book/ui/book-ui.component'
     CommonModule,
     FlexLayoutModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    BookDataModule
   ],
   declarations: [
     // Smart

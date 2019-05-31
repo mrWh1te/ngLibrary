@@ -2,7 +2,7 @@ import { Component, Input } from "@angular/core"
 import { Store } from '@ngrx/store'
 
 import { Book } from 'src/app/book/book-data/models/book.model'
-import { BookSelected } from 'src/app/books/books-data/actions/books.actions'
+import { BookSelected } from 'src/app/book/book-data/actions/book.actions'
 
 @Component({
   selector: 'book',

@@ -2,6 +2,7 @@ import {createEntityAdapter, EntityAdapter, EntityState} from '@ngrx/entity'
 
 import { Book } from '../../../book/book-data/models/book.model'
 import { BooksActions, BooksActionTypes } from '../actions/books.actions'
+import { BookActions, BookActionTypes } from 'src/app/book/book-data/actions/book.actions';
 
 export interface State extends EntityState<Book> {
   // What book has been selected in the Books smart component?
@@ -45,12 +46,12 @@ export const initialState: State = {
   }
 }
 
-export function reducer(state: State = initialState, action: BooksActions): State {
+export function reducer(state: State = initialState, action: BooksActions | BookActions): State {
   switch (action.type) {
     case BooksActionTypes.RequestBooksHydrateSuccess: {      
       return adapter.updateMany(action.payload.books.map(book => ({id: book.id, changes: {...book}})), state)
     }
-    case BooksActionTypes.BookSelected: {
+    case BookActionTypes.BookSelected: {
       return {
         ...state,
         activeBookId: action.payload.bookId
