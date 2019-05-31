@@ -6,7 +6,7 @@ import {Action, select, Store} from '@ngrx/store'
 
 import { BooksService } from '../services/books.service'
 import { RequestBooksHydrate, BooksActionTypes, RequestBooksHydrateSuccess, RequestBooksHydrateError } from '../actions/books.actions'
-import { withLatestFrom, map, switchMap, catchError, tap, exhaustMap } from 'rxjs/operators'
+import { withLatestFrom, map, catchError, exhaustMap } from 'rxjs/operators'
 
 import { selectAllCacheBooks } from '../selectors/books-cache.selectors'
 
