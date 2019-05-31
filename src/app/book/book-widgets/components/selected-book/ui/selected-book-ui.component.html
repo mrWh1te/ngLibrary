@@ -1,6 +1,13 @@
-Selected Book UI Placeholder
-<div *ngIf="selectedBook">
-  We have a selected Book
+<div *ngIf="selectedBook" fxLayout="column">
+  <h2>{{selectedBook.title}}</h2>
+  <section class="book-details">
+    <header fxLayout="row">
+      <img [src]="selectedBook.cover?.large" alt="{{selectedBook.title}}" fxFlex="1 1 33.33%" />
+      <div fxFlex="1 1 66.66%">
+        <h5>Author: {{selectedBook.authors[0].name}}</h5>
+      </div>
+    </header>
+  </section>
 </div>
 <div *ngIf="!selectedBook">
   Choose a book to open it here
