@@ -1,0 +1,19 @@
+$header-height: 64px; // comes from Angular Material's toolbar's .mat-toolbar-single-row CSS class
+
+:host {
+  display: block;
+  height: 100vh;
+}
+
+header.layout {
+  mat-icon {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.main-child-view {
+  height: calc(100vh - #{$header-height});
+  overflow-y: auto;
+}

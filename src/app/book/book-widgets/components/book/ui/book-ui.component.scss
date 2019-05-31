@@ -1,0 +1,14 @@
+mat-card {
+  padding: 0;
+  overflow: hidden;
+  height: 10rem;
+  margin-bottom: .75rem;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  img {
+    width: 100%;
+  }
+}
