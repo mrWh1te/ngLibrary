@@ -25,7 +25,7 @@ export class CartEffects {
   addBookToCart$: Observable<Action> = this.actions$
     .pipe(
       ofType<AttemptToAddBookToCart>(CartActionTypes.AttemptToAddBookToCart),
-      tap(() => console.log('[CartEffects] addBookToCart$')),
+      // tap(() => console.log('[CartEffects] addBookToCart$')),
       withLatestFrom(this.store.pipe(select(selectCartStatusBookIds))),
       map(([action, bookIds]) => {
         let bookId = bookIds.find(bookId => bookId === action.payload.bookId)

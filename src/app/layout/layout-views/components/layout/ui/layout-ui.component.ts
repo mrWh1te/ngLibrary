@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from "@angular/core";
+import { Component, Output, EventEmitter, Input } from "@angular/core";
 
 @Component({
   selector: 'layout-ui',
@@ -6,6 +6,8 @@ import { Component, Output, EventEmitter } from "@angular/core";
   styleUrls: ['./layout-ui.component.scss']
 })
 export class LayoutUiComponent {
+  @Input() cartItemsCount: number
+  
   @Output() cartClick: EventEmitter<any> = new EventEmitter<any>()
   @Output() logoClick: EventEmitter<any> = new EventEmitter<any>()
 }
