@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Output } from "@angular/core";
 
 @Component({
   selector: 'shopping-cart-icon-ui',
@@ -8,4 +8,6 @@ import { Component, Input } from "@angular/core";
 export class ShoppingCartIconUiComponent {
   @Input() animating: boolean
   @Input() cartItemsCount: number
+  
+  dropdownCartOpen = false
 }

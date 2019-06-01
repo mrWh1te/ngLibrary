@@ -1,0 +1,6 @@
+@import '../../../../../../styles/animations/bounce-left';
+
+.animating {
+	-webkit-animation: bounce-left 0.9s both;
+	        animation: bounce-left 0.9s both;
+}

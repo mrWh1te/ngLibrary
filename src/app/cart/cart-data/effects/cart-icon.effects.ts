@@ -24,7 +24,7 @@ export class CartIconEffects {
   animateShoppingCartIconOff$: Observable<Action> = this.actions$
     .pipe(
       ofType<AnimateLayoutHeaderShoppingCartIcon>(CartIconActionTypes.AnimateLayoutHeaderShoppingCartIcon),
-      delay(2000),
+      delay(1000),
       map(() => new AnimateOffLayoutHeaderShoppingCartIcon())
     )
 }

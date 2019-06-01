@@ -1,1 +1,5 @@
-<mat-icon [matBadge]="cartItemsCount" [matBadgeHidden]="cartItemsCount === 0" (click)="cartClick.emit()">shopping_basket</mat-icon>
+<mat-icon 
+  [matBadge]="cartItemsCount" 
+  [matBadgeHidden]="cartItemsCount === 0" 
+  [class.animating]="animating"
+  (click)="dropdownCartOpen = !dropdownCartOpen">shopping_basket</mat-icon>
