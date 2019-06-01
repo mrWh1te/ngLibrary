@@ -23,4 +23,8 @@ import { LayoutUiComponent } from './components/layout/ui/layout-ui.component';
     LayoutComponent
   ]
 })
-export class LayoutViewsModule {}
+export class LayoutViewsModule {
+  constructor() {
+    console.log('[LayoutViewsModule] constructor()')
+  }
+}

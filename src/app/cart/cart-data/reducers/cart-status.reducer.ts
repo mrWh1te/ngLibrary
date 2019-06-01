@@ -10,7 +10,7 @@ export const initialState: State = {
 
 export function reducer(state: State = initialState, action: CartActions): State {
   switch (action.type) {
-    case CartActionTypes.AddBookToCart: {   
+    case CartActionTypes.AddBookToCart: {     
       return {
         ...state,
         bookIds: [...state.bookIds, action.payload.bookId]

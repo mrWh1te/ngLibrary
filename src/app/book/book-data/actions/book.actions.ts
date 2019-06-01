@@ -1,10 +1,8 @@
 import { Action } from '@ngrx/store'
 
-import { Book } from 'src/app/book/book-data/models/book.model'
-
 export enum BookActionTypes {
   BookSelected = '[Book] Book Selected',
-  SelectedBookAddToCartBtnClick = '[Books] Request to Hydrate Books'
+  SelectedBookAddToCartBtnClick = '[Book] Selected Book\'s "Add to Basket" Button Click'
 }
 
 export class BookSelected implements Action {

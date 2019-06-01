@@ -5,8 +5,8 @@
   <div *ngIf="selectedBook" fxLayout="column" fxFlex="100%" class="inner-container">
     <h2>{{selectedBook.title}}</h2>
     <section class="book-details" fxFlex="100%" fxLayout="column">
-      <img [src]="selectedBook.cover?.large" alt="{{selectedBook.title}}" />
-      <h5>Author: {{selectedBook.authors[0].name}}</h5>
+      <img *ngIf="selectedBook.cover" [src]="selectedBook.cover?.large" alt="{{selectedBook.title}}" />
+      <h5 *ngIf="selectedBook.authors">Author: {{selectedBook.authors[0].name}}</h5>
     </section>
     <div fxLayoutAlign="center center" class="add-to-basket-btn-container" fxLayout="row">
       <button mat-raised-button color="primary" (click)="onAddToBasket.emit()" fxFlex="100%">

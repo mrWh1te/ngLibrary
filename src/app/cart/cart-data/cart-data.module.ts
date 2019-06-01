@@ -12,4 +12,8 @@ import { CartEffects } from './effects/cart.effects'
     EffectsModule.forFeature([CartEffects])
   ]
 })
-export class CartDataModule {}
+export class CartDataModule {
+  constructor() {
+    console.log('[CartDataModule] constructor()')
+  }
+}

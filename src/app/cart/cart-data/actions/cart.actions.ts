@@ -1,7 +1,7 @@
 import { Action } from '@ngrx/store'
 
 export enum CartActionTypes {
-  AttemptToAddBookToCart = '[Cart] Request to Add Book To Cart',
+  AttemptToAddBookToCart = '[Cart] Attempt to Add Book To Cart',
   AddBookToCart = '[Cart] Added Book to Cart',
   RemoveBookFromCart = '[Cart] Removed Book from Cart',
   ClearCart = '[Cart] Removed all Books from Cart',

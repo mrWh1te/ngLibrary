@@ -9,4 +9,8 @@ import { BookEffects } from './effects/book.effects'
     EffectsModule.forFeature([BookEffects])
   ]
 })
-export class BookDataModule {}
+export class BookDataModule {
+  constructor() {
+    console.log('[BookDataModule] constructor()')
+  }
+}

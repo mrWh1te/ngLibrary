@@ -19,4 +19,8 @@ import { BookWidgetsModule } from 'src/app/book/book-widgets/book-widgets.module
   ],
   exports: []
 })
-export class BooksViewsModule {}
+export class BooksViewsModule {
+  constructor() {
+    console.log('[BooksViewsModule] constructor()')
+  }
+}

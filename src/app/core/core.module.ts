@@ -43,6 +43,8 @@ export class CoreModule {
     if (parentModule) {
       throw new Error(
         'Import CoreModule only once in the Root Module, probably AppModule');
+    } else {
+      console.log('[CoreModule] constructor()')
     }
   }
 

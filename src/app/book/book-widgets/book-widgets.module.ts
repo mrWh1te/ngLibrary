@@ -30,4 +30,8 @@ import { BookUiComponent } from './components/book/ui/book-ui.component'
     BookComponent
   ]
 })
-export class BookWidgetsModule {}
+export class BookWidgetsModule {
+  constructor() {
+    console.log('[BookWidgetsModule] constructor()')
+  }
+}

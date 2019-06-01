@@ -5,7 +5,7 @@ import { Store, select } from '@ngrx/store'
 
 import { Book } from 'src/app/book/book-data/models/book.model'
 import { selectAllCacheBooks } from 'src/app/books/books-data/selectors/books-cache.selectors'
-import { RequestBooksHydrate } from 'src/app/books/books-data/actions/books.actions';
+import { RequestBooksHydrate } from 'src/app/books/books-data/actions/books.actions'
 
 @Component({
   selector: 'books',
@@ -15,6 +15,7 @@ export class BooksComponent {
   books$: Observable<Book[]>
 
   constructor(private store: Store<any>) {
+    console.log('[BooksComponent] constructor()')
     store.dispatch(new RequestBooksHydrate())
 
     this.books$ = store.pipe(

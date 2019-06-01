@@ -6,7 +6,7 @@ import {Action, select, Store} from '@ngrx/store'
 
 import { BooksService } from '../services/books.service'
 import { RequestBooksHydrate, BooksActionTypes, RequestBooksHydrateSuccess, RequestBooksHydrateError } from '../actions/books.actions'
-import { withLatestFrom, map, catchError, exhaustMap } from 'rxjs/operators'
+import { withLatestFrom, map, catchError, exhaustMap, switchMap } from 'rxjs/operators'
 
 import { selectAllCacheBooks } from '../selectors/books-cache.selectors'
 
@@ -27,7 +27,7 @@ export class BooksEffects {
         // if Book is missing title, let's grab its ISBN & ID's to hydrate them
         return books.filter(book => !book.title).map(book => ({id: book.id, isbn: book.isbn}))
       }),
-      exhaustMap(books => this.booksService.getBooksData(books)), // exhaustMap vs switchMap
+      switchMap(books => this.booksService.getBooksData(books)), // exhaustMap vs switchMap
       // tap(books => console.log('[BooksEffects] hydrateBooksFromAPI$ -> books = ', books)),
       map(books => new RequestBooksHydrateSuccess({books})),
       catchError((err, caught) => {
