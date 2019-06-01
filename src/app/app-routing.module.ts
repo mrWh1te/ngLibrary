@@ -10,7 +10,7 @@ export const RootRoutes: Routes = [
     children: [      
       {
         path: '',
-        loadChildren: './books/books-views/books-views.module#BooksViewsModule'
+        loadChildren: () => import('./books/books-views/books-views.module').then(m => m.BooksViewsModule)
       }
     ]
   }
