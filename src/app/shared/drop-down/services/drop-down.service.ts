@@ -22,7 +22,8 @@ export class DropDownService {
     return new OverlayConfig({
       positionStrategy: positionStrategy,
       scrollStrategy: scrollStrategy,
-      hasBackdrop: false
+      hasBackdrop: true,
+      backdropClass: 'no-backdrop'
     });
   }
 }
