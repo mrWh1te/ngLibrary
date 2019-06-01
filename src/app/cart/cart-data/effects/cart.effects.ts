@@ -1,22 +1,18 @@
 import { Injectable } from '@angular/core'
-import { MatSnackBar } from '@angular/material'
 
 import { Observable } from 'rxjs'
-import { withLatestFrom, map, delay } from 'rxjs/operators'
+import { withLatestFrom, map } from 'rxjs/operators'
 import { Actions, Effect, ofType } from '@ngrx/effects'
 import { Action, select, Store } from '@ngrx/store'
 
 import { AddBookToCart, AttemptToAddBookToCart, CartActionTypes } from '../actions/cart.actions'
 import { selectCartStatusBookIds } from '../selectors/cart-status.selectors'
-import { selectBooksCacheEntities } from 'src/app/books/books-data/selectors/books-cache.selectors'
-import { AnimateLayoutHeaderShoppingCartIcon, CartIconActionTypes, AnimateOffLayoutHeaderShoppingCartIcon } from '../actions/cart-icon.actions';
 
 @Injectable()
 export class CartEffects {
   constructor(
     private actions$: Actions,
     private store: Store<any>,
-    private snackbar: MatSnackBar
   ) {}
 
   @Effect({
@@ -38,19 +34,5 @@ export class CartEffects {
 
         return action
       })
-    )
-
-  @Effect()
-  animateShoppingCartIcon$: Observable<Action> = this.actions$
-    .pipe(
-      ofType<AddBookToCart>(CartActionTypes.AddBookToCart),
-      map(() => new AnimateLayoutHeaderShoppingCartIcon())
-    )
-  @Effect()
-  animateShoppingCartIconOff$: Observable<Action> = this.actions$
-    .pipe(
-      ofType<AnimateLayoutHeaderShoppingCartIcon>(CartIconActionTypes.AnimateLayoutHeaderShoppingCartIcon),
-      delay(2000),
-      map(() => new AnimateOffLayoutHeaderShoppingCartIcon())
     )
 }

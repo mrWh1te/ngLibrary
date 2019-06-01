@@ -6,11 +6,12 @@ import { EffectsModule } from '@ngrx/effects'
 
 import { reducers } from './reducers/cart.reducers'
 import { CartEffects } from './effects/cart.effects'
+import { CartIconEffects } from './effects/cart-icon.effects'
 
 @NgModule({
   imports: [
     StoreModule.forFeature('cart', reducers),
-    EffectsModule.forFeature([CartEffects]),
+    EffectsModule.forFeature([CartEffects, CartIconEffects]),
     MatSnackBarModule
   ]
 })
