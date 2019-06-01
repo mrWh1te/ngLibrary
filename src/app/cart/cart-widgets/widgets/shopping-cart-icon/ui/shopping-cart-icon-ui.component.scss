@@ -4,3 +4,9 @@
 	-webkit-animation: bounce-left 0.9s both;
 	        animation: bounce-left 0.9s both;
 }
+
+mat-icon {
+  &:hover {
+    cursor: pointer;
+  }
+}
