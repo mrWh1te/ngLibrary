@@ -2,10 +2,11 @@ import { NgModule } from "@angular/core"
 import { CommonModule } from '@angular/common'
 import { RouterModule } from '@angular/router'
 import { FlexLayoutModule } from '@angular/flex-layout'
-import { MatToolbarModule, MatIconModule, MatBadgeModule } from '@angular/material'
+import { MatToolbarModule, MatIconModule } from '@angular/material'
 
-import { LayoutComponent } from './components/layout/smart/layout.component'
-import { LayoutUiComponent } from './components/layout/ui/layout-ui.component'
+import { LayoutWidgetsModule } from '../layout-widgets/layout-widgets.module'
+
+import { LayoutViewComponent } from './views/layout/layout-view.component'
 
 @NgModule({
   imports: [
@@ -14,16 +15,14 @@ import { LayoutUiComponent } from './components/layout/ui/layout-ui.component'
     FlexLayoutModule,
     MatToolbarModule,
     MatIconModule,
-    MatBadgeModule
+    LayoutWidgetsModule
   ],
   declarations: [
-    // Smart Components
-    LayoutComponent,
-    // UI Components
-    LayoutUiComponent
+    // Views
+    LayoutViewComponent
   ],
   exports: [
-    LayoutComponent
+    LayoutViewComponent
   ]
 })
 export class LayoutViewsModule {
