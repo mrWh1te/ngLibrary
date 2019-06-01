@@ -1,6 +1,6 @@
 <article>
   <h5>Basket</h5>
   <ul>
-    <li>1. Tom Sawyer</li>
+    <li *ngFor="let book of books; let i = index">{{i+1}}. {{book.title}}</li>
   </ul>
 </article>

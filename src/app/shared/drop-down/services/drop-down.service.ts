@@ -15,7 +15,7 @@ export class DropDownService {
         originY: 'bottom',
         overlayX: 'end',
         overlayY: 'top'
-      }]);
+      }]) // @todo add more positions like one for the opposite (flipped) side, as it tries positions from 1 -> n until 1 fits 
 
     const scrollStrategy = this.overlay.scrollStrategies.reposition();
 
