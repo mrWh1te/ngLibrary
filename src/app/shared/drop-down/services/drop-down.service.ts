@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core"
+import { Injectable, ElementRef } from "@angular/core"
 
 import { Overlay, OverlayConfig } from '@angular/cdk/overlay'
 
@@ -6,9 +6,9 @@ import { Overlay, OverlayConfig } from '@angular/cdk/overlay'
 export class DropDownService {
   constructor(public overlay: Overlay) {}
 
-  getOverlayConfig(reference: HTMLElement): OverlayConfig {
+  getOverlayConfig(reference: ElementRef): OverlayConfig {
     const positionStrategy = this.overlay.position()
-      .flexibleConnectedTo(reference)
+      .flexibleConnectedTo(reference.nativeElement)
       .withPush(true)
       .withPositions([{
         originX: 'end',

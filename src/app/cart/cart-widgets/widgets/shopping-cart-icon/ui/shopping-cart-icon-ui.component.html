@@ -4,7 +4,8 @@
   [class.animating]="animating"
   (click)="onIconClick.emit()">shopping_basket</mat-icon>
 <drop-down 
-  [reference]="shoppingCartIcon"
-  [open$]="openDropDown$">
+  [attachToElement]="shoppingCartIcon"
+  [isOpen$]="openDropDown$"
+  (onBackDropClick)="onBackDropClick.emit()">
   <shopping-cart></shopping-cart>
 </drop-down>

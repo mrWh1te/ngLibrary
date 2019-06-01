@@ -14,6 +14,7 @@ export class ShoppingCartIconUiComponent {
   @Input() openDropDown$: Observable<boolean>
 
   @Output() onIconClick: EventEmitter<any> = new EventEmitter<any>()
+  @Output() onBackDropClick: EventEmitter<any> = new EventEmitter<any>()
 
   // The dropdown requires an ElementRef to attach too
   @ViewChild(MatIcon, { read: ElementRef, static: true }) shoppingCartIcon

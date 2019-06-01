@@ -12,7 +12,8 @@ import { selectCartIconAnimatingStatus } from 'src/app/cart/cart-data/selectors/
     [cartItemsCount]="numberOfBooksInCart$ | async"
     [animating]="animating$ | async"
     [openDropDown$]="isDropDownOpenSubject.asObservable()"
-    (onIconClick)="iconClicked()"></shopping-cart-icon-ui>`
+    (onIconClick)="iconClicked()"
+    (onBackDropClick)="backDropClicked()"></shopping-cart-icon-ui>`
 })
 export class ShoppingCartIconComponent {
   numberOfBooksInCart$: Observable<number>
@@ -28,5 +29,15 @@ export class ShoppingCartIconComponent {
 
   iconClicked() {
     this.isDropDownOpenSubject.next(! this.isDropDownOpenSubject.value)
+  }
+
+  backDropClicked() {
+    this.closeIfOpen()
+  }
+
+  private closeIfOpen() {
+    if (this.isDropDownOpenSubject.value) {
+      this.isDropDownOpenSubject.next(false)
+    }
   }
 }

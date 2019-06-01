@@ -2,8 +2,7 @@ import { NgModule } from "@angular/core"
 import { OverlayModule } from '@angular/cdk/overlay'
 import { PortalModule } from '@angular/cdk/portal'
 
-import { DropDownComponent } from './widgets/drop-down/smart/drop-down.component'
-import { DropDownUiComponent } from './widgets/drop-down/ui/drop-down-ui.component'
+import { DropDownComponent } from './components/drop-down/drop-down.component'
 
 import { DropDownService } from './services/drop-down.service'
 
@@ -15,8 +14,6 @@ import { DropDownService } from './services/drop-down.service'
   declarations: [
     // Smart
     DropDownComponent,
-    // UI
-    DropDownUiComponent
   ],
   providers: [
     DropDownService

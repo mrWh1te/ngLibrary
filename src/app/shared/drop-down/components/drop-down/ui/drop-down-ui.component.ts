@@ -43,6 +43,7 @@ export class DropDownUiComponent implements OnInit, OnDestroy {
     this.backDropClickSubscription.unsubscribe()
   }
 
+  // conver tto output emiitter of TemplatePortalDirective -> smart component does this:
   public show() {
     console.log('show dropdown')
 
@@ -53,7 +54,6 @@ export class DropDownUiComponent implements OnInit, OnDestroy {
     // right now the smart component doesnt know when the dropdown is closed by clicking backdrop so it emits another hide instead of show on click
     this.backDropClickSubscription = this.overlayRef.backdropClick().subscribe(() => this.hide())
   }
-
   public hide() {
     console.log('hide dropdown')
 
