@@ -19,8 +19,8 @@ export class ShoppingCartIconComponent {
   numberOfBooksInCart$: Observable<number>
   animating$: Observable<boolean>
 
-  // @future if we choose open the Shopping Cart dropdown after an error of trying to add too many books to the cart (to help the user remove some), then we need to NgRX this. Otherwise, it's extra work (actions, reducers, etc) to accomplish the end result
-  isDropDownOpenSubject: BehaviorSubject<boolean> = new BehaviorSubject(false) // exception for not putting a piece of state in store. If we want to be able to open the shopping cart dropdown from anywhere in the app, then we should put this in the ngrx store.....
+  // @future if we want to be able to open the shopping cart from anywhere in the app, we'll need to NgRX this state here:
+  isDropDownOpenSubject: BehaviorSubject<boolean> = new BehaviorSubject(false)
 
   constructor(private store: Store<any>) {
     this.numberOfBooksInCart$ = this.store.pipe(select(selectCartStatusBooksCount))

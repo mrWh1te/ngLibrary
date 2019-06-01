@@ -12,8 +12,7 @@ import { DropDownService } from './services/drop-down.service'
     PortalModule
   ],
   declarations: [
-    // Smart
-    DropDownComponent,
+    DropDownComponent
   ],
   providers: [
     DropDownService
