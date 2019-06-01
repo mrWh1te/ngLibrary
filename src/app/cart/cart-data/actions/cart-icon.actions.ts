@@ -1,17 +1,17 @@
 import { Action } from '@ngrx/store'
 
-export enum LayoutActionTypes {
+export enum CartIconActionTypes {
   AnimateLayoutHeaderShoppingCartIcon = '[Layout] Animation ON of Header Shopping Cart Icon',
   AnimateOffLayoutHeaderShoppingCartIcon = '[Layout] Animation OFF of Header Shopping Cart Icon'
 }
 
 export class AnimateLayoutHeaderShoppingCartIcon implements Action {
-  readonly type = LayoutActionTypes.AnimateLayoutHeaderShoppingCartIcon
+  readonly type = CartIconActionTypes.AnimateLayoutHeaderShoppingCartIcon
 }
 export class AnimateOffLayoutHeaderShoppingCartIcon implements Action {
-  readonly type = LayoutActionTypes.AnimateOffLayoutHeaderShoppingCartIcon
+  readonly type = CartIconActionTypes.AnimateOffLayoutHeaderShoppingCartIcon
 }
 
-export type LayoutActions =
+export type CartIconActions =
   AnimateLayoutHeaderShoppingCartIcon |
   AnimateOffLayoutHeaderShoppingCartIcon

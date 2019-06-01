@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core'
+import { MatSnackBar } from '@angular/material'
 import {Observable} from 'rxjs'
 
 import {Actions, Effect, ofType} from '@ngrx/effects'
@@ -8,14 +9,16 @@ import { BooksService } from '../services/books.service'
 import { RequestBooksHydrate, BooksActionTypes, RequestBooksHydrateSuccess, RequestBooksHydrateError } from '../actions/books.actions'
 import { withLatestFrom, map, catchError, exhaustMap } from 'rxjs/operators'
 
-import { selectAllCacheBooks } from '../selectors/books-cache.selectors'
+import { selectAllCacheBooks, selectBooksCacheEntities } from '../selectors/books-cache.selectors'
+import { AddBookToCart, CartActionTypes } from 'src/app/cart/cart-data/actions/cart.actions'
 
 @Injectable()
 export class BooksEffects {
   constructor(
     private actions$: Actions,
     private store: Store<any>,
-    private booksService: BooksService
+    private booksService: BooksService,
+    private snackbar: MatSnackBar
   ) {}
 
   @Effect()
@@ -33,6 +36,22 @@ export class BooksEffects {
       catchError((err, caught) => {
         this.store.dispatch(new RequestBooksHydrateError())
         return caught
+      })
+    )
+
+  @Effect({
+    dispatch: false
+  })
+  showNotificationOnAddedBookToCart$: Observable<Action> = this.actions$
+    .pipe(
+      ofType<AddBookToCart>(CartActionTypes.AddBookToCart),
+      withLatestFrom(this.store.pipe(select(selectBooksCacheEntities))),
+      map(([action, books]) => {
+        this.snackbar.open(`Added "${books[action.payload.bookId].title}"`, 'Close', {
+          duration: 3000
+        })
+
+        return action
       })
     )
 }

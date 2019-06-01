@@ -4,9 +4,8 @@ import { RouterModule } from '@angular/router'
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { MatToolbarModule, MatIconModule } from '@angular/material'
 
-import { LayoutWidgetsModule } from '../layout-widgets/layout-widgets.module'
-
 import { LayoutViewComponent } from './views/layout/layout-view.component'
+import { CartWidgetsModule } from 'src/app/cart/cart-widgets/cart-widgets.module'
 
 @NgModule({
   imports: [
@@ -15,7 +14,7 @@ import { LayoutViewComponent } from './views/layout/layout-view.component'
     FlexLayoutModule,
     MatToolbarModule,
     MatIconModule,
-    LayoutWidgetsModule
+    CartWidgetsModule,
   ],
   declarations: [
     // Views
