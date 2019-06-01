@@ -4,10 +4,10 @@ import { FlexLayoutModule } from '@angular/flex-layout'
 import { MatCardModule, MatButtonModule } from '@angular/material'
 
 import { BookDataModule } from '../book-data/book-data.module'
-import { SelectedBookComponent } from './components/selected-book/smart/selected-book.component'
-import { SelectedBookUiComponent } from './components/selected-book/ui/selected-book-ui.component'
-import { BookComponent } from './components/book/smart/book.component'
-import { BookUiComponent } from './components/book/ui/book-ui.component'
+import { SelectedBookComponent } from './widgets/selected-book/smart/selected-book.component'
+import { SelectedBookUiComponent } from './widgets/selected-book/ui/selected-book-ui.component'
+import { BookComponent } from './widgets/book/smart/book.component'
+import { BookUiComponent } from './widgets/book/ui/book-ui.component'
 
 @NgModule({
   imports: [
