@@ -1,6 +1,9 @@
 :host {
   display: block;
-  width: 5rem;
+  min-width: 8rem;
+}
+
+article {
   background-color: white;
   border: 1px solid blue;
 }
@@ -9,6 +12,6 @@ ul {
   list-style: none;
   padding: 0;
   li {
-    
+
   }
 }

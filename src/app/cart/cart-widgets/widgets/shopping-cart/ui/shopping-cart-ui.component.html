@@ -1,6 +1,10 @@
 <article>
   <h5>Basket</h5>
-  <ul>
-    <li *ngFor="let book of books; let i = index">{{i+1}}. {{book.title}}</li>
+  <ul fxLayout="column" fxLayoutAlign="start stretch">
+    <li *ngFor="let book of books; let i = index" fxLayout="row">
+      <div>{{i+1}}.</div>
+      <div>{{book.title}}</div>
+      <div><mat-icon (click)="onClickRemove.emit(book.id)">close</mat-icon></div>
+    </li>
   </ul>
 </article>
