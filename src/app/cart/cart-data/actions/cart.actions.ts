@@ -4,6 +4,7 @@ export enum CartActionTypes {
   AttemptToAddBookToCart = '[Cart] Attempt to Add Book To Cart',
   AddBookToCart = '[Cart] Added Book to Cart',
   AlreadyHaveBookInCartError = '[Cart] Attempt to Add Book Error: Already In Cart',
+  CantAddAnyMoreBooksInCartError = '[Cart] Attempt to Add Book Error: At Maxium Number of Books being Checked Out',
   RemoveBookFromCart = '[Cart] Removed Book from Cart',
   ClearCart = '[Cart] Removed all Books from Cart',
 }
@@ -22,6 +23,9 @@ export class AddBookToCart implements Action {
 }
 export class AlreadyHaveBookInCartError implements Action {
   readonly type = CartActionTypes.AlreadyHaveBookInCartError
+}
+export class CantAddAnyMoreBooksInCartError implements Action {
+  readonly type = CartActionTypes.CantAddAnyMoreBooksInCartError
 }
 // The above naming pattern?
 export class RemoveBookFromCart implements Action {

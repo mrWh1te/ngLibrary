@@ -6,9 +6,11 @@ import { withLatestFrom, map, tap } from 'rxjs/operators'
 import { Actions, Effect, ofType } from '@ngrx/effects'
 import { Action, select, Store } from '@ngrx/store'
 
-import { AddBookToCart, AttemptToAddBookToCart, CartActionTypes, AlreadyHaveBookInCartError } from '../actions/cart.actions'
+import { AddBookToCart, AttemptToAddBookToCart, CartActionTypes, AlreadyHaveBookInCartError, CantAddAnyMoreBooksInCartError } from '../actions/cart.actions'
 import { selectCartStatusBookIds } from '../selectors/cart-status.selectors'
 
+// @todo where should this be? Move into a folder for constants? models? in the store?
+export const maximumNumberOfBooksAUserCanCheckOut = 4
 
 @Injectable()
 export class CartEffects {
@@ -28,8 +30,12 @@ export class CartEffects {
         let bookId = bookIds.find(bookId => bookId === action.payload.bookId)
 
         // Our business logic: Users can only add 1 copy of each Book to their Cart
+        // Also, they can only check out a maximum of 4 books at a time (this could get fun with users in the future... already 2 books checked out, then can check out 2 more...)
         // It's a library, not a Store ;)
-        if (!bookId) {
+        if (bookIds.length === maximumNumberOfBooksAUserCanCheckOut) {
+          // already have maximum number of books in basket
+          return new CantAddAnyMoreBooksInCartError()
+        } else if (!bookId) {
           return new AddBookToCart({bookId: action.payload.bookId})
         } else {
           return new AlreadyHaveBookInCartError()
@@ -45,6 +51,16 @@ export class CartEffects {
       ofType<AlreadyHaveBookInCartError>(CartActionTypes.AlreadyHaveBookInCartError),
       tap(() => this.snackbar.open(`That book is already in your basket`, 'Close', {
         duration: 3000
+      }))
+    )
+  @Effect({
+    dispatch: false
+  })
+  showErrorNotificationAtMaximumCheckedOutBooks$: Observable<Action> = this.actions$
+    .pipe(
+      ofType<CantAddAnyMoreBooksInCartError>(CartActionTypes.CantAddAnyMoreBooksInCartError),
+      tap(() => this.snackbar.open(`You can only check out ${maximumNumberOfBooksAUserCanCheckOut} books at a time`, 'Close', {
+        duration: 6000
       }))
     )
 }
