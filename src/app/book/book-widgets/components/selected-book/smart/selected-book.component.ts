@@ -22,11 +22,6 @@ export class SelectedBookComponent {
       select(selectActiveBookId), // select the ID
       withLatestFrom(store.pipe(select(selectBooksCacheEntities))), // grab the map of books
       map(([activeBookId, books]) => books[activeBookId])
-      // map(([activeBookId, books]) => {
-      //   if (books[activeBookId]) {
-      //     return books[activeBookId]
-      //   }
-      // })
     )
   }
 

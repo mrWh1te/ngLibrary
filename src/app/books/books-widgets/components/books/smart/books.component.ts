@@ -15,7 +15,6 @@ export class BooksComponent {
   books$: Observable<Book[]>
 
   constructor(private store: Store<any>) {
-    console.log('[BooksComponent] constructor()')
     store.dispatch(new RequestBooksHydrate())
 
     this.books$ = store.pipe(

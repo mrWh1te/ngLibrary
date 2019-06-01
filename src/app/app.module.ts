@@ -11,7 +11,7 @@ import { CartDataModule } from './cart/cart-data/cart-data.module'
     CoreModule.forRoot(),
     AppRoutingModule,
     LayoutViewsModule,
-    CartDataModule // Good chance we'll want this for initial load, in consideration of storing cart items locally in storage
+    CartDataModule // Good chance we'll want this for initial load, in consideration of storing cart items locally in storage to display number in the Layout
   ],
   declarations: [ AppComponent ],
   bootstrap: [ AppComponent ]
