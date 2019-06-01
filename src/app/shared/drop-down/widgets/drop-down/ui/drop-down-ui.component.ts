@@ -44,15 +44,25 @@ export class DropDownUiComponent implements OnInit, OnDestroy {
   }
 
   public show() {
+    console.log('show dropdown')
+
     this.overlayRef = this.overlay.create(this.overlayConfig)
     this.overlayRef.attach(this.contentTemplate)
 
+    // @todo fix bug: We need to communicate this back to the smart component....... 
+    // right now the smart component doesnt know when the dropdown is closed by clicking backdrop so it emits another hide instead of show on click
     this.backDropClickSubscription = this.overlayRef.backdropClick().subscribe(() => this.hide())
   }
 
   public hide() {
+    console.log('hide dropdown')
+
     if (this.overlayRef) {
       this.overlayRef.detach()
+    }
+    if (this.backDropClickSubscription) {
+      this.backDropClickSubscription.unsubscribe()
+      this.backDropClickSubscription = undefined
     }
   }
 }
