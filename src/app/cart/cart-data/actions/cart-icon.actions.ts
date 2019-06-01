@@ -1,8 +1,8 @@
 import { Action } from '@ngrx/store'
 
 export enum CartIconActionTypes {
-  AnimateLayoutHeaderShoppingCartIcon = '[Layout] Animation ON of Header Shopping Cart Icon',
-  AnimateOffLayoutHeaderShoppingCartIcon = '[Layout] Animation OFF of Header Shopping Cart Icon'
+  AnimateLayoutHeaderShoppingCartIcon = '[Cart-Icon] Animation ON',
+  AnimateOffLayoutHeaderShoppingCartIcon = '[Cart-Icon] Animation OFF'
 }
 
 export class AnimateLayoutHeaderShoppingCartIcon implements Action {

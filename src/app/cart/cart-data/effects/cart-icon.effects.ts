@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core'
-import { MatSnackBar } from '@angular/material'
 
 import { Observable } from 'rxjs'
 import { map, delay } from 'rxjs/operators'
 import { Actions, Effect, ofType } from '@ngrx/effects'
-import { Action, Store } from '@ngrx/store'
+import { Action } from '@ngrx/store'
 
 import { AddBookToCart, CartActionTypes } from '../actions/cart.actions'
 import { AnimateLayoutHeaderShoppingCartIcon, CartIconActionTypes, AnimateOffLayoutHeaderShoppingCartIcon } from '../actions/cart-icon.actions'
@@ -12,8 +11,7 @@ import { AnimateLayoutHeaderShoppingCartIcon, CartIconActionTypes, AnimateOffLay
 @Injectable()
 export class CartIconEffects {
   constructor(
-    private actions$: Actions,
-    private store: Store<any>,
+    private actions$: Actions
   ) {}
 
   @Effect()
