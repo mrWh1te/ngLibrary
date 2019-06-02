@@ -11,6 +11,10 @@ export const RootRoutes: Routes = [
       {
         path: '',
         loadChildren: () => import('./books/books-views/books-views.module').then(m => m.BooksViewsModule)
+      },
+      {
+        path: 'checkout',
+        loadChildren: () => import('./checkout/checkout-views/checkout-views.module').then(m => m.CheckoutViewsModule)
       }
     ]
   }

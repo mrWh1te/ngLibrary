@@ -1,7 +1,9 @@
 <header class="layout">
-  <mat-toolbar fxLayout="row" fxLayoutAlign="space-between center">
-    <mat-icon>home</mat-icon>
+  <mat-toolbar>
+    <mat-icon routerLink="/">home</mat-icon>
+    <span fxFlex="1 1 auto"></span>
     <shopping-cart-icon></shopping-cart-icon>
+    <mat-icon class="checkout" routerLink="/checkout">arrow_forward</mat-icon>
   </mat-toolbar>
 </header>
 <section class="main-child-view">

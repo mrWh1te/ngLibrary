@@ -5,6 +5,10 @@
 	        animation: bounce-left 0.9s both;
 }
 
+:host {
+  display: flex;
+}
+
 mat-icon {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
