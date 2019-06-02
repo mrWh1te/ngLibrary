@@ -1,17 +1,35 @@
+@import '../../../../../../styles/colors';
+
 :host {
   display: block;
-  min-width: 8rem;
+  width: 16rem;
 }
 
 article {
-  background-color: white;
-  border: 1px solid blue;
+  background-color: $white;
+  border: .05rem solid $primary;
+  border-radius: .25rem;
+  padding: .75rem .5rem;
 }
 
 ul {
   list-style: none;
   padding: 0;
   li {
-
+    margin-bottom: .1rem;
+    mat-icon {
+      width: auto;
+      height: auto;
+      font-size: .8rem;
+      margin-left: 1rem;
+      margin-right: .25rem;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .row-number {
+      margin-left: .25rem;
+      margin-right: .25rem;
+    }
   }
 }
