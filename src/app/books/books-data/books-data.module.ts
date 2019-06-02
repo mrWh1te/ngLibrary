@@ -16,4 +16,8 @@ import { BooksEffects } from './effects/books.effects'
     BooksService
   ]
 })
-export class BooksDataModule {}
+export class BooksDataModule {
+  constructor() {
+    console.log('[BooksDataModule] constructor()')
+  }
+}

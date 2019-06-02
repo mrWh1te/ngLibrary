@@ -1,0 +1,20 @@
+.selected-book-container {
+  height: calc(100vh - 64px); // @todo replace 64px with shareable var
+  .inner-container {
+    padding: 1rem;
+  }
+}
+
+.book-details {
+  img {
+    width: 100%;
+  }
+}
+
+.add-to-basket-btn-container {
+  padding: 1rem;
+  button {
+    height: 3.5rem;
+    font-size: 1.25rem;
+  }
+}

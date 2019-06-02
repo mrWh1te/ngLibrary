@@ -9,7 +9,8 @@ export class Book {
     public summary?: string,
     public description?: string,
     public released?: Date,
-    public photo?: string,
+    public cover?: {small: string, medium: string, large: string},
+    public authors?: {name: string}[]
   ) {}
   
   static fromJson(json: Partial<Book>): Book {
@@ -22,7 +23,7 @@ export class Book {
       json.summary,
       json.description,
       json.released,
-      json.photo
+      json.cover
     )
   }
 }

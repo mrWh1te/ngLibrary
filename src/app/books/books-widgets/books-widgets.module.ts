@@ -4,8 +4,8 @@ import { FlexLayoutModule } from '@angular/flex-layout'
 
 import { BooksDataModule } from '../books-data/books-data.module'
 
-import { BooksComponent } from './components/books/smart/books.component'
-import { BooksUiComponent } from './components/books/ui/books-ui.component'
+import { BooksComponent } from './widgets/books/smart/books.component'
+import { BooksUiComponent } from './widgets/books/ui/books-ui.component'
 import { BookWidgetsModule } from 'src/app/book/book-widgets/book-widgets.module'
 
 @NgModule({
@@ -25,4 +25,8 @@ import { BookWidgetsModule } from 'src/app/book/book-widgets/book-widgets.module
     BooksComponent
   ]
 })
-export class BooksWidgetsModule {}
+export class BooksWidgetsModule {
+  constructor() {
+    console.log('[BooksWidgetsModule] constructor()')
+  }
+}

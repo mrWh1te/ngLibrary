@@ -1,0 +1,14 @@
+<article>
+  <p *ngIf="books.length === 0" fxLayoutAlign="center">
+    Empty
+  </p>
+  <ul fxLayout="column" fxLayoutAlign="start stretch">
+    <li *ngFor="let book of books; let i = index" fxLayout="row" fxLayoutAlign="start stretch">
+      <div class="row-number" fxFlex="auto">
+        {{i+1}}.
+      </div>
+      <div fxFlex="1 1 100%">{{book.title}}</div>
+      <div fxFlex="auto"><mat-icon (click)="onClickRemove.emit(book.id)">close</mat-icon></div>
+    </li>
+  </ul>
+</article>

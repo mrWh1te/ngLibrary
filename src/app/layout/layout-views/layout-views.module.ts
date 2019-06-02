@@ -1,26 +1,31 @@
-import { NgModule } from "@angular/core";
-import { MatToolbarModule, MatIconModule } from '@angular/material';
-import { RouterModule } from '@angular/router';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { NgModule } from "@angular/core"
+import { CommonModule } from '@angular/common'
+import { RouterModule } from '@angular/router'
+import { FlexLayoutModule } from '@angular/flex-layout'
+import { MatToolbarModule, MatIconModule } from '@angular/material'
 
-import { LayoutComponent } from './components/layout/smart/layout.component';
-import { LayoutUiComponent } from './components/layout/ui/layout-ui.component';
+import { LayoutViewComponent } from './views/layout/layout-view.component'
+import { CartWidgetsModule } from 'src/app/cart/cart-widgets/cart-widgets.module'
 
 @NgModule({
   imports: [
+    CommonModule,
     RouterModule,
     FlexLayoutModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    CartWidgetsModule,
   ],
   declarations: [
-    // Smart Components
-    LayoutComponent,
-    // UI Components
-    LayoutUiComponent
+    // Views
+    LayoutViewComponent
   ],
   exports: [
-    LayoutComponent
+    LayoutViewComponent
   ]
 })
-export class LayoutViewsModule {}
+export class LayoutViewsModule {
+  constructor() {
+    console.log('[LayoutViewsModule] constructor()')
+  }
+}

@@ -1,0 +1,17 @@
+<article class="selected-book-container" fxLayout="column">
+  <div *ngIf="!selectedBook" class="inner-container">
+    Select a book to open it here
+  </div>
+  <div *ngIf="selectedBook" fxLayout="column" fxFlex="100%" class="inner-container">
+    <h2>{{selectedBook.title}}</h2>
+    <section class="book-details" fxFlex="100%" fxLayout="column">
+      <img *ngIf="selectedBook.cover" [src]="selectedBook.cover?.large" alt="{{selectedBook.title}}" />
+      <h5 *ngIf="selectedBook.authors">Author: {{selectedBook.authors[0].name}}</h5>
+    </section>
+    <div fxLayoutAlign="center center" class="add-to-basket-btn-container" fxLayout="row">
+      <button mat-raised-button color="primary" (click)="onAddToBasket.emit()" fxFlex="100%">
+        Add to Basket
+      </button>
+    </div>
+  </div>
+</article>

@@ -14,4 +14,8 @@ import { CoreModule } from './core/core.module'
   declarations: [ AppComponent ],
   bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    console.log('[AppModule] constructor()')
+  }
+}

@@ -1,0 +1,13 @@
+article {
+  height: calc(100vh - 64px); // @todo move the header height into a shareable scss file
+  
+  // @todo move the padding into the parent component (let the view dress that up)
+  padding: 1rem;
+  padding-bottom: 0;
+}
+
+.inventory {
+  overflow-y: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
