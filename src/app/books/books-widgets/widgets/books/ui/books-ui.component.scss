@@ -1,5 +1,7 @@
+@import '../../../../../../styles/layout';
+
 article {
-  height: calc(100vh - 64px); // @todo move the header height into a shareable scss file
+  height: calc(100vh - #{$header-height});
   
   // @todo move the padding into the parent component (let the view dress that up)
   padding: 1rem;
