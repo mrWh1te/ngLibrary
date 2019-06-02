@@ -16,7 +16,7 @@ export class DropDownComponent implements OnInit, OnDestroy {
   public attachToElement: ElementRef
 
   @Input()
-  public isOpen$: Observable<boolean> // When the Drop-Down should open or close
+  public isOpen$: Observable<boolean>
 
   @Output() onBackDropClick: EventEmitter<any> = new EventEmitter<any>()
 

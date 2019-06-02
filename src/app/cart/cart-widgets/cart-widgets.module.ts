@@ -29,7 +29,8 @@ import { ShoppingCartUiComponent } from './widgets/shopping-cart/ui/shopping-car
     ShoppingCartIconUiComponent
   ],
   exports: [
-    ShoppingCartIconComponent
+    ShoppingCartIconComponent,
+    ShoppingCartComponent
   ]
 })
 export class CartWidgetsModule {
