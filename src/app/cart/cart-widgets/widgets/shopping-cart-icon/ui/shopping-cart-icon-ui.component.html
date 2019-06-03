@@ -1,11 +1,13 @@
-<mat-icon 
-  [matBadge]="cartItemsCount" 
-  [matBadgeHidden]="cartItemsCount === 0" 
-  [class.animating]="animating"
-  (click)="onIconClick.emit()">shopping_basket</mat-icon>
-<drop-down 
-  [attachToElement]="shoppingCartIcon"
-  [isOpen$]="openDropDown$"
-  (onBackDropClick)="onBackDropClick.emit()">
-  <shopping-cart></shopping-cart>
-</drop-down>
+<div class="shopping-cart-icon-ui">
+  <mat-icon 
+    [matBadge]="cartItemsCount" 
+    [matBadgeHidden]="cartItemsCount === 0" 
+    [class.animating]="animating"
+    (click)="onIconClick.emit()">shopping_basket</mat-icon>
+  <drop-down 
+    [attachToElement]="shoppingCartIcon"
+    [isOpen$]="openDropDown$"
+    (onBackDropClick)="onBackDropClick.emit()">
+    <shopping-cart></shopping-cart>
+  </drop-down>
+</div>

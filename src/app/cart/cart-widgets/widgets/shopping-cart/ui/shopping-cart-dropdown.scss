@@ -1,0 +1,37 @@
+/**
+ * @description   Styling of the Shopping-Cart as a Drop-Down Menu (as of writing, layout's header)
+ */
+
+@import '../../../../../../styles/colors';
+
+shopping-cart {
+  width: 16rem;  
+  article {
+    background-color: $white;
+    border: .05rem solid $primary;
+    border-radius: .25rem;
+    padding: .75rem .5rem;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    li {
+      margin-bottom: .1rem;
+      .close {
+        width: auto;
+        height: auto;
+        font-size: .8rem;
+        margin-left: 1rem;
+        margin-right: .25rem;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      .row-number {
+        margin-left: .25rem;
+        margin-right: .25rem;
+      }
+    }
+  }
+}

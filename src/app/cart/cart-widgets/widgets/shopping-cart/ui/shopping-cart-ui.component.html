@@ -1,4 +1,4 @@
-<article>
+<article class="shopping-cart-ui">
   <p *ngIf="books.length === 0" fxLayoutAlign="center">
     Empty
   </p>
@@ -8,7 +8,7 @@
         {{i+1}}.
       </div>
       <div fxFlex="1 1 100%">{{book.title}}</div>
-      <div fxFlex="auto"><mat-icon (click)="onClickRemove.emit(book.id)">close</mat-icon></div>
+      <div fxFlex="auto"><mat-icon class="close" (click)="onClickRemove.emit(book.id)">close</mat-icon></div>
     </li>
   </ul>
 </article>

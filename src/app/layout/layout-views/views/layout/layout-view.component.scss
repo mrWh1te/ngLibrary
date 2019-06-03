@@ -1,6 +1,9 @@
+// Vars
 @import '../../../../../styles/layout';
 @import '../../../../../styles/colors';
 
+//
+// Base Layout
 :host {
   display: block;
   height: 100vh;
@@ -25,7 +28,7 @@ header.layout {
   }
 }
 
-.checkout {
+mat-icon.checkout {
   margin-left: 1rem;
 }
 

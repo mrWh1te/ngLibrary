@@ -6,7 +6,7 @@ import { Observable } from 'rxjs'
 @Component({
   selector: 'shopping-cart-icon-ui',
   templateUrl: './shopping-cart-icon-ui.component.html',
-  styleUrls: ['./shopping-cart-icon-ui.component.scss']
+  styleUrls: ['./shopping-cart-icon-ui.component.scss'],
 })
 export class ShoppingCartIconUiComponent {
   @Input() animating: boolean
