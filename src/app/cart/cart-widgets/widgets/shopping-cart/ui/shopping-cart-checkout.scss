@@ -4,6 +4,7 @@
 
  @import '../../../../../../styles/colors';
 
+// @todo @future consider making a mixin of shopping-cart's checkout style or other SCSS techniques of abstraction to gain more flexbility. Open to suggestion!
 .checkout-view {
   shopping-cart {
     width: 100%;  

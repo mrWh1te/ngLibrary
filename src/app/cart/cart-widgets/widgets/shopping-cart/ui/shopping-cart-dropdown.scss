@@ -4,6 +4,7 @@
 
 @import '../../../../../../styles/colors';
 
+// So we're not wrapping this one with a parent element to restrict the styling to the component (view) since this component's instance will be injected in a overlay, separate to that view component
 shopping-cart {
   width: 16rem;  
   article {
