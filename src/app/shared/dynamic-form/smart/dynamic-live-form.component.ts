@@ -14,7 +14,6 @@ import { DynamicFormService } from '../services/dynamic-form.service'
 
 @Component({
   selector: 'dynamic-form-live',
-  styleUrls: ['./dynamic-live-form.component.scss'],
   template: `
     <dynamic-form-ui
       [dynamicFormConfig]="config"

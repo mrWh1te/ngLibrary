@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core"
 import { CommonModule } from '@angular/common'
 
-import { MatInputModule } from '@angular/material'
+import { MatInputModule, MatButtonModule } from '@angular/material'
 import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 
 import { DynamicFormFieldDirective } from './directives/dynamic-form-field.directive'
@@ -21,7 +21,8 @@ import { FormButtonSubmitComponent } from './ui/dynamic-form-inputs/form-button-
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    MatInputModule
+    MatInputModule,
+    MatButtonModule
   ],
   declarations: [
     DynamicFormFieldDirective,
