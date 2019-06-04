@@ -16,36 +16,29 @@ import { DynamicFormService } from '../services/dynamic-form.service'
   selector: 'dynamic-form-live',
   styleUrls: ['./dynamic-live-form.component.scss'],
   template: `
-    <form [formGroup]="form">
-      <ng-container 
-        *ngFor="let field of config.inputs;"
-        dynamicFormField
-        [config]="field"
-        [group]="form">
-      </ng-container>
-    </form>
-  ` // @todo move this into a UI component !
+    <dynamic-form-ui
+      [dynamicFormConfig]="config"
+      [formGroup]="formGroup"></dynamic-form-ui>
+  `
 })
 export class DynamicLiveFormComponent implements OnInit {
   @Output() 
   onFormChange: EventEmitter<any> = new EventEmitter<any>()
 
   @Input()
-  config: DynamicFormConfig = {
-    inputs: []
-  }
+  config: DynamicFormConfig
 
-  form: FormGroup
+  formGroup: FormGroup
 
   constructor(
     private dynamicFormService: DynamicFormService
   ) {}
 
   ngOnInit() {
-    this.form = this.dynamicFormService.createFormGroup(this.config.inputs)
+    this.formGroup = this.dynamicFormService.createFormGroup(this.config.inputs)
 
-    // Make this form live with immediate reactions on changes to form values
-    this.form.valueChanges.subscribe(form => {
+    // How this form is live:
+    this.formGroup.valueChanges.subscribe(form => {
       console.log('[DynamicLiveFormComponent] form valueChanges, form = ', form)
       this.onFormChange.emit(form)
     })

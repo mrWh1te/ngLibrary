@@ -7,7 +7,7 @@ import { DynamicFormInput } from '../models/dynamic-form-input.model'
 @Injectable()
 export class DynamicFormService {
   constructor(
-    private fb:FormBuilder
+    private fb: FormBuilder
   ) {}
 
   public createFormGroup(inputs: DynamicFormInput<any>[]): FormGroup {

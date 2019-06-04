@@ -1,0 +1,7 @@
+<section class="dynamic-field-container" 
+  [formGroup]="formGroup">
+  <mat-form-field class="dynamic-form-field">
+    <input matInput [placeholder]="formInput.placeholder" [formControlName]="formInput.name">
+    <mat-hint align="start" *ngIf="formInput.hint"><strong>{{formInput.hint}}</strong></mat-hint>
+  </mat-form-field>
+</section>

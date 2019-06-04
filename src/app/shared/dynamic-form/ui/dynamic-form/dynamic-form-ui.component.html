@@ -1,8 +1,8 @@
-<form [formGroup]="form">
+<form [formGroup]="formGroup">
   <ng-container 
-    *ngFor="let formInput of config.inputs"
+    *ngFor="let formInput of dynamicFormConfig.inputs"
     dynamicFormField
-    [config]="formInput"
-    [group]="form">
+    [formInput]="formInput"
+    [formGroup]="formGroup">
   </ng-container>
 </form>

@@ -1,40 +1,35 @@
-import { ComponentFactoryResolver, Directive, Input, OnInit, ViewContainerRef } from '@angular/core
+import { ComponentFactoryResolver, Directive, Input, OnInit, ViewContainerRef, ComponentRef } from '@angular/core'
 
 import { FormGroup } from '@angular/forms'
 
-import { DYNAMICFORMINPUTS } from '../dynamic-form-inputs.const'
 import { DynamicFormInput } from '../models/dynamic-form-input.model'
+import { DynamicFormInputComponentsType, DynamicFormInputComponentsMap } from '../dynamic-form-input-components'
+import { DynamicFormInputComponent } from '../models/dynamic-form-input-component.interface'
 
 @Directive({
   selector: '[dynamicFormField]'
 })
-export class DynamicFormFieldDirective implements OnInit {
+export class DynamicFormFieldDirective implements DynamicFormInputComponent, OnInit {
   @Input()
-  config: DynamicFormInput<any>
+  formInput: DynamicFormInput<any>
 
   @Input()
-  group: FormGroup
+  formGroup: FormGroup
 
-  component: any
+  formInputComponent: ComponentRef<DynamicFormInputComponentsType>
 
-  /**
-   * 
-   * @param resolver 
-   * @param container 
-   */
   constructor(
     private resolver: ComponentFactoryResolver,
     private container: ViewContainerRef
   ) {}
 
-  /**
-   * 
-   */
   ngOnInit() {
-    const component = DYNAMICFORMINPUTS[this.config.type];
-    const factory = this.resolver.resolveComponentFactory<any>(component);
-    this.component = this.container.createComponent(factory);
-    this.component.instance.config = this.config;
-    this.component.instance.group = this.group;
+    const component = DynamicFormInputComponentsMap[this.formInput.type]
+
+    const factory = this.resolver.resolveComponentFactory<any>(component)
+
+    this.formInputComponent = this.container.createComponent(factory)
+    this.formInputComponent.instance.formInput = this.formInput
+    this.formInputComponent.instance.formGroup = this.formGroup
   }
 }
