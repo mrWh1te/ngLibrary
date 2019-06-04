@@ -38,7 +38,6 @@ export class DynamicLiveFormComponent implements OnInit {
 
     // How this form is live:
     this.formGroup.valueChanges.subscribe(form => {
-      console.log('[DynamicLiveFormComponent] form valueChanges, form = ', form)
       this.onFormChange.emit(form)
     })
   }
