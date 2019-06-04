@@ -3,23 +3,15 @@ import { User } from '../models/user.model'
 import { CheckoutActions, CheckoutActionTypes } from '../actions/checkout.actions'
 
 export interface State {
-  user: Partial<User>,
-  bookIds: number[]
+  user: Partial<User>
 }
 
 export const initialState: State = {
-  user: null,
-  bookIds: []
+  user: null
 }
 
 export function reducer(state: State = initialState, action: CheckoutActions): State {
   switch (action.type) {
-    case CheckoutActionTypes.CheckoutSetBooks: {     
-      return {
-        ...state,
-        bookIds: [...action.payload.bookIds]
-      }
-    }
     case CheckoutActionTypes.CheckoutUpdateUserInfo: {
       return {
         ...state,
@@ -27,12 +19,6 @@ export function reducer(state: State = initialState, action: CheckoutActions): S
       }
     }
 
-    case CheckoutActionTypes.CheckoutClearBooks: {
-      return {
-        ...state,
-        bookIds: []
-      }
-    }
     case CheckoutActionTypes.CheckoutClearUserInfo: {
       return {
         ...state,
