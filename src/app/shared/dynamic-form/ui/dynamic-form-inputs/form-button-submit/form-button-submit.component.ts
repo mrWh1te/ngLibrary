@@ -10,6 +10,6 @@ import { DynamicFormInput } from '../../../models/dynamic-form-input.model'
   styleUrls: ['./form-button-submit.component.scss']
 })
 export class FormButtonSubmitComponent implements DynamicFormInputComponent {
-  formInput: DynamicFormInput<any> // T = any -> not going to emit anything but the signal itself
+  formInput: DynamicFormInput<any> // T = any -> not going to emit anything but the signal itself @todo does void work?
   formGroup: FormGroup
 }

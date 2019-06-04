@@ -1,5 +1,11 @@
 @import '../../../../../styles/colors';
 
 .checkout-view {
-  // padding: 0 5rem;
+  padding: 2rem;
+}
+
+checkout-user-form {
+  .mat-form-field-infix {
+    width: 15rem;
+  }
 }
