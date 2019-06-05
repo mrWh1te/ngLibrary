@@ -3,12 +3,12 @@ import { MatDialogRef } from '@angular/material'
 
 import { Store, select } from '@ngrx/store'
 import { Observable } from 'rxjs'
-import { map } from 'rxjs/operators'
+import { map, take } from 'rxjs/operators'
 
 import { User } from 'src/app/checkout/checkout-data/models/user.model'
 import { selectCheckoutRequestUser } from 'src/app/checkout/checkout-data/selectors/checkout-request.selectors'
 import { selectCartStatusBooksCount } from 'src/app/cart/cart-data/selectors/cart-status.selectors'
-import { CheckoutClearAll } from 'src/app/checkout/checkout-data/actions/checkout.actions';
+import { CheckoutComplete } from 'src/app/checkout/checkout-data/actions/checkout.actions'
 
 @Component({
   selector: 'checkout-success-message',
@@ -31,10 +31,12 @@ export class CheckoutSuccessMessageDialogComponent {
   ) {
     this.user$ = store.pipe(
       select(selectCheckoutRequestUser),
+      take(1), // data won't change until we clear, and we won't care about that so
       map(user => User.fromJson(user))
     )    
     this.numberOfBooks$ = store.pipe(
-      select(selectCartStatusBooksCount)
+      select(selectCartStatusBooksCount),
+      take(1)
     )
 
     const now = new Date()
@@ -45,6 +47,6 @@ export class CheckoutSuccessMessageDialogComponent {
   close(): void {
     this.dialogRef.close()
 
-    this.store.dispatch(new CheckoutClearAll()) // clear cart, clear checkout request user, clear book selected
+    this.store.dispatch(new CheckoutComplete()) // clear cart, clear checkout request user, clear book selected
   }
 }

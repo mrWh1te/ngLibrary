@@ -2,6 +2,7 @@ import { Action } from '@ngrx/store'
 
 export enum BookActionTypes {
   BookSelected = '[Book] Book Selected',
+  ClearBookSelected = '[Book] Selected Book Cleared',
   SelectedBookAddToCartBtnClick = '[Book] Selected Book\'s "Add to Basket" Button Click'
 }
 
@@ -10,6 +11,9 @@ export class BookSelected implements Action {
 
   constructor(public payload: {bookId: number}) {}
 }
+export class ClearBookSelected implements Action {
+  readonly type = BookActionTypes.ClearBookSelected
+}
 
 export class SelectedBookAddToCartBtnClick implements Action {
   readonly type = BookActionTypes.SelectedBookAddToCartBtnClick
@@ -17,4 +21,5 @@ export class SelectedBookAddToCartBtnClick implements Action {
 
 export type BookActions =
   BookSelected |
+  ClearBookSelected |
   SelectedBookAddToCartBtnClick

@@ -5,7 +5,7 @@ import { User } from '../models/user.model'
 export enum CheckoutActionTypes {
   CheckoutUpdateUserInfo = '[Checkout] Update Request User Info',
   CheckoutClearUserInfo = '[Checkout] Clear Request User Info',
-  CheckoutClearAll = '[Checkout] Clear All Request Data',
+  CheckoutComplete = '[Checkout] Complete',
   CheckoutSubmit = '[Checkout] Submit Request',
   CheckoutSubmitSuccess = '[Checkout] Submit Request Success',
   CheckoutSubmitError = '[Checkout] Submit Request Error'
@@ -33,14 +33,14 @@ export class CheckoutSubmitError implements Action {
 export class CheckoutClearUserInfo implements Action {
   readonly type = CheckoutActionTypes.CheckoutClearUserInfo
 }
-export class CheckoutClearAll implements Action {
-  readonly type = CheckoutActionTypes.CheckoutClearAll
+export class CheckoutComplete implements Action {
+  readonly type = CheckoutActionTypes.CheckoutComplete
 }
 
 export type CheckoutActions =
   CheckoutUpdateUserInfo |
   CheckoutClearUserInfo |
-  CheckoutClearAll |
+  CheckoutComplete |
   CheckoutSubmit |
   CheckoutSubmitSuccess |
   CheckoutSubmitError

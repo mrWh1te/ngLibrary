@@ -6,7 +6,7 @@ import { BookActions, BookActionTypes } from 'src/app/book/book-data/actions/boo
 
 export interface State extends EntityState<Book> {
   // What book has been selected in the Books smart component?
-  activeBookId: number // if activeBookId > 0, then there is one selected. To make it more obvious, -1 is the value assigned when no book is selected (instead of 0)
+  activeBookId: number
 }
 
 export const adapter: EntityAdapter<Book> =
@@ -66,6 +66,12 @@ export function reducer(state: State = initialState, action: BooksActions | Book
       return {
         ...state,
         activeBookId: action.payload.bookId
+      }
+    }
+    case BookActionTypes.ClearBookSelected: {
+      return {
+        ...state,
+        activeBookId: -1
       }
     }
     default: {
