@@ -32,9 +32,23 @@ export class CartIconEffects {
 
   @Effect()
   toggleShoppingCartIconDropDownVisibility$: Observable<Action> = this.actions$
-      .pipe(
-        ofType<ToggleCartIconDropDown>(CartIconActionTypes.ToggleCartIconDropDown),
-        withLatestFrom(this.store.pipe(select(selectCartIconDropDownIsVisible))),
-        map(([action, dropDownIsVisible]) => dropDownIsVisible ? new HideCartIconDropDown() : new ShowCartIconDropDown())
-      )
+    .pipe(
+      ofType<ToggleCartIconDropDown>(CartIconActionTypes.ToggleCartIconDropDown),
+      withLatestFrom(this.store.pipe(select(selectCartIconDropDownIsVisible))),
+      map(([action, dropDownIsVisible]) => dropDownIsVisible ? new HideCartIconDropDown() : new ShowCartIconDropDown())
+    )
+
+  @Effect({
+    dispatch: false
+  })
+  HideShoppingCartIconDropDown$: Observable<Action> = this.actions$
+    .pipe(
+      ofType('@ngrx/router-store/navigation'),
+      tap(action => {
+        // No point in displaying the dropdown shopping-cart, when we're going to display it in the Checkout view (styled differently, but some content)
+        if (action['payload']['event']['state']['url'] === '/checkout') {
+          this.store.dispatch(new HideCartIconDropDown())
+        }
+      })
+    )
 }
