@@ -1,6 +1,8 @@
 import { NgModule } from "@angular/core"
 import { CommonModule } from '@angular/common'
 
+import { ModalModule } from 'src/app/shared/modal/modal.module'
+
 import { CheckoutSuccessMessageDialogComponent } from './checkout-success-message/smart/checkout-success-message-dialog.component'
 import { CheckoutSuccessMessageDialogUiComponent } from './checkout-success-message/ui/checkout-success-message-dialog-ui.component'
 
@@ -9,7 +11,8 @@ import { CheckoutSuccessMessageDialogUiComponent } from './checkout-success-mess
  */
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    ModalModule
   ],
   declarations: [
     CheckoutSuccessMessageDialogComponent,

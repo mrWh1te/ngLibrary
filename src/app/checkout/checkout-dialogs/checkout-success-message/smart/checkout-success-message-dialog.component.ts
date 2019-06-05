@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators'
 import { User } from 'src/app/checkout/checkout-data/models/user.model'
 import { selectCheckoutRequestUser } from 'src/app/checkout/checkout-data/selectors/checkout-request.selectors'
 import { selectCartStatusBooksCount } from 'src/app/cart/cart-data/selectors/cart-status.selectors'
+import { CheckoutClearAll } from 'src/app/checkout/checkout-data/actions/checkout.actions';
 
 @Component({
   selector: 'checkout-success-message',
@@ -43,5 +44,7 @@ export class CheckoutSuccessMessageDialogComponent {
 
   close(): void {
     this.dialogRef.close()
+
+    this.store.dispatch(new CheckoutClearAll()) // clear cart, clear checkout request user, clear book selected
   }
 }

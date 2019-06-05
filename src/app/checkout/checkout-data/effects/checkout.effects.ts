@@ -42,6 +42,8 @@ export class CheckoutEffects {
   displayCheckoutFollowUpMessageDialog$: Observable<Action> = this.actions$
     .pipe(
       ofType<CheckoutSubmitSuccess>(CheckoutActionTypes.CheckoutSubmitSuccess),
-      tap(() => this.dialog.open(CheckoutSuccessMessageDialogComponent))
+      tap(() => this.dialog.open(CheckoutSuccessMessageDialogComponent, {
+        panelClass: 'special-pane-no-padding'
+      }))
     )
 }
