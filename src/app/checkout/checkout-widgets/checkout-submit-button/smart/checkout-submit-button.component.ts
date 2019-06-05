@@ -26,6 +26,7 @@ export class CheckoutSubmitButtonComponent {
       store.pipe(select(selectCheckoutRequestUser))
     ).pipe(
       map(([cartBooksCount, checkoutUser]) => {
+        console.log('checkoutUser = ', checkoutUser)
         if (cartBooksCount === 0) {
           return true
         }
