@@ -9,7 +9,7 @@ import { User } from '../models/user.model'
 export class CheckoutService {
   submitToAPI(bookIds: number[], user: Partial<User>): Observable<any> {
     // we don't have an actual backend to process the checkout request, so this is pretend:
-    return of().pipe(
+    return of({user, bookIds}).pipe(
       delay(100) // simulate API response time, 100ms ?
     )
   }
