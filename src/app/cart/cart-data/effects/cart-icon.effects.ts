@@ -43,10 +43,10 @@ export class CartIconEffects {
   })
   HideShoppingCartIconDropDown$: Observable<Action> = this.actions$
     .pipe(
-      ofType('@ngrx/router-store/navigation'),
+      ofType('@ngrx/router-store/navigated'), // the success action for navigating too a page
       tap(action => {
         // No point in displaying the dropdown shopping-cart, when we're going to display it in the Checkout view (styled differently, but some content)
-        if (action['payload']['event']['state']['url'] === '/checkout') {
+        if (action['payload']['event']['url'] === '/checkout') {
           this.store.dispatch(new HideCartIconDropDown())
         }
       })
