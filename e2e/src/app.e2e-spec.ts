@@ -1,16 +1,20 @@
-import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import { AppPage } from './app.po'
+import { browser, logging } from 'protractor'
 
-describe('workspace-project App', () => {
+import { bookISBNs } from './../../src/app/books/books-data/reducers/books-cache.reducer'
+
+describe('ngLibrary App', () => {
   let page: AppPage;
 
   beforeEach(() => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  // @todo move this into a books domain e2e spec
+  it('should display a book for each ISBN in books-cache.reducer', () => {
+    // bookISBNs
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Welcome to ngLibrary!');
+    expect(page.getBooks().count()).toEqual(bookISBNs.length)
   });
 
   afterEach(async () => {

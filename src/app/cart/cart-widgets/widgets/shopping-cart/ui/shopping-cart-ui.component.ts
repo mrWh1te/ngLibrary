@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from "@angular/core"
-import { Book } from 'src/app/book/book-data/models/book.model';
+
+import { Book } from 'src/app/book/book-data/models/book.model'
 
 @Component({
   selector: 'shopping-cart-ui',
