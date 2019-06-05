@@ -5,7 +5,7 @@ import { BooksActions, BooksActionTypes } from '../actions/books.actions'
 import { BookActions, BookActionTypes } from 'src/app/book/book-data/actions/book.actions';
 
 export interface State extends EntityState<Book> {
-  // What book has been selected in the Books smart component?
+  // What book has been selected in the Book's SelectedBookComponent?
   activeBookId: number
 }
 

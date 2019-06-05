@@ -1,8 +1,8 @@
-import { Component } from "@angular/core"
+import { Component, OnDestroy } from "@angular/core"
 import { MatDialogRef } from '@angular/material'
 
 import { Store, select } from '@ngrx/store'
-import { Observable } from 'rxjs'
+import { Observable, Subscription } from 'rxjs'
 import { map, take } from 'rxjs/operators'
 
 import { User } from 'src/app/checkout/checkout-data/models/user.model'
@@ -25,6 +25,8 @@ export class CheckoutSuccessMessageDialogComponent {
   public numberOfBooks$: Observable<number>
   public pickUpTime: Date
 
+  dialogCloseSubscription: Subscription
+
   constructor(
     private dialogRef: MatDialogRef<CheckoutSuccessMessageDialogComponent>,
     private store: Store<any>
@@ -42,11 +44,13 @@ export class CheckoutSuccessMessageDialogComponent {
     const now = new Date()
     this.pickUpTime = new Date()
     this.pickUpTime.setHours(now.getHours() + 1)
+
+    this.dialogRef.afterClosed().toPromise().then(() => {
+      this.store.dispatch(new CheckoutComplete())
+    })
   }
 
   close(): void {
     this.dialogRef.close()
-
-    this.store.dispatch(new CheckoutComplete()) // clear cart, clear checkout request user, clear book selected
   }
 }
