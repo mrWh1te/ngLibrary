@@ -11,5 +11,10 @@ export const selectCartIcon = createSelector(
 
 export const selectCartIconAnimatingStatus = createSelector(
   selectCartIcon,
-  (cartIcon: CartIconState) => cartIcon.animating
+  (cartIconState: CartIconState) => cartIconState.animating
+)
+
+export const selectCartIconDropDownIsVisible = createSelector(
+  selectCartIcon,
+  (cartIconState: CartIconState) => cartIconState.dropDownIsVisible
 )

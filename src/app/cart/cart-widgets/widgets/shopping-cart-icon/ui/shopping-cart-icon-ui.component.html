@@ -6,8 +6,7 @@
     (click)="onIconClick.emit()">shopping_basket</mat-icon>
   <drop-down 
     [attachToElement]="shoppingCartIcon"
-    [isOpen$]="openDropDown$"
-    (onBackDropClick)="onBackDropClick.emit()">
+    [isOpen$]="openDropDown$">
     <shopping-cart></shopping-cart>
   </drop-down>
 </div>
