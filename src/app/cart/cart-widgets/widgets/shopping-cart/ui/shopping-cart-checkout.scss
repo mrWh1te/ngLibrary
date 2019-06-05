@@ -1,0 +1,43 @@
+/**
+ * @description   Styling of the Shopping-Cart as a part of the Checkout page
+ */
+
+ @import '../../../../../../styles/colors';
+
+// @todo @future consider making a mixin of shopping-cart's checkout style or other SCSS techniques of abstraction to gain more flexbility. Open to suggestion!
+.checkout-view {
+  shopping-cart {
+    // width: 100%;  
+    article {
+      background-color: $transparent;
+      border: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        margin-bottom: .5rem;
+        .author {
+          margin-top: .25rem;
+        }
+        .close {
+          width: auto;
+          height: auto;
+          font-size: .8rem;
+          margin-left: 1rem;
+          margin-right: .25rem;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+        .row-number {
+          margin-left: .25rem;
+          margin-right: .25rem;
+        }
+      }
+    }
+  }
+}

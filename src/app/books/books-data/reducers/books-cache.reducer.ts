@@ -5,45 +5,56 @@ import { BooksActions, BooksActionTypes } from '../actions/books.actions'
 import { BookActions, BookActionTypes } from 'src/app/book/book-data/actions/book.actions';
 
 export interface State extends EntityState<Book> {
-  // What book has been selected in the Books smart component?
-  activeBookId: number // if activeBookId > 0, then there is one selected. To make it more obvious, -1 is the value assigned when no book is selected (instead of 0)
+  // What book has been selected in the Book's SelectedBookComponent?
+  activeBookId: number
 }
 
 export const adapter: EntityAdapter<Book> =
   createEntityAdapter<Book>()
 
-// For this example app, I've hard-coded some entities into our intial state right here
-// Usually I don't do this, maybe instead grab the data from a global JS object that is rendered inside the main index.html file (that can be server generated with the books data). Ideally, data required for the upfront loading of home page is packaged together in the index.html file so no subsequent API calls are required to display. One technique to do that is inline your required data in the index.html file using server rendering
-// But for now, since we're trying to avoid server rendering (backend in this example project), this will do:
+// @todo add local storage support to cache data locally
+// upon such, put these ISBN's in a service for when local storage is empty
+const bookISBNs: string[] = [
+  '0451526538',
+  '0439554934',
+  '0385333498',
+  '0812550706',
+  '0140441409',
+  '0374531269',
+  '0451169514',
+  '0307277925',
+  '9781400067824',
+  '978-84-666-5895-9',
+  '0060652950',
+  '0553109537',
+  '0062316095',
+  '9780735213654',
+  '0722534124',
+  '0140350497',
+  '0007322607',
+  '1847922643',
+  '0060513098',
+  '0553755994',
+  '0345353145',
+  '0836218094',
+  '0345342968',
+  '0307473473',
+  '0786851473',
+  '0448411067',
+  '0739326740'
+]
+
 export const initialState: State = {
   activeBookId: -1, // no book selected
-  ids: [1, 2, 3, 4, 5, 6],
-  entities: {
-    1: {
-      id: 1,
-      isbn: '0451526538'
-    },
-    2: {
-      id: 2,
-      isbn: '0439554934'
-    },
-    3: {
-      id: 3,
-      isbn: '0385333498'
-    },
-    4: {
-      id: 4,
-      isbn: '0812550706'
-    },
-    5: {
-      id: 5,
-      isbn: '0140441409'
-    },
-    6: {
-      id: 6,
-      isbn: '0374531269'
+  ids: bookISBNs.map((isbn, index) => index + 1),
+  entities: bookISBNs.reduce((entities, isbn, index) => {
+    const id = index + 1
+    entities[id] = {
+      id,
+      isbn
     }
-  }
+    return entities
+  }, {})
 }
 
 export function reducer(state: State = initialState, action: BooksActions | BookActions): State {
@@ -55,6 +66,12 @@ export function reducer(state: State = initialState, action: BooksActions | Book
       return {
         ...state,
         activeBookId: action.payload.bookId
+      }
+    }
+    case BookActionTypes.ClearBookSelected: {
+      return {
+        ...state,
+        activeBookId: -1
       }
     }
     default: {

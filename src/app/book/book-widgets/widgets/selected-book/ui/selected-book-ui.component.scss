@@ -1,5 +1,7 @@
+@import '../../../../../../styles/layout';
+
 .selected-book-container {
-  height: calc(100vh - 64px); // @todo replace 64px with shareable var
+  height: calc(100vh - #{$header-height});
   .inner-container {
     padding: 1rem;
   }

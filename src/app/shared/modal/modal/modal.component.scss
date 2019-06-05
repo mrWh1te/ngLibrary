@@ -1,0 +1,33 @@
+@import '../../../../styles/colors';
+
+.modal {
+  position: relative;
+  padding: 1rem;
+  .close {
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    width: 2rem;
+    height: 2rem;
+
+    background-color: $primary;
+    border-radius: 15rem;
+    color: $white;
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+// For proper positioning of the close X icon, we need to override some default values for the mat dialog container
+// therefore, please add `special-pane-no-padding` as a panelClass to the dialog being opened
+// ie: dialog.open(CheckoutSuccessMessageDialogComponent, {
+//  panelClass: 'special-pane-no-padding'
+// })
+.special-pane-no-padding {
+  .mat-dialog-container {
+    padding: 0;
+    overflow: visible;
+  }
+}

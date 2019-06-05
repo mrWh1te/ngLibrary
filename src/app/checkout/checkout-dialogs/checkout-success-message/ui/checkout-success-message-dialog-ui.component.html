@@ -1,0 +1,8 @@
+<modal (onClose)="onClose.emit()">
+  <p>
+    Thank you {{user?.name}} for checking out {{ numberOfBooks }} book{{ numberOfBooks > 1 ? 's' : ''}}!
+  </p>
+  <p class="tiny-top-margin">
+    {{ numberOfBooks > 1 ? 'They\'ll' : 'It will'}} be ready for you to pick up at <b>{{ pickUpTime | date:'shortTime' }}</b>
+  </p>
+</modal>

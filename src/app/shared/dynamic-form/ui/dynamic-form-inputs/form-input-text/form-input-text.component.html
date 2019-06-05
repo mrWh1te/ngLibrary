@@ -1,0 +1,13 @@
+<div class="dynamic-field-container" 
+  [formGroup]="formGroup">
+  <mat-form-field class="dynamic-form-field">
+    <input matInput [placeholder]="formInput.placeholder" [formControlName]="formInput.name">
+    <mat-hint align="start" *ngIf="formInput.hint"><strong>{{formInput.hint}}</strong></mat-hint>
+    <mat-error 
+      *ngFor="let formError of formInput.errors">
+      <ng-container *ngIf="formGroup.get(formInput.name).hasError(formError.validationRule)">
+        <span [innerHTML]="formError.errorMessageHTML"></span>
+      </ng-container>
+    </mat-error>
+  </mat-form-field>
+</div>

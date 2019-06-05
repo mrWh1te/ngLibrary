@@ -1,16 +1,35 @@
-$header-height: 64px; // comes from Angular Material's toolbar's .mat-toolbar-single-row CSS class
+// Vars
+@import '../../../../../styles/layout';
+@import '../../../../../styles/colors';
 
+//
+// Base Layout
 :host {
   display: block;
   height: 100vh;
 }
 
 header.layout {
+  -moz-box-shadow:    2px -5px 6px 5px $gray;
+  -webkit-box-shadow: 2px -5px 6px 5px $gray;
+  box-shadow:         2px -5px 6px 5px $gray;
+
   mat-icon {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
     &:hover {
       cursor: pointer;
     }
   }
+}
+
+mat-icon.checkout {
+  margin-left: 1rem;
 }
 
 .main-child-view {

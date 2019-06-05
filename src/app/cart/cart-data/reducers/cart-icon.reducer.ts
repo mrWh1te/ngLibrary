@@ -4,11 +4,13 @@ import { CartIconActions, CartIconActionTypes } from '../actions/cart-icon.actio
  * @description   This is the state of the Shopping Cart Icon found in the Header UI
  */
 export interface State {
-  animating: boolean
+  animating: boolean,
+  dropDownIsVisible: boolean
 }
 
 export const initialState: State = {
-  animating: false
+  animating: false,
+  dropDownIsVisible: false
 }
 
 export function reducer(state: State = initialState, action: CartIconActions): State {
@@ -23,6 +25,18 @@ export function reducer(state: State = initialState, action: CartIconActions): S
       return {
         ...state,
         animating: false
+      }
+    }
+    case CartIconActionTypes.ShowCartIconDropDown: {
+      return {
+        ...state,
+        dropDownIsVisible: true
+      }
+    }
+    case CartIconActionTypes.HideCartIconDropDown: {
+      return {
+        ...state,
+        dropDownIsVisible: false
       }
     }
     default: {
