@@ -6,7 +6,9 @@ export enum CheckoutActionTypes {
   CheckoutUpdateUserInfo = '[Checkout] Update Request User Info',
   CheckoutClearUserInfo = '[Checkout] Clear Request User Info',
   CheckoutClearAll = '[Checkout] Clear All Request Data',
-  CheckoutSubmit = '[Checkout] Submit Request'
+  CheckoutSubmit = '[Checkout] Submit Request',
+  CheckoutSubmitSuccess = '[Checkout] Submit Request Success',
+  CheckoutSubmitError = '[Checkout] Submit Request Error'
 }
 
 // Setters
@@ -19,6 +21,12 @@ export class CheckoutUpdateUserInfo implements Action {
 // Artificial action due to its effect being impartially implemented (no backend to save request to DB)
 export class CheckoutSubmit implements Action {
   readonly type = CheckoutActionTypes.CheckoutSubmit
+}
+export class CheckoutSubmitSuccess implements Action {
+  readonly type = CheckoutActionTypes.CheckoutSubmitSuccess
+}
+export class CheckoutSubmitError implements Action {
+  readonly type = CheckoutActionTypes.CheckoutSubmitError
 }
 
 // Clear data so we can checkout new books
@@ -33,4 +41,6 @@ export type CheckoutActions =
   CheckoutUpdateUserInfo |
   CheckoutClearUserInfo |
   CheckoutClearAll |
-  CheckoutSubmit
+  CheckoutSubmit |
+  CheckoutSubmitSuccess |
+  CheckoutSubmitError

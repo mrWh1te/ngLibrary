@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators'
 
 import { selectCartStatusBooksCount } from 'src/app/cart/cart-data/selectors/cart-status.selectors'
 import { selectCheckoutRequestUser } from 'src/app/checkout/checkout-data/selectors/checkout-request.selectors'
+import { CheckoutSubmit } from 'src/app/checkout/checkout-data/actions/checkout.actions';
 
 @Component({
   selector: 'checkout-submit-button',
@@ -26,7 +27,6 @@ export class CheckoutSubmitButtonComponent {
       store.pipe(select(selectCheckoutRequestUser))
     ).pipe(
       map(([cartBooksCount, checkoutUser]) => {
-        console.log('checkoutUser = ', checkoutUser)
         if (cartBooksCount === 0) {
           return true
         }
@@ -58,5 +58,6 @@ export class CheckoutSubmitButtonComponent {
 
   submit(): void {
     console.log('[CheckoutSubmitButtonComponent] submit()')
+    this.store.dispatch(new CheckoutSubmit())
   }
 }

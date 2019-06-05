@@ -1,7 +1,7 @@
 import { Component } from "@angular/core"
 
 import { Store, select } from '@ngrx/store'
-import { Observable } from 'rxjs'
+import { Observable, combineLatest } from 'rxjs'
 import { withLatestFrom, map } from 'rxjs/operators'
 
 import { Book } from 'src/app/book/book-data/models/book.model'
@@ -18,9 +18,10 @@ export class SelectedBookComponent {
   selectedBook$: Observable<Book>
 
   constructor(private store: Store<any>) {
-    this.selectedBook$ = store.pipe(
-      select(selectActiveBookId), // select the ID
-      withLatestFrom(store.pipe(select(selectBooksCacheEntities))), // grab the map of books
+    this.selectedBook$ = combineLatest(
+      store.pipe(select(selectActiveBookId)),
+      store.pipe(select(selectBooksCacheEntities))
+    ).pipe(
       map(([activeBookId, books]) => books[activeBookId])
     )
   }
