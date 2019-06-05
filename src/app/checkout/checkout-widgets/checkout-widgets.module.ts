@@ -19,11 +19,11 @@ import { CheckoutSubmitButtonUiComponent } from './checkout-submit-button/ui/che
   declarations: [
     CheckoutUserFormComponent,
     CheckoutSubmitButtonComponent,
-    CheckoutSubmitButtonUiComponent
+    CheckoutSubmitButtonUiComponent,
   ],
   exports: [
     CheckoutUserFormComponent,
-    CheckoutSubmitButtonComponent
+    CheckoutSubmitButtonComponent,
   ]
 })
 export class CheckoutWidgetsModule {

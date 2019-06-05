@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core'
+import { MatDialog } from '@angular/material'
 
 import { Observable } from 'rxjs'
-import { withLatestFrom, exhaustMap, map, catchError } from 'rxjs/operators'
+import { withLatestFrom, exhaustMap, map, catchError, tap } from 'rxjs/operators'
 import { Actions, Effect, ofType } from '@ngrx/effects'
 import { Action, Store, select } from '@ngrx/store'
 
@@ -9,13 +10,15 @@ import { CheckoutSubmit, CheckoutActionTypes, CheckoutSubmitSuccess, CheckoutSub
 import { selectCheckoutRequestUser } from '../selectors/checkout-request.selectors'
 import { selectCartStatusBookIds } from 'src/app/cart/cart-data/selectors/cart-status.selectors'
 import { CheckoutService } from '../services/checkout.service'
+import { CheckoutSuccessMessageDialogComponent } from '../../checkout-dialogs/checkout-success-message/smart/checkout-success-message-dialog.component'
 
 @Injectable()
 export class CheckoutEffects {
   constructor(
     private actions$: Actions,
     private store: Store<any>,
-    private checkoutService: CheckoutService
+    private checkoutService: CheckoutService,
+    private dialog: MatDialog
   ) {}
 
   @Effect()
@@ -31,5 +34,14 @@ export class CheckoutEffects {
 
         return caught
       })
+    )
+
+  @Effect({
+    dispatch: false
+  })
+  displayCheckoutFollowUpMessageDialog$: Observable<Action> = this.actions$
+    .pipe(
+      ofType<CheckoutSubmitSuccess>(CheckoutActionTypes.CheckoutSubmitSuccess),
+      tap(() => this.dialog.open(CheckoutSuccessMessageDialogComponent))
     )
 }
