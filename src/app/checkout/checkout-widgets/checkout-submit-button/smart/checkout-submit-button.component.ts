@@ -57,7 +57,6 @@ export class CheckoutSubmitButtonComponent {
   }
 
   submit(): void {
-    console.log('[CheckoutSubmitButtonComponent] submit()')
     this.store.dispatch(new CheckoutSubmit())
   }
 }

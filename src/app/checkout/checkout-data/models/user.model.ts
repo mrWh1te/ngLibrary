@@ -16,6 +16,6 @@ export class User {
   }
 
   get name(): string {
-    return (this.first_name !== '' ? this.first_name + ' ' : '') + this.last_name !== '' ? this.last_name.charAt(0) + '.' : ''
+    return (this.first_name !== '' ? this.first_name + ' ' : '') + (this.last_name !== '' ? this.last_name.charAt(0) + '.' : '')
   }
 }
