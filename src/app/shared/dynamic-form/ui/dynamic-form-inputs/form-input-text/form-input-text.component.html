@@ -3,13 +3,11 @@
   <mat-form-field class="dynamic-form-field">
     <input matInput [placeholder]="formInput.placeholder" [formControlName]="formInput.name">
     <mat-hint align="start" *ngIf="formInput.hint"><strong>{{formInput.hint}}</strong></mat-hint>
-    <!-- @todo make the error messages dynamic: -->
-    <!-- @future let's wrap the mat-error component in ng-container to loop on, then we can customize the error message, etc. dynamically from the DynamicFormInput config -->
-    <mat-error *ngIf="formGroup.get(formInput.name).hasError('required')">
-      {{ formInput.placeholder }} is <strong>required</strong>
-    </mat-error>
-    <mat-error *ngIf="formGroup.get(formInput.name).hasError('minlength')">
-      {{ formInput.placeholder }}'s length is <strong>wrong</strong>
+    <mat-error 
+      *ngFor="let formError of formInput.errors">
+      <ng-container *ngIf="formGroup.get(formInput.name).hasError(formError.validationRule)">
+        <span [innerHTML]="formError.errorMessageHTML"></span>
+      </ng-container>
     </mat-error>
   </mat-form-field>
 </div>

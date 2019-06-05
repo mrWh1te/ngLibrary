@@ -1,4 +1,10 @@
 import { ValidatorFn } from '@angular/forms'
+import { SafeHtml } from '@angular/platform-browser'
+
+export interface FormError {
+  validationRule: string
+  errorMessageHTML: string | SafeHtml
+}
 
 export interface DynamicFormInput<T> {
   type: string, // Maps to dynamic-form.inputs.const.ts
@@ -7,5 +13,6 @@ export interface DynamicFormInput<T> {
   defaultValue?: T,
   placeholder?: string,
   hint?: string,
-  validators?: ValidatorFn | ValidatorFn[]
+  validators?: ValidatorFn | ValidatorFn[],
+  errors?: FormError[]
 }

@@ -35,14 +35,34 @@ export class CheckoutUserFormComponent {
             name: 'first_name',
             placeholder: 'First name',
             defaultValue: checkoutUser !== null ? checkoutUser.first_name : null,
-            validators: [Validators.required, Validators.minLength(1), Validators.maxLength(255)]
+            validators: [Validators.required, Validators.minLength(1), Validators.maxLength(255)],
+            errors: [
+              {
+                validationRule: 'required',
+                errorMessageHTML: `First name is <strong>required</strong>`
+              },
+              {
+                validationRule: 'maxlength',
+                errorMessageHTML: `It must be less than <strong>255 characters</strong>`
+              }
+            ]
           },
           {
             type: 'text',
             name: 'last_name',
             placeholder: 'Last name',
             defaultValue: checkoutUser !== null ? checkoutUser.last_name : null,
-            validators: [Validators.required, Validators.minLength(1), Validators.maxLength(255)]
+            validators: [Validators.required, Validators.minLength(1), Validators.maxLength(255)],
+            errors: [
+              {
+                validationRule: 'required',
+                errorMessageHTML: `Last name is <strong>required</strong>`
+              },
+              {
+                validationRule: 'maxlength',
+                errorMessageHTML: `It can\'t be longer than <strong>255 characters</strong>`
+              }
+            ]
           },
           {
             type: 'text',
@@ -50,7 +70,17 @@ export class CheckoutUserFormComponent {
             placeholder: 'Library Card ID',
             defaultValue: checkoutUser !== null ? checkoutUser.library_card_id : null,
             hint: 'Found on the backside of your Library Card',
-            validators: [Validators.required, Validators.minLength(8), Validators.maxLength(8)]
+            validators: [Validators.required, Validators.minLength(8), Validators.maxLength(8)],
+            errors: [
+              {
+                validationRule: 'required',
+                errorMessageHTML: `Your Library Card ID is <strong>required</strong>`
+              },
+              {
+                validationRule: 'minlength',
+                errorMessageHTML: `The ID length should be <strong>8 characters</strong> long`
+              }
+            ]
           }
         ]
       }))
