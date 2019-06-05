@@ -1,4 +1,4 @@
-<article class="shopping-cart-ui">
+<article class="shopping-cart-ui" *ngIf="ui === 'dropdown'; else checkout">
   <p *ngIf="books.length === 0" fxLayoutAlign="center">
     Empty
   </p>
@@ -12,3 +12,23 @@
     </li>
   </ul>
 </article>
+<ng-template #checkout>
+  <article class="shopping-cart-ui">
+    <p *ngIf="books.length === 0">
+      Your basket is empty!
+    </p>
+    <ul fxLayout="column" fxLayoutAlign="start stretch">
+      <li *ngFor="let book of books; let i = index" 
+        fxLayout="row" 
+        fxLayoutAlign="start stretch">
+        <div class="row-number" fxFlex="auto">
+          <img [src]="book.cover.small" />
+        </div>
+        <div fxFlex="1 1 100%" fxLayout="column" fxLayoutAlign="center">
+          <div class="title"><b>{{book.title}}</b></div>
+          <div class="author">by: {{book.authors[0].name}}</div>
+        </div>
+      </li>
+    </ul>
+  </article>
+</ng-template>

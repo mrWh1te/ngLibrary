@@ -1,4 +1,4 @@
-import { Component } from "@angular/core"
+import { Component, Input } from "@angular/core"
 
 import { Store, select } from '@ngrx/store'
 import { Observable } from 'rxjs'
@@ -12,10 +12,13 @@ import { RemoveBookFromCart } from 'src/app/cart/cart-data/actions/cart.actions'
 @Component({
   selector: 'shopping-cart',
   template: `<shopping-cart-ui 
+    [ui]="ui"
     [books]="cartBooks$ | async"
     (onClickRemove)="removeFromCart($event)"></shopping-cart-ui>`
 })
 export class ShoppingCartComponent {
+  @Input() ui: string
+
   cartBooks$: Observable<Book[]>
 
   constructor(private store: Store<any>) {

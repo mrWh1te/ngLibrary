@@ -8,5 +8,6 @@ import { Book } from 'src/app/book/book-data/models/book.model';
 })
 export class ShoppingCartUiComponent {
   @Input() books: Book[]
+  @Input() ui: string
   @Output() onClickRemove: EventEmitter<number> = new EventEmitter<number>()
 }

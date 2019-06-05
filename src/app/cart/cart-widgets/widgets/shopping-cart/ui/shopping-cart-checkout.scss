@@ -11,14 +11,18 @@
     article {
       background-color: $transparent;
       border: none;
-      padding: .75rem .5rem;
+      padding: 0;
+      margin-top: 1rem;
     }
     
     ul {
       list-style: none;
       padding: 0;
       li {
-        margin-bottom: .1rem;
+        margin-bottom: .5rem;
+        .author {
+          margin-top: .25rem;
+        }
         .close {
           width: auto;
           height: auto;
