@@ -13,8 +13,12 @@ export class DynamicFormService {
   public createFormGroup(inputs: DynamicFormInput<any>[]): FormGroup {
     const group = this.fb.group({})
 
-    inputs.forEach(control => {
-      group.addControl(control.name, this.fb.control(control.defaultValue))
+    inputs.forEach(formInput => {
+      if (formInput.validators) {
+        group.addControl(formInput.name, this.fb.control(formInput.defaultValue, formInput.validators))
+      } else {
+        group.addControl(formInput.name, this.fb.control(formInput.defaultValue))
+      }
     })
 
     return group

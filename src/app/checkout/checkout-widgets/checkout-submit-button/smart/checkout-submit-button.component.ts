@@ -46,10 +46,9 @@ export class CheckoutSubmitButtonComponent {
           return true
         }
 
-        // @todo some basic kind of data validation on the library card ID
-        // if (checkoutUser.library_card_id.length !== 8) {
-        //   return false
-        // }
+        if (checkoutUser.library_card_id.length !== 8) {
+          return true
+        }
 
         return false
       })
