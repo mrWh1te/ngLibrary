@@ -47,14 +47,12 @@ export const bookISBNs: string[] = [
 export const initialState: State = {
   activeBookId: -1, // no book selected
   ids: bookISBNs.map((isbn, index) => index + 1),
-  entities: bookISBNs.reduce((entities, isbn, index) => {
-    const id = index + 1
-    entities[id] = {
-      id,
-      isbn
+  entities: bookISBNs.reduce((entities, isbn, index) => ({
+    ...entities,
+    [index+1]: {
+      id: index+1, isbn
     }
-    return entities
-  }, {})
+  }), {})
 }
 
 export function reducer(state: State = initialState, action: BooksActions | BookActions): State {
