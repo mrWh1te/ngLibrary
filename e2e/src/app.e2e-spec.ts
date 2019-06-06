@@ -12,7 +12,6 @@ describe('ngLibrary App', () => {
 
   // @todo move this into a books domain e2e spec
   it('should display a book for each ISBN in books-cache.reducer', () => {
-    // bookISBNs
     page.navigateTo();
     expect(page.getBooks().count()).toEqual(bookISBNs.length)
   });
