@@ -15,5 +15,7 @@ cache:
     - ~/.cache
 install:
   - npm ci
+before_script:
+  - export NG_CLI_ANALYTICS=ci
 script:
-  - $(npm bin)/cypress run --record
+  - ./node_modules/cypress/bin/cypress run --record
