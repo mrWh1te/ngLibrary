@@ -1,6 +1,6 @@
-# NgLibrary
+# ngLibrary
 
-[![Build Status](https://travis-ci.com/mrWh1te/ngLibrary.svg?branch=ml-testing-cd-tidy)](https://travis-ci.com/mrWh1te/ngLibrary) [![Greenkeeper badge](https://badges.greenkeeper.io/mrWh1te/ngLibrary.svg)](https://greenkeeper.io/) [![Netlify Status](https://api.netlify.com/api/v1/badges/c41968d0-1b4e-4a0d-91a3-bdfec3f32305/deploy-status)](https://app.netlify.com/sites/nglibrary-demo/deploys)
+[![Build Status](https://travis-ci.com/mrWh1te/ngLibrary.svg?branch=master)](https://travis-ci.com/mrWh1te/ngLibrary) [![Greenkeeper badge](https://badges.greenkeeper.io/mrWh1te/ngLibrary.svg)](https://greenkeeper.io/) [![Netlify Status](https://api.netlify.com/api/v1/badges/c41968d0-1b4e-4a0d-91a3-bdfec3f32305/deploy-status)](https://app.netlify.com/sites/nglibrary-demo/deploys)
 
 [Demo](http://nglibrary-demo.netlify.com)
 
