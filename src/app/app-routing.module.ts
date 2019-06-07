@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core'
-import { Routes, RouterModule } from '@angular/router'
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router'
 
 import { LayoutViewComponent } from './layout/layout-views/views/layout/layout-view.component'
 
@@ -21,7 +21,9 @@ export const RootRoutes: Routes = [
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(RootRoutes)],
+  imports: [RouterModule.forRoot(RootRoutes, {
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
