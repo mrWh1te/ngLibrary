@@ -1,6 +1,8 @@
 # NgLibrary
 
-[![Build Status](https://travis-ci.com/mrWh1te/ngLibrary.svg?branch=ml-testing-cd-tidy)](https://travis-ci.com/mrWh1te/ngLibrary)
+[![Build Status](https://travis-ci.com/mrWh1te/ngLibrary.svg?branch=ml-testing-cd-tidy)](https://travis-ci.com/mrWh1te/ngLibrary) 
+
+[Demo](http://nglibrary-demo.netlify.com)
 
 This is a simple app that pretends to be an online gateway into checking out books from your local library. It follows best practices established by community leaders in Angular, RxJS, and beyond (including a tiny bit by me).
 
