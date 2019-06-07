@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core"
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core"
 import { Store } from '@ngrx/store'
 
 import { Book } from 'src/app/book/book-data/models/book.model'
@@ -6,7 +6,8 @@ import { BookSelected } from 'src/app/book/book-data/actions/book.actions'
 
 @Component({
   selector: 'book',
-  template: '<book-ui [book]="book" (onSelect)="selected()"></book-ui>'
+  template: '<book-ui [book]="book" (onSelect)="selected()"></book-ui>',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BookComponent {
   @Input() book: Book

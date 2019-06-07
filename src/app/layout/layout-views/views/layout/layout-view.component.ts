@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from "@angular/core"
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from "@angular/core"
 
 @Component({
   selector: 'layout-view',
@@ -7,6 +7,7 @@ import { Component, ViewEncapsulation } from "@angular/core"
     './layout-view.component.scss', 
     './../../../../cart/cart-widgets/widgets/shopping-cart/ui/shopping-cart-dropdown.scss'
   ],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LayoutViewComponent {}

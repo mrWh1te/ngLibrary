@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, OnDestroy, OnInit, ViewChild, Output, EventEmitter } from "@angular/core"
+import { Component, Input, ElementRef, OnDestroy, OnInit, ViewChild, Output, EventEmitter, ChangeDetectionStrategy } from "@angular/core"
 import { OverlayRef, Overlay } from '@angular/cdk/overlay'
 import { TemplatePortalDirective } from '@angular/cdk/portal'
 
@@ -9,7 +9,8 @@ import { DropDownService } from '../../services/drop-down.service'
 
 @Component({
   selector: 'drop-down',
-  templateUrl: './drop-down.component.html'
+  templateUrl: './drop-down.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DropDownComponent implements OnInit, OnDestroy {
   @Input()

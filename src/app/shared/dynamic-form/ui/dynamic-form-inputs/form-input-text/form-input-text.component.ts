@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core"
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core"
 import { FormGroup } from '@angular/forms'
 
 import { DynamicFormInput } from '../../../models/dynamic-form-input.model'
@@ -8,7 +8,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'form-input-text',
   templateUrl: './form-input-text.component.html',
-  styleUrls: ['./form-input-text.component.scss']
+  styleUrls: ['./form-input-text.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FormInputTextComponent implements DynamicFormInputComponent, OnInit {
   formInput: DynamicFormInput<string>

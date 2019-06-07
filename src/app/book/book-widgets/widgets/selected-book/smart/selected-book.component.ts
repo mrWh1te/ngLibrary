@@ -1,4 +1,4 @@
-import { Component } from "@angular/core"
+import { Component, ChangeDetectionStrategy } from "@angular/core"
 
 import { Store, select } from '@ngrx/store'
 import { Observable, combineLatest } from 'rxjs'
@@ -12,7 +12,8 @@ import { SelectedBookAddToCartBtnClick } from 'src/app/book/book-data/actions/bo
   selector: 'selected-book',
   template: `<selected-book-ui 
     [selectedBook]="selectedBook$ | async"
-    (onAddToBasket)="addToBasket()"></selected-book-ui>`
+    (onAddToBasket)="addToBasket()"></selected-book-ui>`,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SelectedBookComponent {
   selectedBook$: Observable<Book>

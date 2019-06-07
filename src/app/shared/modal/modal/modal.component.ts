@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter, ViewEncapsulation } from "@angular/core"
+import { Component, Output, EventEmitter, ViewEncapsulation, ChangeDetectionStrategy } from "@angular/core"
 
 /**
  * @description   a re-usable modal template that leverages ng-content for content transclusion
@@ -14,7 +14,8 @@ import { Component, Output, EventEmitter, ViewEncapsulation } from "@angular/cor
   selector: 'modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ModalComponent {
   @Output() onClose: EventEmitter<any> = new EventEmitter<any>()

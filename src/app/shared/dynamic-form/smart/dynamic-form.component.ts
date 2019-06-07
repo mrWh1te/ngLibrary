@@ -3,7 +3,7 @@
  * @description     Similar to its brother, DynamicFormLiveComponent, it can be used to build forms on run-time
  */
 
-import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core'
+import { Component, Input, Output, OnInit, EventEmitter, ChangeDetectionStrategy } from '@angular/core'
 import { FormGroup } from '@angular/forms'
 
 import { DynamicFormConfig } from '../models/dynamic-form-config.model'
@@ -16,7 +16,8 @@ import { DynamicFormService } from '../services/dynamic-form.service'
       [dynamicFormConfig]="config"
       [formGroup]="formGroup"
       (formSubmitted)="onSubmit.emit($event)"></dynamic-form-ui>
-  `
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DynamicFormComponent implements OnInit {
   @Output() 

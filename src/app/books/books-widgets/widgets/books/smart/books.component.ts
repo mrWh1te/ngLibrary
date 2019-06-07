@@ -1,4 +1,4 @@
-import { Component } from "@angular/core"
+import { Component, ChangeDetectionStrategy } from "@angular/core"
 import { Observable } from 'rxjs'
 
 import { Store, select } from '@ngrx/store'
@@ -9,7 +9,8 @@ import { RequestBooksHydrate } from 'src/app/books/books-data/actions/books.acti
 
 @Component({
   selector: 'books',
-  template: '<books-ui [books]="books$ | async"></books-ui>'
+  template: '<books-ui [books]="books$ | async"></books-ui>',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BooksComponent {
   books$: Observable<Book[]>
