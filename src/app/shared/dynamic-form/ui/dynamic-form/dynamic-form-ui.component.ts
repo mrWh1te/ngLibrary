@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core"
+import { Component, Input, Output, EventEmitter } from "@angular/core"
 import { FormGroup } from '@angular/forms'
 
 import { DynamicFormConfig } from '../../models/dynamic-form-config.model'
@@ -10,4 +10,5 @@ import { DynamicFormConfig } from '../../models/dynamic-form-config.model'
 export class DynamicFormUiComponent {
   @Input() dynamicFormConfig: DynamicFormConfig
   @Input() formGroup: FormGroup
+  @Output() formSubmitted: EventEmitter<any> = new EventEmitter<any>()
 }

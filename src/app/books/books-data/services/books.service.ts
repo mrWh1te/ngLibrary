@@ -6,9 +6,6 @@ import { map } from 'rxjs/operators'
 
 import { Book } from 'src/app/book/book-data/models/book.model'
 
-// @todo
-// UI with cards where each card takes up like 25% for gutter and stuff so like 4 / row
-
 @Injectable()
 export class BooksService {
   constructor(private http: HttpClient) {}

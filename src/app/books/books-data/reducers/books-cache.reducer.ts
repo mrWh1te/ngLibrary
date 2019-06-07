@@ -12,8 +12,6 @@ export interface State extends EntityState<Book> {
 export const adapter: EntityAdapter<Book> =
   createEntityAdapter<Book>()
 
-// @todo add local storage support to cache data locally
-// upon such, put these ISBN's in a service for when local storage is empty
 export const bookISBNs: string[] = [
   '0451526538',
   '0439554934',
