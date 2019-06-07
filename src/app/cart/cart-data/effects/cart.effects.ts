@@ -64,12 +64,4 @@ export class CartEffects {
         duration: 6000
       }))
     )
-
-  // @todo complete checkout UX flow first, including a dialog pop-up thanking User, informing them of pick-up location & time
-  // @Effect()
-  // clearCart$: Observable<Action> = this.actions$
-  //   .pipe(
-  //     ofType<CheckoutSubmitSuccess>(CheckoutActionTypes.CheckoutSubmitSuccess),
-  //     map(() => new ClearCart())
-  //   )
 }
