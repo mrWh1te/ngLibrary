@@ -10,6 +10,11 @@
     "e2e": "./node_modules/.bin/cypress run",
     "cypress": "./node_modules/.bin/cypress open"
   },
+  "greenkeeper": {
+    "ignore": [
+      "typescript"
+    ]
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "github:angular/animations-builds",
@@ -53,6 +58,6 @@
     "protractor": "~5.4.0",
     "ts-node": "~8.2.0",
     "tslint": "~5.17.0",
-    "typescript": "~3.5.1"
+    "typescript": "~3.4.0"
   }
 }
