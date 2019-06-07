@@ -17,5 +17,4 @@ install:
   - export NG_CLI_ANALYTICS=ci
   - npm ci
 script:
-  # - ./node_modules/cypress/bin/cypress run --record
-  - ./node_modules/cypress/bin/cypress run
+  - ./node_modules/cypress/bin/cypress run --record
