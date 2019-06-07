@@ -1,7 +1,6 @@
 /**
  * @name    DynamicFormComponent
- * @description     Similar to its brother, DynamicLiveFormComponent, it can be used to build forms on run-time
- *                  This one, however, RELIES on a configurable SUBMIT button. 
+ * @description     Similar to its brother, DynamicFormLiveComponent, it can be used to build forms on run-time
  */
 
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core'
@@ -15,7 +14,8 @@ import { DynamicFormService } from '../services/dynamic-form.service'
   template: `
     <dynamic-form-ui
       [dynamicFormConfig]="config"
-      [formGroup]="formGroup"></dynamic-form-ui>
+      [formGroup]="formGroup"
+      (formSubmitted)="onSubmit.emit($event)"></dynamic-form-ui>
   `
 })
 export class DynamicFormComponent implements OnInit {

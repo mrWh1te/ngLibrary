@@ -10,6 +10,10 @@
 # dependencies
 /node_modules
 
+# Cypress
+/cypress/screenshots/*
+/cypress/videos/*
+
 # profiling files
 chrome-profiler-events.json
 speed-measure-plugin.json

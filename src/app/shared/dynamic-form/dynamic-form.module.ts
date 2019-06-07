@@ -6,7 +6,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 
 import { DynamicFormFieldDirective } from './directives/dynamic-form-field.directive'
 
-import { DynamicLiveFormComponent } from './smart/dynamic-live-form.component'
+import { DynamicFormLiveComponent } from './smart/dynamic-form-live.component'
 import { DynamicFormComponent } from './smart/dynamic-form.component'
 
 import { DynamicFormUiComponent } from './ui/dynamic-form/dynamic-form-ui.component'
@@ -28,7 +28,7 @@ import { FormButtonSubmitComponent } from './ui/dynamic-form-inputs/form-button-
     DynamicFormFieldDirective,
     // Smart
     DynamicFormComponent,
-    DynamicLiveFormComponent,
+    DynamicFormLiveComponent,
     // UI
     DynamicFormUiComponent,
     // Form Inputs
@@ -37,7 +37,7 @@ import { FormButtonSubmitComponent } from './ui/dynamic-form-inputs/form-button-
   ],
   exports: [
     DynamicFormComponent,
-    DynamicLiveFormComponent
+    DynamicFormLiveComponent
   ],
   providers: [
     DynamicFormService

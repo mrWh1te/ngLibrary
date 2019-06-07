@@ -2,7 +2,7 @@ import { Component } from "@angular/core"
 
 import { Store, select } from '@ngrx/store'
 import { Observable, combineLatest } from 'rxjs'
-import { withLatestFrom, map } from 'rxjs/operators'
+import { map } from 'rxjs/operators'
 
 import { Book } from 'src/app/book/book-data/models/book.model'
 import { selectActiveBookId, selectBooksCacheEntities } from 'src/app/books/books-data/selectors/books-cache.selectors'
