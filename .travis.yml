@@ -21,4 +21,4 @@ install:
   - npm ci
 script:
   - ng build --prod
-  - jest --config ./jest/app.config.js --runInBand && concurrently "http-server ./dist/ngLibrary -a localhost -p 4200 -c-1" "./node_modules/cypress/bin/cypress run --record"
+  - jest --config ./jest/app.config.js --runInBand && concurrently --success "first" "http-server ./dist/ngLibrary -a localhost -p 4200 -c-1" "./node_modules/cypress/bin/cypress run --record"
