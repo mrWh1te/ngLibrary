@@ -20,4 +20,4 @@ install:
   - npm i
   - npm ci
 script:
-  - jest --config ./jest/app.config.js --runInBand && ./node_modules/cypress/bin/cypress run --record
+  - jest --config ./jest/app.config.js --runInBand && concurrently "ng serve --prod" "./node_modules/cypress/bin/cypress run --record"
