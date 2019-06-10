@@ -37,9 +37,9 @@ To accomplish that, we follow the best practices & principles established by Ang
 6) Not everything needs to be in NgRX Store. If various parts of an app need to effect something like a component, then that should be in the store, otherwise if its isolated to the component itself, it isn't beneficial to go through all the work in adding it to the store.
 7) Lazy load modules not required for initial root route 
 8) Have a /shared folder for reusuable & self-contained modules
-9) Use the `async` pipe instead of opening an observer with a `subscription`
+9) Reactive architecture that takes advantage of the the `async` pipe instead of opening observables as subscriptions
 
-Ultimately, the number one principle in deriving coding patterns in orchestrating this code base is **SRP** (Single Responsibility Principle). Keep it all simple.
+This is a pretty condensed & fractured overview of this repo's Programming Style Guide. Detailed articles reviewing these topics and more are published at https://copynpaste.me.
 
 Let's get started!
 
