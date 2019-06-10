@@ -12,9 +12,13 @@ cache:
   npm: true
   directories:
     - ~/.cache 
-    - ./node_modules 
+    - ./node_modules
+before_install:
+  - npm update
 install:
   - export NG_CLI_ANALYTICS=ci
+  - npm i
   - npm ci
 script:
-  - ./node_modules/cypress/bin/cypress run --record
+  - ng build --prod
+  - jest --config ./jest/app.config.js --runInBand && concurrently -k -s first "http-server ./dist/ngLibrary -a localhost -p 4200 -c-1" "./node_modules/cypress/bin/cypress run --record"

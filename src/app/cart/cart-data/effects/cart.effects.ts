@@ -6,9 +6,8 @@ import { withLatestFrom, map, tap } from 'rxjs/operators'
 import { Actions, Effect, ofType } from '@ngrx/effects'
 import { Action, select, Store } from '@ngrx/store'
 
-import { AddBookToCart, AttemptToAddBookToCart, CartActionTypes, AlreadyHaveBookInCartError, CantAddAnyMoreBooksInCartError, ClearCart } from '../actions/cart.actions'
+import { AddBookToCart, AttemptToAddBookToCart, CartActionTypes, AlreadyHaveBookInCartError, CantAddAnyMoreBooksInCartError } from '../actions/cart.actions'
 import { selectCartStatusBookIds } from '../selectors/cart-status.selectors'
-import { CheckoutSubmitSuccess, CheckoutActionTypes } from 'src/app/checkout/checkout-data/actions/checkout.actions';
 
 // @todo where should this be? Move into a folder for constants? models? in the store?
 export const maximumNumberOfBooksAUserCanCheckOut = 4
@@ -64,12 +63,4 @@ export class CartEffects {
         duration: 6000
       }))
     )
-
-  // @todo complete checkout UX flow first, including a dialog pop-up thanking User, informing them of pick-up location & time
-  // @Effect()
-  // clearCart$: Observable<Action> = this.actions$
-  //   .pipe(
-  //     ofType<CheckoutSubmitSuccess>(CheckoutActionTypes.CheckoutSubmitSuccess),
-  //     map(() => new ClearCart())
-  //   )
 }

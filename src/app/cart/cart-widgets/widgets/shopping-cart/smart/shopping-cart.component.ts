@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core"
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core"
 
 import { Store, select } from '@ngrx/store'
 import { Observable } from 'rxjs'
@@ -14,7 +14,8 @@ import { RemoveBookFromCart } from 'src/app/cart/cart-data/actions/cart.actions'
   template: `<shopping-cart-ui 
     [ui]="ui"
     [books]="cartBooks$ | async"
-    (onClickRemove)="removeFromCart($event)"></shopping-cart-ui>`
+    (onClickRemove)="removeFromCart($event)"></shopping-cart-ui>`,
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShoppingCartComponent {
   @Input() ui: string

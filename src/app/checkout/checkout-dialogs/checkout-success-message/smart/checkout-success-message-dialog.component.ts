@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from "@angular/core"
+import { Component, ChangeDetectionStrategy } from "@angular/core"
 import { MatDialogRef } from '@angular/material'
 
 import { Store, select } from '@ngrx/store'
@@ -18,7 +18,8 @@ import { CheckoutComplete } from 'src/app/checkout/checkout-data/actions/checkou
       [numberOfBooks]="numberOfBooks$ | async"
       [pickUpTime]="pickUpTime"
       (onClose)="close()"></checkout-success-message-dialog-ui>
-  `
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckoutSuccessMessageDialogComponent {
   public user$: Observable<User>

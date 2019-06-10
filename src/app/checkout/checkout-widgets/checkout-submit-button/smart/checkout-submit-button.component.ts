@@ -1,4 +1,4 @@
-import { Component } from "@angular/core"
+import { Component, ChangeDetectionStrategy } from "@angular/core"
 
 import { Store, select } from '@ngrx/store'
 import { Observable, combineLatest } from 'rxjs'
@@ -19,7 +19,8 @@ import { CheckoutSubmit } from 'src/app/checkout/checkout-data/actions/checkout.
     <checkout-submit-button-ui
       [isDisabled]="isDisabled$ | async"
       (onSubmit)="submit()"></checkout-submit-button-ui>
-  `
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckoutSubmitButtonComponent {
   isDisabled$: Observable<boolean>

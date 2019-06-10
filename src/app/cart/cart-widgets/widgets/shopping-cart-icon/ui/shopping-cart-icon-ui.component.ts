@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, ViewChild, ElementRef } from "@angular/core"
+import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, ChangeDetectionStrategy } from "@angular/core"
 import { MatIcon } from '@angular/material'
 
 import { Observable } from 'rxjs'
@@ -7,6 +7,7 @@ import { Observable } from 'rxjs'
   selector: 'shopping-cart-icon-ui',
   templateUrl: './shopping-cart-icon-ui.component.html',
   styleUrls: ['./shopping-cart-icon-ui.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ShoppingCartIconUiComponent {
   @Input() animating: boolean

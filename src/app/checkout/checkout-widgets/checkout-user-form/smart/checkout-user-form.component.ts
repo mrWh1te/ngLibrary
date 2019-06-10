@@ -1,4 +1,5 @@
-import { Component } from "@angular/core"
+import { Component, ChangeDetectionStrategy } from "@angular/core"
+import { Validators } from '@angular/forms'
 
 import { Store, select } from '@ngrx/store'
 
@@ -6,10 +7,9 @@ import { Observable } from 'rxjs'
 import { map, take } from 'rxjs/operators'
 
 import { DynamicFormConfig } from 'src/app/shared/dynamic-form/models/dynamic-form-config.model'
-import { CheckoutUpdateUserInfo } from 'src/app/checkout/checkout-data/actions/checkout.actions';
+import { CheckoutUpdateUserInfo } from 'src/app/checkout/checkout-data/actions/checkout.actions'
 import { User } from 'src/app/checkout/checkout-data/models/user.model'
-import { selectCheckoutRequestUser } from 'src/app/checkout/checkout-data/selectors/checkout-request.selectors';
-import { Validators } from '@angular/forms';
+import { selectCheckoutRequestUser } from 'src/app/checkout/checkout-data/selectors/checkout-request.selectors'
 
 @Component({
   selector: 'checkout-user-form',
@@ -17,7 +17,8 @@ import { Validators } from '@angular/forms';
     <dynamic-form-live
       [config]="dynamicFormConfig$ | async"
       (onFormChange)="formValueChanged($event)"></dynamic-form-live>
-  `
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CheckoutUserFormComponent {
   dynamicFormConfig$: Observable<DynamicFormConfig>

@@ -5,8 +5,7 @@
  * @example    See any Settings container components that are form based ie SettingsPreferencesComponent
  */
 
-// Dependencies
-import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core'
+import { Component, Input, Output, OnInit, EventEmitter, ChangeDetectionStrategy } from '@angular/core'
 import { FormGroup } from '@angular/forms'
 
 import { DynamicFormConfig } from '../models/dynamic-form-config.model'
@@ -21,7 +20,8 @@ import { DynamicFormService } from '../services/dynamic-form.service'
     <dynamic-form-ui
       [dynamicFormConfig]="config"
       [formGroup]="formGroup"></dynamic-form-ui>
-  `
+  `,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DynamicFormLiveComponent implements OnInit {
   @Output() 
