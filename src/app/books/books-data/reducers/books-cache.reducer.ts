@@ -12,6 +12,7 @@ export interface State extends EntityState<Book> {
 export const adapter: EntityAdapter<Book> =
   createEntityAdapter<Book>()
 
+// @todo move into bookISBNs.seed.ts, in books-data/
 export const bookISBNs: string[] = [
   '0451526538',
   '0439554934',
