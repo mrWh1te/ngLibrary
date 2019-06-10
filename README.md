@@ -22,7 +22,7 @@ CD is setup with [Netlify](https://netlify.com). It will automatically deploy th
 
 ## Guide 
 
-There are two values that guide this repo.
+There are two core values that guide this repo.
 
 1) Minimize TTI (Time to Interact)
 2) Keep it easy to add and replace new pages & features (extensible code is easier to maintain)
@@ -70,7 +70,7 @@ The main feature modules were separated into more modules based on type. The mai
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/ngLibrary` directory. Use the `--prod` flag for a production build (with AOT).
+Run `ng build` to build the project. The static build will be stored in the `dist/ngLibrary` directory. Use the `--prod` flag for a production build (with AOT). You can deploy that directory with many basic http-servers.
 
 ## Running Tests
 
