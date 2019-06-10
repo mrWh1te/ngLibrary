@@ -3,6 +3,7 @@ import {createEntityAdapter, EntityAdapter, EntityState} from '@ngrx/entity'
 import { Book } from '../../../book/book-data/models/book.model'
 import { BooksActions, BooksActionTypes } from '../actions/books.actions'
 import { BookActions, BookActionTypes } from '../../../book/book-data/actions/book.actions'
+import { bookISBNs } from '../book-isbns.seed'
 
 export interface State extends EntityState<Book> {
   // What book has been selected in the Book's SelectedBookComponent?
@@ -11,40 +12,6 @@ export interface State extends EntityState<Book> {
 
 export const adapter: EntityAdapter<Book> =
   createEntityAdapter<Book>()
-
-// @todo move into bookISBNs.seed.ts, in books-data/
-export const bookISBNs: string[] = [
-  '0451526538',
-  '0439554934',
-  '0385333498',
-  '0812550706',
-  '0140441409',
-  '0374531269',
-  '0451169514',
-  '0307277925',
-  '9781400067824',
-  '978-84-666-5895-9',
-  '0060652950',
-  '0553109537',
-  '0062316095',
-  '9780735213654',
-  '0722534124',
-  '0140350497',
-  '0007322607',
-  '1847922643',
-  '0060513098',
-  '0553755994',
-  '0345353145',
-  '0836218094',
-  '0345342968',
-  '0307473473',
-  '0786851473',
-  '0448411067',
-  '0739326740',
-  '0698400526',
-  '0451524934',
-  '0425120287'
-]
 
 export const initialState: State = {
   activeBookId: -1, // no book selected
