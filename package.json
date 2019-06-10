@@ -3,12 +3,16 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "lint": "ng lint",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "./node_modules/.bin/cypress run",
-    "cypress": "./node_modules/.bin/cypress open"
+    "test": "npm run unit-tests && npm run e2e",
+    "unit-tests": "jest --config ./jest/app.config.js",
+    "unit-tests:watch": "jest --config ./jest/app.config.js --watch",
+    "unit-tests:coverage": "jest --config ./jest/app.config.js --coverage",
+    "unit-tests:ci": "jest --config ./src/jest/app.config.js --runInBand",
+    "cypress": "./node_modules/.bin/cypress open",
+    "e2e": "./node_modules/.bin/cypress run"
   },
   "greenkeeper": {
     "ignore": [
@@ -45,11 +49,14 @@
     "@angular/language-service": "~8.0.0",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/jest": "^24.0.13",
     "@types/node": "~12.0.7",
     "codelyzer": "^5.0.0",
     "cypress": "^3.3.1",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
+    "jest": "^24.8.0",
+    "jest-preset-angular": "^7.1.1",
     "karma": "~4.1.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.1",
