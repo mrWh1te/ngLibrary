@@ -12,9 +12,12 @@ cache:
   npm: true
   directories:
     - ~/.cache 
-    - ./node_modules 
+    - ./node_modules
+before_install:
+  - npm update
 install:
   - export NG_CLI_ANALYTICS=ci
+  - npm i
   - npm ci
 script:
-  - ./node_modules/cypress/bin/cypress run --record
+  - jest --config ./src/jest/app.config.js --runInBand && ./node_modules/cypress/bin/cypress run --record
