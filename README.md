@@ -12,13 +12,13 @@ Have fun!
 
 The app itself is pretty simple. It's two pages: home & checkout. In terms of features, it has a Shopping Cart (UI as a Basket), Books, a basic local storage cache, a Selected Book area, a basic Form to Checkout, and a Dialog (modal) for a success message on Checkout.
 
-These are the main dependencies of this app: `@angular/cdk`, `@angular/flex-layout`, `@angular/material`, `@ngrx/store`, `@ngrx/effects`, `@ngrx/entity`, `@ngrx/router-store`, `@ngrx/store-devtools`, and `ngrx-store-localstorage`. Therefore, it follows a Single-Source of Truth based NgRX Store for its application state (data). It uses `flex-layout` to lay out components programmatically, reducing the SCSS code needed to style an UI. Angular's `Material` was used for the form's inputs and main header toolbar. The drop-down in the Cart is powered by the CDK's `Overlay`. 
+These are the main dependencies of this app: `@angular/cdk`, `@angular/flex-layout`, `@angular/material`, `@ngrx/store`, `@ngrx/effects`, `@ngrx/entity`, `@ngrx/router-store`, `@ngrx/store-devtools`, and `ngrx-store-localstorage`. It follows a Single-Source of Truth for the application state by using NgRX's Store. It uses `flex-layout` to lay out components programmatically, de-coupling the layout portion of styling UI. Angular's `Material` was used for the form's inputs and main header toolbar. The drop-down for the Cart is powered by the CDK's `Overlay`. 
 
 ## CI & CD
 
 This repo was setup to demonstrate a possible real Production Angular app. It has both Continuous Integration (CI) and Continuous Deployment (CD) setup. CI is setup with [Travis](https://travis-ci.com) and runs on pushed branches & pull requests. It runs both [Cypress](https://cypress.io) E2E tests and [Jest](https://jestjs.io/) Unit-Tests. Also, we have [Greenkeeper](https://greenkeeper.io/) running to stay up-to-date on new dependency releases. 
 
-CD is setup with [Netlify](https://netlify.com). It will automatically deploy the `master` branch PROD build to the [Demo](http://nglibrary-demo.netlify.com). Also, for pull-requests, it will automatically deploy on unique sub-domains URL's, the latest code from that branch. So you get like temproary Staging URL's while your reviewing code during a PR (Pull Request).
+CD is setup with [Netlify](https://netlify.com). It will automatically deploy the `master` branch PROD build to the [Demo](http://nglibrary-demo.netlify.com). Also, for pull-requests, it will automatically deploy on different sub-domains, the latest code from that branch. Therefore, while reviewing code in a PR, you can actually test it live before merging.
 
 ## Guide 
 
@@ -27,7 +27,7 @@ There are two core values that guide this repo.
 1) Minimize TTI (Time to Interact)
 2) Keep it easy to add and replace new pages & features (extensible code is easier to maintain)
 
-To accomplish that, we follow the best practices & principles established by Angular community leaders and core contributors in regards to the dependencies we use. From that, we follow particular coding patterns & principles to maintain our values. These include, but are not limited too: 
+To accomplish that, we follow the best practices & principles established by Angular community leaders and core contributors in regards to the dependencies we use. From that, we follow particular coding patterns to maintain our values. These include, but are not limited too: 
 
 1) Separation of business logic and UI while leveraging the `onPush` change detection strategy
 2) Multiple Types of Modules per Domain (Views/Routing, Widgets, Data, etc)
@@ -39,14 +39,13 @@ To accomplish that, we follow the best practices & principles established by Ang
 8) Have a /shared folder for reusuable & self-contained modules
 9) Reactive architecture that takes advantage of the the `async` pipe instead of opening observables as subscriptions
 
-This is a pretty condensed & fractured overview of this repo's Programming Style Guide. Detailed articles reviewing these topics and more are published at https://copynpaste.me.
+That's a pretty condensed & some-what fractured overview of this repo's Programming Style Guide. Detailed articles reviewing these topics and more are published at https://copynpaste.me.
 
 Let's get started!
 
 ## Frontend Angular
 
 This isn't for first-timers. If this is your first time building web applications, you're going to have to install a few things. I recommend following this [guide](https://angular.io/guide/setup-local) in getting the right version of NodeJS installed. Once Node is installed, [download the code](https://github.com/mrWh1te/ngLibrary/archive/master.zip) to a folder, then open that folder with a Command Line program such as Terminal, so you can follow along with entering each command:
-
 
 After cloning or downloading the repo's code into a folder on your computer, install the dependencies with `npm i`:
 ```
