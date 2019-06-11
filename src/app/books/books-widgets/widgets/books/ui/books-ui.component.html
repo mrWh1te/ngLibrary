@@ -1,8 +1,9 @@
 <article fxLayout="column" fxLayoutAlign="start">
   <h1 fxFlex="1 0 auto">Inventory</h1>
-  <section class="inventory" fxFlex="1 1 100%" fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="2%">
+  <section class="inventory" fxFlex="1 1 100%" 
+    fxLayout="row wrap" fxLayoutAlign="start start" fxLayoutGap="2%">
     <ng-container *ngFor="let book of books">
-      <book [book]="book" fxFlex="0 0 17.6%"></book>
+      <book [book]="book" fxFlex="0 0 17.6%" fxFlex.lt-md="0 0 44%" fxFlex.lt-sm="0 0 100%"></book>
     </ng-container>
   </section>
 </article>
