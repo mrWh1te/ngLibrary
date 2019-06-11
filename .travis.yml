@@ -13,8 +13,6 @@ cache:
   directories:
     - ~/.cache 
     - ./node_modules
-before_install:
-  - npm update
 install:
   - export NG_CLI_ANALYTICS=ci
   - npm i
