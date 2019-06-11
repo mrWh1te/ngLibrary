@@ -1,5 +1,4 @@
 @import '../../../../../../styles/layout';
-@import '../../../../../../styles/breakpoints';
 
 .selected-book-container {
   height: calc(100vh - #{$header-height});
@@ -8,11 +7,9 @@
   }
 }
 
-@media(max-width: $medium) {
-  .book-details {
-    img {
-      width: 100%;
-    }
+.book-details {
+  img {
+    max-width: 100%;
   }
 }
 
