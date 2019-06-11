@@ -5,6 +5,7 @@
 }
 
 .shopping-cart-icon-ui {
+  height: 24px; // same height of mat-icon, other-wise the height is too large, which corrupts the centered-vertical positioning
   .animating {
     -webkit-animation: bounce-left 0.9s both;
             animation: bounce-left 0.9s both;
