@@ -1,4 +1,3 @@
 <mat-card (click)="onSelect.emit()">
-  <img *ngIf="book.cover" [src]="book.cover?.medium" alt="{{ book.title }}" />
-  <span *ngIf="!book.cover || !book.cover.medium">{{book.id}}</span>
+  <img [src]="book.cover?.medium" alt="{{book.id}}" />
 </mat-card>
