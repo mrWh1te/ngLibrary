@@ -1,7 +1,7 @@
 import { bookISBNs } from "../../src/app/books/books-data/book-isbns.seed"
 
 // @todo re-enable this test suite when OpenLibrary.org comes back online
-xdescribe('Open Library API', function() {
+describe.skip('Open Library API', function() {
 
   const firstSeedISBN = bookISBNs[0]
 

@@ -3,8 +3,13 @@ mat-card {
   overflow: hidden;
   height: 10rem;
   margin-bottom: .75rem;
+
+  // for broken test 
   min-width: 1px;
   min-height: 1px;
+  width: 100%;
+  height: 100%;
+  // end special test tweak
 
   &:hover {
     cursor: pointer;
