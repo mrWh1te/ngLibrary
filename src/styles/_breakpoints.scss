@@ -1,0 +1,26 @@
+/**
+ * Flex Layout's/Material's Breakpoints
+ * @see https://material.io/design/layout/responsive-layout-grid.html#breakpoints
+ */
+
+// Small Handset: 0 - 359px (Portrait)
+// Medium Handset: 360 - 399px (Portrait)
+// Large Handset: 400 - 479px (Portrait)
+// Large Handset: 480 - 599px (Portrait) && Small Handset (Landscape)
+// Therefore xs (extra small) is for < 600px
+// sm (small) starts at 600px
+
+$small: 600px;
+// Small Tablet: 600 - 719px (Portrait) && Medium Handset (Landscape)
+// Large Tablet: 720 - 839px (Portrait) && Large Handset (Landscape)
+// Large Tablet: 840 - 959px (Portrait) && Large Handset (Landscape)
+// Small Tablet: 960 - 1023px (Landscape)
+
+$medium: 1024px;
+// Large Tablet: 1024 - 1279px (Landscape)
+// Large Tablet: 1280 - 1439px (Landscape)
+
+$large: 1440px;
+// Desktop >
+
+$xlarge: 1920px;

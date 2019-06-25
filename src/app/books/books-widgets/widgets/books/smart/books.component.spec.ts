@@ -56,7 +56,7 @@ describe('BooksComponent', () => {
   // Not covered is the Effect for which will pull data from store based on bookISBNs to 
   // call OpenLibrary API
 
-  it('should display 1 Book for each ISBN in our bookISBNs seed', () => {
+  it('should have 1 Book for each ISBN in our bookISBNs seed', () => {
     const booksSeed = bookISBNs.map((isbn, index) => ({id: index+1, isbn}))
  
     component.books$.subscribe(books => {
