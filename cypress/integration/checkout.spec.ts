@@ -1,4 +1,5 @@
 import { addRandomBookToCart } from '../support/helpers/cart.helpers'
+import { setupOpenLibraryBooksFixture } from '../support/routing/books.routing'
 
 describe('Checkout', function() {
 
@@ -21,9 +22,7 @@ describe('Checkout', function() {
   })
 
   it('Checkout button can be submitted once the form is filled correctly and there is at least 1 book in the Cart', () => {
-    cy.server()
-    cy.fixture('open-library-books.json').as('fxBooks')
-    cy.route('GET', '**/books*', '@fxBooks')
+    setupOpenLibraryBooksFixture()
 
     cy.visit('http://localhost:4200')
 

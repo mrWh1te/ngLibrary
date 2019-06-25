@@ -1,5 +1,5 @@
 import { addRandomBookToCart } from '../support/helpers/cart.helpers'
-import { setupOpenLibraryBooksFixture } from 'cypress/support/routing/books.routing'
+import { setupOpenLibraryBooksFixture } from '../support/routing/books.routing'
 
 describe('Cart', function() {
 
