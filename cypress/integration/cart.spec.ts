@@ -3,6 +3,10 @@ import { setupOpenLibraryBooksStubResponse } from '../support/routing/books.rout
 
 describe('Cart', function() {
 
+  beforeEach(() => {
+    cy.clearLocalStorage()
+  })
+
   it('Users should be able to add any book to their Basket then Remove it to show an Empty message', () => {
     cy.server()
     setupOpenLibraryBooksStubResponse()

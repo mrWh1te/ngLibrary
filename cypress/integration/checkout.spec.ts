@@ -3,6 +3,10 @@ import { setupOpenLibraryBooksStubResponse } from '../support/routing/books.rout
 
 describe('Checkout', function() {
 
+  beforeEach(() => {
+    cy.clearLocalStorage()
+  })
+
   it('Going directly to the Checkout page with an Empty Cart has a disabled Checkout button & an Empty cart', () => {
     cy.visit('http://localhost:4200/checkout')
 
@@ -28,7 +32,6 @@ describe('Checkout', function() {
     cy.server()
     setupOpenLibraryBooksStubResponse()
 
-    cy.clearLocalStorage()
     cy.visit('http://localhost:4200')
 
     addRandomBookToCart()
