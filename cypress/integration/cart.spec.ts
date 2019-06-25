@@ -1,4 +1,5 @@
 import { addRandomBookToCart } from '../support/helpers/cart.helpers'
+import { setupOpenLibraryBooksFixture } from 'cypress/support/routing/books.routing'
 
 describe('Cart', function() {
 
@@ -18,6 +19,9 @@ describe('Cart', function() {
   })
 
   it('Limits Users to 4 books in their Basket', () => {
+
+    setupOpenLibraryBooksFixture()
+
     cy.visit('http://localhost:4200')
 
     cy.get('book').eq(0).click()
