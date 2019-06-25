@@ -19,4 +19,4 @@ install:
   - npm ci
 script:
   - ng build --prod
-  - jest --config ./jest/app.config.js --runInBand && concurrently -k -s first "spa-http-server ./dist/ngLibrary -a localhost -p 4200 -c-1 --push-state" "./node_modules/cypress/bin/cypress run --record"
+  - jest --config ./jest/app.config.js --runInBand && concurrently -k -s first "./node_modules/spa-http-server/bin/http-server ./dist/ngLibrary -a localhost -p 4200 --push-state" "./node_modules/cypress/bin/cypress run --record"
