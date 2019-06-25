@@ -83,7 +83,7 @@ To run unit-tests in watch mode (re-runs the tests as soon as a test file change
 
 ## Running Only End-To-End Tests
 
-Run `npm run e2e` to execute the end-to-end tests via [Cypress](https://cypress.io).
+Run `npm run e2e` to execute the end-to-end tests via [Cypress](https://cypress.io). This requires the Development server running in the background.
 
 To open the Cypress Dashboard app, run `npm run cypress`. If you haven't before, you should definitely try it out. It's pretty cool.
 
