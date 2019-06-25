@@ -11,6 +11,8 @@ describe('Checkout', function() {
   })
 
   it('Users should be able to add any book to their Basket from their Home page, then go to the Checkout page, to see it listed in the Shopping Cart', () => {
+    setupOpenLibraryBooksFixture()
+    
     cy.visit('http://localhost:4200')
     
     addRandomBookToCart()

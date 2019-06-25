@@ -1,4 +1,5 @@
 import { bookISBNs } from "../../src/app/books/books-data/book-isbns.seed"
+import { setupOpenLibraryBooksFixture } from '../support/routing/books.routing'
 
 describe('Books', function() {
 
@@ -13,6 +14,7 @@ describe('Books', function() {
   })
 
   it('Users should be able to select the first Book (The adventures of Tom Sawyer) & View it in the selected book section', () => {
+    setupOpenLibraryBooksFixture()
     cy.visit('http://localhost:4200')
     cy.get('book').first().click()
     cy.get('selected-book .book-details h2').text().should('eq', 'The adventures of Tom Sawyer')

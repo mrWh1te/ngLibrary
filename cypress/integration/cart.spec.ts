@@ -4,6 +4,8 @@ import { setupOpenLibraryBooksFixture } from '../support/routing/books.routing'
 describe('Cart', function() {
 
   it('Users should be able to add any book to their Basket then Remove it to show an Empty message', () => {
+    setupOpenLibraryBooksFixture()
+    
     cy.visit('http://localhost:4200')
     
     addRandomBookToCart()
