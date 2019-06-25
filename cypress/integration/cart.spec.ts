@@ -10,8 +10,8 @@ describe('Cart', function() {
   it('Users should be able to add any book to their Basket then Remove it to show an Empty message', () => {
     cy.server()
     setupOpenLibraryBooksStubResponse()
-    
     cy.visit('http://localhost:4200')
+    cy.wait('@openLibraryAPI')
     
     addRandomBookToCart()
 
@@ -28,8 +28,8 @@ describe('Cart', function() {
   it('Limits Users to 4 books in their Basket', () => {
     cy.server()
     setupOpenLibraryBooksStubResponse()
-
     cy.visit('http://localhost:4200')
+    cy.wait('@openLibraryAPI')
 
     cy.get('book').eq(0).find('mat-card').click()
     cy.get('selected-book .add-to-basket-btn-container button').click()

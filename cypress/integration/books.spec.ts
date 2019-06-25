@@ -22,8 +22,8 @@ describe('Books', function() {
   it('Users should be able to select the first Book (The adventures of Tom Sawyer) & View it in the selected book section', () => {
     cy.server()
     setupOpenLibraryBooksStubResponse()
-
     cy.visit('http://localhost:4200')
+    cy.wait('@openLibraryAPI')
 
     cy.get('book').first().find('mat-card').click()
     cy.get('selected-book .book-details h2').text().should('eq', 'The adventures of Tom Sawyer')
