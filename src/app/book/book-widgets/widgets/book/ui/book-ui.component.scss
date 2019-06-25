@@ -3,6 +3,8 @@ mat-card {
   overflow: hidden;
   height: 10rem;
   margin-bottom: .75rem;
+  min-width: 1px;
+  min-height: 1px;
 
   &:hover {
     cursor: pointer;
