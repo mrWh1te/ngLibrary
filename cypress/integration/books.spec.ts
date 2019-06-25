@@ -25,7 +25,7 @@ describe('Books', function() {
 
     cy.visit('http://localhost:4200')
 
-    cy.get('book').first().click()
+    cy.get('book').first().find('mat-card').click()
     cy.get('selected-book .book-details h2').text().should('eq', 'The adventures of Tom Sawyer')
   })
   

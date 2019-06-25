@@ -31,22 +31,22 @@ describe('Cart', function() {
 
     cy.visit('http://localhost:4200')
 
-    cy.get('book').eq(0).click()
+    cy.get('book').eq(0).find('mat-card').click()
     cy.get('selected-book .add-to-basket-btn-container button').click()
 
-    cy.get('book').eq(1).click()
+    cy.get('book').eq(1).find('mat-card').click()
     cy.get('selected-book .add-to-basket-btn-container button').click()
 
-    cy.get('book').eq(2).click()
+    cy.get('book').eq(2).find('mat-card').click()
     cy.get('selected-book .add-to-basket-btn-container button').click()
 
-    cy.get('book').eq(3).click()
+    cy.get('book').eq(3).find('mat-card').click()
     cy.get('selected-book .add-to-basket-btn-container button').click()
 
     cy.get('shopping-cart-icon .shopping-cart-icon-ui mat-icon .mat-badge-content').should('be.visible')
     cy.get('shopping-cart-icon .shopping-cart-icon-ui mat-icon .mat-badge-content').text().should('eq', '4')
 
-    cy.get('book').eq(4).click()
+    cy.get('book').eq(4).find('mat-card').click()
     cy.get('selected-book .add-to-basket-btn-container button').click()
 
     cy.get('shopping-cart-icon .shopping-cart-icon-ui mat-icon .mat-badge-content').text().should('eq', '4')
