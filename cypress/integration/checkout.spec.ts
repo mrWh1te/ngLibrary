@@ -1,5 +1,5 @@
 import { addRandomBookToCart } from '../support/helpers/cart.helpers'
-import { setupOpenLibraryBooksFixture } from '../support/routing/books.routing'
+import { setupOpenLibraryBooksStubResponse } from '../support/routing/books.routing'
 
 describe('Checkout', function() {
 
@@ -11,7 +11,8 @@ describe('Checkout', function() {
   })
 
   it('Users should be able to add any book to their Basket from their Home page, then go to the Checkout page, to see it listed in the Shopping Cart', () => {
-    setupOpenLibraryBooksFixture()
+    cy.server()
+    setupOpenLibraryBooksStubResponse()
 
     cy.visit('http://localhost:4200')
     
@@ -24,8 +25,10 @@ describe('Checkout', function() {
   })
 
   it('Checkout button can be submitted once the form is filled correctly and there is at least 1 book in the Cart', () => {
-    setupOpenLibraryBooksFixture()
+    cy.server()
+    setupOpenLibraryBooksStubResponse()
 
+    cy.clearLocalStorage()
     cy.visit('http://localhost:4200')
 
     addRandomBookToCart()

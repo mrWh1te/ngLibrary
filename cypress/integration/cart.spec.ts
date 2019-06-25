@@ -1,10 +1,11 @@
 import { addRandomBookToCart } from '../support/helpers/cart.helpers'
-import { setupOpenLibraryBooksFixture } from '../support/routing/books.routing'
+import { setupOpenLibraryBooksStubResponse } from '../support/routing/books.routing'
 
 describe('Cart', function() {
 
   it('Users should be able to add any book to their Basket then Remove it to show an Empty message', () => {
-    setupOpenLibraryBooksFixture()
+    cy.server()
+    setupOpenLibraryBooksStubResponse()
     
     cy.visit('http://localhost:4200')
     
@@ -21,8 +22,8 @@ describe('Cart', function() {
   })
 
   it('Limits Users to 4 books in their Basket', () => {
-
-    setupOpenLibraryBooksFixture()
+    cy.server()
+    setupOpenLibraryBooksStubResponse()
 
     cy.visit('http://localhost:4200')
 

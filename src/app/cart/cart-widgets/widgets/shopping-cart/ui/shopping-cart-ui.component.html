@@ -22,7 +22,7 @@
         fxLayout="row" 
         fxLayoutAlign="start stretch">
         <div class="row-number" fxFlex="auto">
-          <img [src]="book.cover.small" />
+          <img [src]="book.cover?.small" />
         </div>
         <div fxFlex="1 1 100%" fxLayout="column" fxLayoutAlign="center">
           <div class="title"><b>{{book.title}}</b></div>
