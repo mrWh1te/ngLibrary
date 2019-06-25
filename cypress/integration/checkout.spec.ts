@@ -12,7 +12,7 @@ describe('Checkout', function() {
 
   it('Users should be able to add any book to their Basket from their Home page, then go to the Checkout page, to see it listed in the Shopping Cart', () => {
     setupOpenLibraryBooksFixture()
-    
+
     cy.visit('http://localhost:4200')
     
     addRandomBookToCart()
@@ -31,6 +31,7 @@ describe('Checkout', function() {
     addRandomBookToCart()
 
     cy.get('mat-icon.checkout').click()
+    
     cy.get('checkout-submit-button button').should('have.attr', 'disabled')
     
     cy.get('checkout-user-form input').eq(0).type('Peter')
