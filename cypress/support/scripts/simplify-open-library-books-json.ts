@@ -3,7 +3,8 @@ const bookISBNs = require("../../../src/app/books/books-data/book-isbns.seed.jso
 run()
 
 /**
- * 
+ * @description   Run the actual API call made to OpenLibary.org for the Books listed in our Book ISBN's Seed
+ *                Then save that response, without the big data we don't need, to a fixture file so our Cypress E2E tests can Stub that common API response with the fixture data
  */
 async function run() {
   const fetch = require('node-fetch')
@@ -21,7 +22,7 @@ async function run() {
 }
 
 /**
- * 
+ * @description   Take the hash map response from OpenLibrary.org, remove keys from entities that we don't need, then save to disk
  * @param data 
  */
 function writeCleanOLBooksJSONFile(booksHashMap: JSON): void {
@@ -49,7 +50,7 @@ function writeCleanOLBooksJSONFile(booksHashMap: JSON): void {
   }
 
   // write to fixture file
-  var fs = require('fs')
+  const fs = require('fs')
   fs.writeFile(__dirname + '/../../fixtures/open-library-books-clean.json', JSON.stringify(newBooksHashMap), (err) => {
     if(err) {
       return console.log(" ❌ Unable to write the fixtures/open-library-books-clean.json file: " + err.message)

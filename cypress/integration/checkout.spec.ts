@@ -5,7 +5,6 @@ describe('Checkout', function() {
 
   beforeEach(() => {
     cy.clearLocalStorage()
-    cy.log('I run before every test in every spec file!!!!!!')
   })
 
   it('Going directly to the Checkout page with an Empty Cart has a disabled Checkout button & an Empty cart', () => {
