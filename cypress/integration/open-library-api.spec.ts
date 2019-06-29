@@ -1,4 +1,5 @@
-import { bookISBNs } from "../../src/app/books/books-data/book-isbns.seed"
+import * as seed from '../../src/app/books/books-data/book-isbns.seed.json'
+const bookISBNs = seed.bookISBNs
 
 // @todo re-enable this test suite when OpenLibrary.org comes back online
 describe.skip('Open Library API', function() {

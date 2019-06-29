@@ -7,7 +7,9 @@ import * as BooksActions from '../../../../books-data/actions/books.actions'
 
 import { ConfigureFn, configureTests } from './../../../../../../../jest/config.helpers'
 import { BooksComponent } from './books.component'
-import { bookISBNs } from './../../../../books-data/book-isbns.seed'
+import * as seed from './../../../../books-data/book-isbns.seed.json'
+const bookISBNs = seed.bookISBNs
+
 import { MockComponent } from './../../../../../../../jest/mocks.helpers'
 
 describe('BooksComponent', () => {

@@ -1,4 +1,6 @@
-import { bookISBNs } from "../../src/app/books/books-data/book-isbns.seed"
+import * as seed from '../../src/app/books/books-data/book-isbns.seed.json'
+const bookISBNs = seed.bookISBNs
+
 import { setupOpenLibraryBooksStubResponse } from '../support/routing/books.routing'
 
 describe('Books', function() {

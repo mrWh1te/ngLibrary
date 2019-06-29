@@ -3,7 +3,9 @@ import {createEntityAdapter, EntityAdapter, EntityState} from '@ngrx/entity'
 import { Book } from '../../../book/book-data/models/book.model'
 import { BooksActions, BooksActionTypes } from '../actions/books.actions'
 import { BookActions, BookActionTypes } from '../../../book/book-data/actions/book.actions'
-import { bookISBNs } from '../book-isbns.seed'
+
+import * as seed from '../book-isbns.seed.json'
+const bookISBNs = seed.bookISBNs
 
 export interface State extends EntityState<Book> {
   // What book has been selected in the Book's SelectedBookComponent?

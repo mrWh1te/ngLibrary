@@ -1,4 +1,5 @@
-import { bookISBNs } from '../../../src/app/books/books-data/book-isbns.seed'
+import * as seed from '../../../src/app/books/books-data/book-isbns.seed.json'
+const bookISBNs = seed.bookISBNs
 
 export function addRandomBookToCart() {
   const bookISBNsIdx = Math.floor(Math.random() * bookISBNs.length)

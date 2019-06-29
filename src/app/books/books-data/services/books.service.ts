@@ -10,8 +10,12 @@ import { Book } from 'src/app/book/book-data/models/book.model'
 export class BooksService {
   constructor(private http: HttpClient) {}
 
+  getBooksDataAPIUrl(books: {id: number, isbn: string}[]): string {
+    return `https://openlibrary.org/api/books?bibkeys=ISBN:${books.map(book => book.isbn).join()}&format=json&jscmd=data`
+  }
+
   getBooksData(books: {id: number, isbn: string}[]): Observable<Book[]> {
-    return this.http.get(`https://openlibrary.org/api/books?bibkeys=ISBN:${books.map(book => book.isbn).join()}&format=json&jscmd=data`)
+    return this.http.get(this.getBooksDataAPIUrl(books))
       .pipe(
         map((openLibraryBooksAPIResponse: any) => {
           // hydrate this API response data with out corresponding book ID's

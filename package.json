@@ -11,7 +11,8 @@
     "unit-tests:watch": "jest --config ./jest/app.config.js --watch",
     "unit-tests:coverage": "jest --config ./jest/app.config.js --coverage",
     "cypress": "./node_modules/.bin/cypress open",
-    "e2e": "./node_modules/.bin/cypress run"
+    "e2e": "./node_modules/.bin/cypress run",
+    "build:e2e:fixtures": "./node_modules/.bin/ts-node ./cypress/support/scripts/simplify-open-library-books-json.ts"
   },
   "greenkeeper": {
     "ignore": [
@@ -56,10 +57,11 @@
     "cypress-commands": "^0.2.0",
     "jest": "^24.8.0",
     "jest-preset-angular": "^7.1.1",
+    "node-fetch": "^2.6.0",
     "protractor": "~5.4.0",
     "spa-http-server": "^0.9.0",
     "ts-loader": "^6.0.4",
-    "ts-node": "~8.3.0",
+    "ts-node": "^8.3.0",
     "tslint": "~5.17.0",
     "typescript": "~3.4.0"
   }
