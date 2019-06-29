@@ -63,6 +63,18 @@ You'll need it to run the Angular Development server and build the Production ve
 
 To run a development server locally (so you can see the app running), run `ng serve`. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Books Seed
+
+There is a `books-isbns.seed.json` which has an array of ISBN-10 strings representing all the books listed in the App. All of those ISBN's were copied from OpenLibrary.org. If you add or remove ISBN's from the Seed, you need to run the `build:e2e:fixtures` script like so:
+
+```
+$ npm run build:e2e:fixtures
+```
+
+That will build a new fixture file for the E2E testing that stubs the API response from OpenLibrary.org. Otherwise, tests may begin to fail.
+
+Also, we don't currently have a Cache-Busting mechanism in place for when you add or remove ISBN's from the Seed (see #21). So for now, just Clear your Local Storage for this app. Specifically the `books` key is what you need to delete.
+
 ## Code Scaffolding
 
 The main feature modules were separated into more modules based on type. The main three types are `views`, `widgets` and `data`. This is for our code extensibility value. By not grouping them all together in 1 module, we have greater code flexibility in adding and replacing components in various pages while only importing what we need (and reducing the possibility of circular dependencies). In the future, an article will be published on CopynPaste.me that dives into the reasoning behind the Scaffolding of this project, including the types of Modules.
