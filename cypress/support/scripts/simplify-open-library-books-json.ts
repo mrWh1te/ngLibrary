@@ -55,7 +55,7 @@ function buildCleanJSONFile(booksHashMap: JSON): void {
   var fs = require('fs')
   fs.writeFile(__dirname + '/../../fixtures/open-library-books-clean.json', JSON.stringify(newBooksHashMap), (err) => {
     if(err) {
-      return console.log(err);
+      return console.log(" ❌ Unable to write the fixtures/open-library-books-clean.json file: " + err.message)
     }
 
     console.log(" ✔️  fixtures/open-library-books-clean.json was written & saved");
