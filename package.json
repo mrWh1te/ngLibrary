@@ -6,7 +6,7 @@
     "lint": "ng lint",
     "start": "ng serve",
     "build": "ng build",
-    "test": "npm run unit-tests && npm run e2e",
+    "tests": "npm run unit-tests && npm run e2e",
     "unit-tests": "jest --config ./jest/app.config.js",
     "unit-tests:watch": "jest --config ./jest/app.config.js --watch",
     "unit-tests:coverage": "jest --config ./jest/app.config.js --coverage",
