@@ -7,7 +7,7 @@ import { Observable } from 'rxjs'
 import { map, take } from 'rxjs/operators'
 
 import { DynamicFormConfig } from 'src/app/shared/dynamic-form/models/dynamic-form-config.model'
-import { CheckoutUpdateUserInfo } from 'src/app/checkout/checkout-data/actions/checkout.actions'
+import { checkoutUpdateUserInfo } from 'src/app/checkout/checkout-data/actions/checkout.actions'
 import { User } from 'src/app/checkout/checkout-data/models/user.model'
 import { selectCheckoutRequestUser } from 'src/app/checkout/checkout-data/selectors/checkout-request.selectors'
 
@@ -89,6 +89,6 @@ export class CheckoutUserFormComponent {
   }
 
   formValueChanged(user: Partial<User>) {
-    this.store.dispatch(new CheckoutUpdateUserInfo({user}))
+    this.store.dispatch(checkoutUpdateUserInfo({user}))
   }
 }

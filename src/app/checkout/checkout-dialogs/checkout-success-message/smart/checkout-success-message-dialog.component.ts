@@ -2,13 +2,13 @@ import { Component, ChangeDetectionStrategy } from "@angular/core"
 import { MatDialogRef } from '@angular/material'
 
 import { Store, select } from '@ngrx/store'
-import { Observable, Subscription } from 'rxjs'
+import { Observable } from 'rxjs'
 import { map, take } from 'rxjs/operators'
 
 import { User } from 'src/app/checkout/checkout-data/models/user.model'
 import { selectCheckoutRequestUser } from 'src/app/checkout/checkout-data/selectors/checkout-request.selectors'
 import { selectCartStatusBooksCount } from 'src/app/cart/cart-data/selectors/cart-status.selectors'
-import { CheckoutComplete } from 'src/app/checkout/checkout-data/actions/checkout.actions'
+import { checkoutComplete } from 'src/app/checkout/checkout-data/actions/checkout.actions'
 
 @Component({
   selector: 'checkout-success-message',
@@ -25,8 +25,6 @@ export class CheckoutSuccessMessageDialogComponent {
   public user$: Observable<User>
   public numberOfBooks$: Observable<number>
   public pickUpTime: Date
-
-  dialogCloseSubscription: Subscription
 
   constructor(
     private dialogRef: MatDialogRef<CheckoutSuccessMessageDialogComponent>,
@@ -47,7 +45,7 @@ export class CheckoutSuccessMessageDialogComponent {
     this.pickUpTime.setHours(now.getHours() + 1)
 
     this.dialogRef.afterClosed().toPromise().then(() => {
-      this.store.dispatch(new CheckoutComplete())
+      this.store.dispatch(checkoutComplete())
     })
   }
 
