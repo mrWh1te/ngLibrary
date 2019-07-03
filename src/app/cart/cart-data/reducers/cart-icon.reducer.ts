@@ -2,8 +2,6 @@ import { createReducer, Action, on } from '@ngrx/store'
 
 import * as cartIconActions from '../actions/cart-icon.actions'
 
-// import { CartIconActions, CartIconActionTypes } from '../actions/cart-icon.actions'
-
 /**
  * @description   This is the state of the Shopping Cart Icon found in the Header UI
  */
@@ -40,35 +38,3 @@ const cartIconReducer = createReducer(
 export function reducer(state: State | undefined, action: Action) {
   return cartIconReducer(state, action)
 }
-
-// export function reducerOld(state: State = initialState, action: CartIconActions): State {
-//   switch (action.type) {
-//     case CartIconActionTypes.AnimateLayoutHeaderShoppingCartIcon: {     
-//       return {
-//         ...state,
-//         animating: true
-//       }
-//     }
-//     case CartIconActionTypes.AnimateOffLayoutHeaderShoppingCartIcon: {
-//       return {
-//         ...state,
-//         animating: false
-//       }
-//     }
-//     case CartIconActionTypes.ShowCartIconDropDown: {
-//       return {
-//         ...state,
-//         dropDownIsVisible: true
-//       }
-//     }
-//     case CartIconActionTypes.HideCartIconDropDown: {
-//       return {
-//         ...state,
-//         dropDownIsVisible: false
-//       }
-//     }
-//     default: {
-//       return state
-//     }
-//   }
-// }
