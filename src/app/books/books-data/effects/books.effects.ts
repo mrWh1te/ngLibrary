@@ -11,7 +11,8 @@ import * as booksActions from '../actions/books.actions'
 import { withLatestFrom, map, catchError, exhaustMap, filter, mergeMap } from 'rxjs/operators'
 
 import { selectAllCacheBooks, selectBooksCacheEntities } from '../selectors/books-cache.selectors'
-import { AddBookToCart, CartActionTypes } from 'src/app/cart/cart-data/actions/cart.actions'
+// import { AddBookToCart, CartActionTypes } from 'src/app/cart/cart-data/actions/cart.actions'
+import * as cartActions from '../../../cart/cart-data/actions/cart.actions'
 
 @Injectable()
 export class BooksEffects {
@@ -67,19 +68,30 @@ export class BooksEffects {
   //   })
   // ), {dispatch: false})
 
-  @Effect({
-    dispatch: false
-  })
-  showNotificationOnAddedBookToCart$: Observable<Action> = this.actions$
-    .pipe(
-      ofType<AddBookToCart>(CartActionTypes.AddBookToCart),
-      withLatestFrom(this.store.pipe(select(selectBooksCacheEntities))),
-      map(([action, books]) => {
-        this.snackbar.open(`Added "${books[action.payload.bookId].title}"`, 'Close', {
-          duration: 3000
-        })
-
-        return action
+  showNotificationOnAddedBookToCart$ = createEffect(() => this.actions$.pipe(
+    ofType(cartActions.addBookToCart),
+    withLatestFrom(this.store.pipe(select(selectBooksCacheEntities))),
+    map(([action, books]) => {
+      this.snackbar.open(`Added "${books[action.bookId].title}"`, 'Close', {
+        duration: 3000
       })
-    )
+
+      return action
+    })
+  ), {dispatch: false})
+  // @Effect({
+  //   dispatch: false
+  // })
+  // showNotificationOnAddedBookToCart$: Observable<Action> = this.actions$
+  //   .pipe(
+  //     ofType<AddBookToCart>(CartActionTypes.AddBookToCart),
+  //     withLatestFrom(this.store.pipe(select(selectBooksCacheEntities))),
+  //     map(([action, books]) => {
+  //       this.snackbar.open(`Added "${books[action.payload.bookId].title}"`, 'Close', {
+  //         duration: 3000
+  //       })
+
+  //       return action
+  //     })
+  //   )
 }

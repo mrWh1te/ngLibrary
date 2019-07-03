@@ -6,9 +6,6 @@ import { Book } from '../../../book/book-data/models/book.model'
 import * as booksActions from '../actions/books.actions'
 import * as bookActions from '../../../book/book-data/actions/book.actions'
 
-// import { BooksActions, BooksActionTypes } from '../actions/books.actions'
-// import { BookActions, BookActionTypes } from '../../../book/book-data/actions/book.actions'
-
 import * as seed from '../book-isbns.seed.json'
 const bookISBNs = seed.bookISBNs
 
@@ -52,26 +49,3 @@ const booksCacheReducer = createReducer(
 export function reducer(state: State | undefined, action: Action) {
   return booksCacheReducer(state, action)
 }
-
-// export function reducerOld(state: State = initialState, action: BooksActions | BookActions): State {
-//   switch (action.type) {
-//     case BooksActionTypes.RequestBooksHydrateSuccess: {      
-//       return adapter.updateMany(action.payload.books.map(book => ({id: book.id, changes: {...book}})), state)
-//     }
-//     case BookActionTypes.BookSelected: {
-//       return {
-//         ...state,
-//         activeBookId: action.payload.bookId
-//       }
-//     }
-//     case BookActionTypes.ClearBookSelected: {
-//       return {
-//         ...state,
-//         activeBookId: -1
-//       }
-//     }
-//     default: {
-//       return state
-//     }
-//   }
-// }

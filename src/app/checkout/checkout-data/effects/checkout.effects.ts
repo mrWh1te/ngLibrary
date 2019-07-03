@@ -12,7 +12,7 @@ import { selectCheckoutRequestUser } from '../selectors/checkout-request.selecto
 import { selectCartStatusBookIds } from 'src/app/cart/cart-data/selectors/cart-status.selectors'
 import { CheckoutService } from '../services/checkout.service'
 import { CheckoutSuccessMessageDialogComponent } from '../../checkout-dialogs/checkout-success-message/smart/checkout-success-message-dialog.component'
-import { ClearCart } from 'src/app/cart/cart-data/actions/cart.actions'
+import { clearCart } from 'src/app/cart/cart-data/actions/cart.actions'
 import { clearBookSelected } from 'src/app/book/book-data/actions/book.actions'
 
 @Injectable()
@@ -59,7 +59,7 @@ export class CheckoutEffects {
       ofType<CheckoutComplete>(CheckoutActionTypes.CheckoutComplete),
       tap(() => {
         this.store.dispatch(new CheckoutClearUserInfo())
-        this.store.dispatch(new ClearCart())
+        this.store.dispatch(clearCart())
         this.store.dispatch(clearBookSelected())
       })
     )

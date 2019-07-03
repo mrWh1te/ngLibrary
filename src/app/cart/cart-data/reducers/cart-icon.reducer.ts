@@ -1,4 +1,8 @@
-import { CartIconActions, CartIconActionTypes } from '../actions/cart-icon.actions'
+import { createReducer, Action, on } from '@ngrx/store'
+
+import * as cartIconActions from '../actions/cart-icon.actions'
+
+// import { CartIconActions, CartIconActionTypes } from '../actions/cart-icon.actions'
 
 /**
  * @description   This is the state of the Shopping Cart Icon found in the Header UI
@@ -13,34 +17,58 @@ export const initialState: State = {
   dropDownIsVisible: false
 }
 
-export function reducer(state: State = initialState, action: CartIconActions): State {
-  switch (action.type) {
-    case CartIconActionTypes.AnimateLayoutHeaderShoppingCartIcon: {     
-      return {
-        ...state,
-        animating: true
-      }
-    }
-    case CartIconActionTypes.AnimateOffLayoutHeaderShoppingCartIcon: {
-      return {
-        ...state,
-        animating: false
-      }
-    }
-    case CartIconActionTypes.ShowCartIconDropDown: {
-      return {
-        ...state,
-        dropDownIsVisible: true
-      }
-    }
-    case CartIconActionTypes.HideCartIconDropDown: {
-      return {
-        ...state,
-        dropDownIsVisible: false
-      }
-    }
-    default: {
-      return state
-    }
-  }
+const cartIconReducer = createReducer(
+  initialState,
+  on(
+    cartIconActions.animateLayoutHeaderShoppingCartIcon,
+    state => ({...state, animating: true})
+  ),
+  on(
+    cartIconActions.animateOffLayoutHeaderShoppingCartIcon, 
+    state => ({...state, animating: false})
+  ),
+  on(
+    cartIconActions.showCartIconDropDown, 
+    state => ({...state, dropDownIsVisible: true})
+  ),
+  on(
+    cartIconActions.hideCartIconDropDown,
+    state => ({...state, dropDownIsVisible: false})
+  )
+)
+
+export function reducer(state: State | undefined, action: Action) {
+  return cartIconReducer(state, action)
 }
+
+// export function reducerOld(state: State = initialState, action: CartIconActions): State {
+//   switch (action.type) {
+//     case CartIconActionTypes.AnimateLayoutHeaderShoppingCartIcon: {     
+//       return {
+//         ...state,
+//         animating: true
+//       }
+//     }
+//     case CartIconActionTypes.AnimateOffLayoutHeaderShoppingCartIcon: {
+//       return {
+//         ...state,
+//         animating: false
+//       }
+//     }
+//     case CartIconActionTypes.ShowCartIconDropDown: {
+//       return {
+//         ...state,
+//         dropDownIsVisible: true
+//       }
+//     }
+//     case CartIconActionTypes.HideCartIconDropDown: {
+//       return {
+//         ...state,
+//         dropDownIsVisible: false
+//       }
+//     }
+//     default: {
+//       return state
+//     }
+//   }
+// }

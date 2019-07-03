@@ -7,7 +7,7 @@ import { withLatestFrom, map } from 'rxjs/operators'
 import { Book } from 'src/app/book/book-data/models/book.model'
 import { selectCartStatusBookIds } from 'src/app/cart/cart-data/selectors/cart-status.selectors'
 import { selectBooksCacheEntities } from 'src/app/books/books-data/selectors/books-cache.selectors'
-import { RemoveBookFromCart } from 'src/app/cart/cart-data/actions/cart.actions'
+import { removeBookFromCart } from 'src/app/cart/cart-data/actions/cart.actions'
 
 @Component({
   selector: 'shopping-cart',
@@ -31,6 +31,6 @@ export class ShoppingCartComponent {
   }
 
   removeFromCart(bookId: number) {
-    this.store.dispatch(new RemoveBookFromCart({bookId}))
+    this.store.dispatch(removeBookFromCart({bookId}))
   }
 }
