@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators'
 
 import { Book } from 'src/app/book/book-data/models/book.model'
 import { selectActiveBookId, selectBooksCacheEntities } from 'src/app/books/books-data/selectors/books-cache.selectors'
-import { SelectedBookAddToCartBtnClick } from 'src/app/book/book-data/actions/book.actions'
+import { selectedBookAddToCartBtnClick } from 'src/app/book/book-data/actions/book.actions'
 
 @Component({
   selector: 'selected-book',
@@ -28,6 +28,6 @@ export class SelectedBookComponent {
   }
 
   addToBasket(): void {    
-    this.store.dispatch(new SelectedBookAddToCartBtnClick())
+    this.store.dispatch(selectedBookAddToCartBtnClick())
   }
 }

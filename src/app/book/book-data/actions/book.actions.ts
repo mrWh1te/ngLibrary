@@ -1,25 +1,38 @@
-import { Action } from '@ngrx/store'
+import { createAction, props } from '@ngrx/store'
 
-export enum BookActionTypes {
-  BookSelected = '[Book] Book Selected',
-  ClearBookSelected = '[Book] Selected Book Cleared',
-  SelectedBookAddToCartBtnClick = '[Book] Selected Book\'s "Add to Basket" Button Click'
-}
+export const bookSelected = createAction(
+  '[Book] Book Selected',
+  props<{ bookId: number }>()
+)
 
-export class BookSelected implements Action {
-  readonly type = BookActionTypes.BookSelected
+export const clearBookSelected = createAction(
+  '[Book] Selected Book Cleared'
+)
 
-  constructor(public payload: {bookId: number}) {}
-}
-export class ClearBookSelected implements Action {
-  readonly type = BookActionTypes.ClearBookSelected
-}
+export const selectedBookAddToCartBtnClick = createAction(
+  '[Book] Selected Book\'s "Add to Basket" Button Click'
+)
 
-export class SelectedBookAddToCartBtnClick implements Action {
-  readonly type = BookActionTypes.SelectedBookAddToCartBtnClick
-}
+// export enum BookActionTypes {
+//   BookSelected = '[Book] Book Selected',
+//   ClearBookSelected = '[Book] Selected Book Cleared',
+//   SelectedBookAddToCartBtnClick = '[Book] Selected Book\'s "Add to Basket" Button Click'
+// }
 
-export type BookActions =
-  BookSelected |
-  ClearBookSelected |
-  SelectedBookAddToCartBtnClick
+// export class BookSelected implements Action {
+//   readonly type = BookActionTypes.BookSelected
+
+//   constructor(public payload: {bookId: number}) {}
+// }
+// export class ClearBookSelected implements Action {
+//   readonly type = BookActionTypes.ClearBookSelected
+// }
+
+// export class SelectedBookAddToCartBtnClick implements Action {
+//   readonly type = BookActionTypes.SelectedBookAddToCartBtnClick
+// }
+
+// export type BookActions =
+//   BookSelected |
+//   ClearBookSelected |
+//   SelectedBookAddToCartBtnClick

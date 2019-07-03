@@ -2,7 +2,7 @@ import { Component, Input, ChangeDetectionStrategy } from "@angular/core"
 import { Store } from '@ngrx/store'
 
 import { Book } from 'src/app/book/book-data/models/book.model'
-import { BookSelected } from 'src/app/book/book-data/actions/book.actions'
+import { bookSelected } from 'src/app/book/book-data/actions/book.actions'
 
 @Component({
   selector: 'book',
@@ -15,6 +15,6 @@ export class BookComponent {
   constructor(private store: Store<any>) {}
   
   selected(): void {
-    this.store.dispatch(new BookSelected({bookId: this.book.id}))
+    this.store.dispatch(bookSelected({bookId: this.book.id}))
   }
 }
