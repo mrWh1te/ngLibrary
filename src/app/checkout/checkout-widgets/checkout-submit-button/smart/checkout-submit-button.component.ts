@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators'
 
 import { selectCartStatusBooksCount } from 'src/app/cart/cart-data/selectors/cart-status.selectors'
 import { selectCheckoutRequestUser } from 'src/app/checkout/checkout-data/selectors/checkout-request.selectors'
-import { CheckoutSubmit } from 'src/app/checkout/checkout-data/actions/checkout.actions'
+import { checkoutSubmit } from 'src/app/checkout/checkout-data/actions/checkout.actions'
 
 /**
  * @description   A lot of work went into de-coupling this main form Submit button
@@ -71,6 +71,6 @@ export class CheckoutSubmitButtonComponent {
   }
 
   submit(): void {
-    this.store.dispatch(new CheckoutSubmit())
+    this.store.dispatch(checkoutSubmit())
   }
 }

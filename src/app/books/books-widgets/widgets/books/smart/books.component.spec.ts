@@ -3,7 +3,7 @@ import { ComponentFixture } from '@angular/core/testing'
 import { StoreModule, Store, combineReducers } from '@ngrx/store'
 
 import * as fromBooks from '../../../../books-data/reducers/books.reducers'
-import * as BooksActions from '../../../../books-data/actions/books.actions'
+import * as booksActions from '../../../../books-data/actions/books.actions'
 
 import { ConfigureFn, configureTests } from './../../../../../../../jest/config.helpers'
 import { BooksComponent } from './books.component'
@@ -49,7 +49,7 @@ describe('BooksComponent', () => {
   })
 
   it('should dispatch an action to load data when created', () => {
-    const action = new BooksActions.RequestBooksHydrate()
+    const action = booksActions.requestBooksHydrate()
  
     expect(store.dispatch).toHaveBeenCalledWith(action)
   })
@@ -100,7 +100,7 @@ describe('BooksComponent', () => {
       }
     ]
 
-    const action = new BooksActions.RequestBooksHydrateSuccess({books: booksSeed})
+    const action = booksActions.requestBooksHydrateSuccess({books: booksSeed})
     store.dispatch(action)
  
     component.books$.subscribe(books => {

@@ -1,27 +1,16 @@
-import { Action } from '@ngrx/store'
+import { createAction, props } from '@ngrx/store'
 
 import { Book } from 'src/app/book/book-data/models/book.model'
 
-// For Main Feature of Books Inventory (home page)
-export enum BooksActionTypes {
-  RequestBooksHydrate = '[Books] Request to Hydrate Books',
-  RequestBooksHydrateSuccess = '[Books] Request to Hydrate Books Success',
-  RequestBooksHydrateError = '[Books] Request to Hydrate Books Error'
-}
+export const requestBooksHydrate = createAction(
+  '[Books] Request to Hydrate Books'
+)
 
-export class RequestBooksHydrate implements Action {
-  readonly type = BooksActionTypes.RequestBooksHydrate
-}
-export class RequestBooksHydrateSuccess implements Action {
-  readonly type = BooksActionTypes.RequestBooksHydrateSuccess
+export const requestBooksHydrateSuccess = createAction(
+  '[Books] Request to Hydrate Books Success',
+  props<{ books: Book[] }>()
+)
 
-  constructor(public payload: {books: Book[]}) {}
-}
-export class RequestBooksHydrateError implements Action {
-  readonly type = BooksActionTypes.RequestBooksHydrateError
-}
-
-export type BooksActions =
-  RequestBooksHydrate |
-  RequestBooksHydrateSuccess |
-  RequestBooksHydrateError
+export const requestBooksHydrateError = createAction(
+  '[Books] Request to Hydrate Books Error'
+)

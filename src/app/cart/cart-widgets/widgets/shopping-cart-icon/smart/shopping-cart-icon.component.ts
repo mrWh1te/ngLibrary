@@ -1,11 +1,11 @@
 import { Component, ChangeDetectionStrategy } from "@angular/core"
 
-import { Observable, BehaviorSubject } from 'rxjs'
+import { Observable } from 'rxjs'
 import { Store, select } from '@ngrx/store'
 
 import { selectCartStatusBooksCount } from 'src/app/cart/cart-data/selectors/cart-status.selectors'
 import { selectCartIconAnimatingStatus, selectCartIconDropDownIsVisible } from 'src/app/cart/cart-data/selectors/cart-icon.selectors'
-import { ToggleCartIconDropDown } from 'src/app/cart/cart-data/actions/cart-icon.actions'
+import { toggleCartIconDropDown } from 'src/app/cart/cart-data/actions/cart-icon.actions'
 
 @Component({
   selector: 'shopping-cart-icon',
@@ -30,6 +30,6 @@ export class ShoppingCartIconComponent {
   }
 
   iconClicked() {
-    this.store.dispatch(new ToggleCartIconDropDown())
+    this.store.dispatch(toggleCartIconDropDown())
   }
 }

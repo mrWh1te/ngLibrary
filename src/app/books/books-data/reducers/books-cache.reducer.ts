@@ -1,8 +1,10 @@
 import {createEntityAdapter, EntityAdapter, EntityState} from '@ngrx/entity'
+import { createReducer, on, Action } from '@ngrx/store'
 
 import { Book } from '../../../book/book-data/models/book.model'
-import { BooksActions, BooksActionTypes } from '../actions/books.actions'
-import { BookActions, BookActionTypes } from '../../../book/book-data/actions/book.actions'
+
+import * as booksActions from '../actions/books.actions'
+import * as bookActions from '../../../book/book-data/actions/book.actions'
 
 import * as seed from '../book-isbns.seed.json'
 const bookISBNs = seed.bookISBNs
@@ -26,25 +28,24 @@ export const initialState: State = {
   }), {})
 }
 
-export function reducer(state: State = initialState, action: BooksActions | BookActions): State {
-  switch (action.type) {
-    case BooksActionTypes.RequestBooksHydrateSuccess: {      
-      return adapter.updateMany(action.payload.books.map(book => ({id: book.id, changes: {...book}})), state)
-    }
-    case BookActionTypes.BookSelected: {
-      return {
-        ...state,
-        activeBookId: action.payload.bookId
-      }
-    }
-    case BookActionTypes.ClearBookSelected: {
-      return {
-        ...state,
-        activeBookId: -1
-      }
-    }
-    default: {
-      return state
-    }
-  }
+const booksCacheReducer = createReducer(
+  initialState,
+  // Books Actions
+  on(
+    booksActions.requestBooksHydrateSuccess, 
+    (state, { books }) => adapter.updateMany(books.map(book => ({id: book.id, changes: {...book}})), state)
+  ),
+  // Book Actions
+  on(
+    bookActions.bookSelected, 
+    (state, { bookId }) => ({...state, activeBookId: bookId})
+  ),
+  on(
+    bookActions.clearBookSelected, 
+    state => ({...state, activeBookId: -1})
+  )
+)
+
+export function reducer(state: State | undefined, action: Action) {
+  return booksCacheReducer(state, action)
 }
