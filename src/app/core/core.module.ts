@@ -25,10 +25,14 @@ import { RouterSimpleStateSerializer } from './serializers/router-state.serializ
     HttpClientModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([]),
-    !environment.production ? StoreDevtoolsModule.instrument({
+    StoreDevtoolsModule.instrument({
       maxAge: 20,
       logOnly: environment.production
-    }) : [],
+    }),
+//     !environment.production ? StoreDevtoolsModule.instrument({
+//       maxAge: 20,
+//       logOnly: environment.production
+//     }) : [],
     StoreRouterConnectingModule.forRoot()
   ],
   providers: [{ provide: RouterStateSerializer, useClass: RouterSimpleStateSerializer }],
