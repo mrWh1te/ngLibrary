@@ -18,4 +18,8 @@ import { CheckoutWidgetsModule } from '../checkout-widgets/checkout-widgets.modu
     CheckoutViewComponent
   ]
 })
-export class CheckoutViewsModule {}
+export class CheckoutViewsModule {
+  constructor() {
+    console.log('[CheckoutViewsModule] constructor()')
+  }
+}
