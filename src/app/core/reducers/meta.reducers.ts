@@ -3,7 +3,6 @@ import { ActionReducer, MetaReducer } from '@ngrx/store'
 import { localStorageSync } from 'ngrx-store-localstorage'
 
 import { RootState } from './root.state'
-import { environment } from '../../../environments/environment'
 
 export function logger(reducer: ActionReducer<any>): ActionReducer<any> {
   return function(state, action) {
@@ -24,5 +23,4 @@ export function localStorageBackupReducer(reducer: ActionReducer<any>): ActionRe
   return localStorageSync({keys: ['books', 'cart'], rehydrate: true})(reducer)
 }
 
-export const metaReducers: MetaReducer<RootState>[] =
-  environment.production ? [localStorageBackupReducer] : [logger, localStorageBackupReducer]
+export const metaReducers: MetaReducer<RootState>[] = [logger, localStorageBackupReducer]
