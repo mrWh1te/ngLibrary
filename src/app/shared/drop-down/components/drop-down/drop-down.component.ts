@@ -24,7 +24,7 @@ export class DropDownComponent implements OnInit, OnDestroy {
   private openSubscription: Subscription
   private backDropClickSubscription: Subscription
 
-  @ViewChild(TemplatePortalDirective, {static: false})
+  @ViewChild(TemplatePortalDirective)
   private contentTemplate: TemplatePortalDirective
 
   private overlayRef: OverlayRef
