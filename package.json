@@ -1,6 +1,6 @@
 {
   "name": "ng-library",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "lint": "ng lint",
@@ -12,7 +12,8 @@
     "unit-tests:coverage": "jest --config ./jest/app.config.js --coverage",
     "cypress": "./node_modules/.bin/cypress open",
     "e2e": "./node_modules/.bin/cypress run",
-    "build:e2e:fixtures": "./node_modules/.bin/ts-node ./cypress/support/scripts/simplify-open-library-books-json.ts"
+    "build:e2e:fixtures": "./node_modules/.bin/ts-node ./cypress/support/scripts/simplify-open-library-books-json.ts",
+    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
   "greenkeeper": {
     "ignore": [
@@ -21,37 +22,38 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "github:angular/animations-builds",
-    "@angular/cdk": "github:angular/cdk-builds",
-    "@angular/common": "~8.0.0",
-    "@angular/compiler": "~8.0.0",
-    "@angular/core": "~8.0.0",
-    "@angular/flex-layout": "^8.0.0-beta.26",
-    "@angular/forms": "~8.0.0",
-    "@angular/material": "github:angular/material2-builds",
-    "@angular/platform-browser": "~8.0.0",
-    "@angular/platform-browser-dynamic": "~8.0.0",
-    "@angular/router": "~8.0.0",
-    "@ngrx/effects": "^8.0.0",
-    "@ngrx/entity": "^8.0.0",
-    "@ngrx/router-store": "^8.0.0",
-    "@ngrx/store": "^8.0.0",
-    "@ngrx/store-devtools": "^8.0.0",
+    "@angular/animations": "~9.0.0-rc.7",
+    "@angular/cdk": "~8.2.3",
+    "@angular/common": "~9.0.0-rc.7",
+    "@angular/compiler": "~9.0.0-rc.7",
+    "@angular/core": "~9.0.0-rc.7",
+    "@angular/flex-layout": "^8.0.0-beta.27",
+    "@angular/forms": "~9.0.0-rc.7",
+    "@angular/material": "~8.2.3",
+    "@angular/platform-browser": "~9.0.0-rc.7",
+    "@angular/platform-browser-dynamic": "~9.0.0-rc.7",
+    "@angular/router": "~9.0.0-rc.7",
+    "@ngrx/effects": "^8.6.0",
+    "@ngrx/entity": "^8.6.0",
+    "@ngrx/router-store": "^8.6.0",
+    "@ngrx/store": "^8.6.0",
+    "@ngrx/store-devtools": "^8.6.0",
     "g": "^2.0.1",
     "ngrx-store-localstorage": "^8.0.0",
-    "rxjs": "~6.5.2",
-    "tslib": "^1.9.0",
-    "zone.js": "~0.9.1"
+    "npm": "^6.13.4",
+    "rxjs": "~6.5.4",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.801.0",
-    "@angular/cli": "~8.3.21",
-    "@angular/compiler-cli": "~8.0.0",
-    "@angular/language-service": "~8.0.0",
+    "@angular-devkit/build-angular": "~0.900.0-rc.7",
+    "@angular/cli": "~9.0.0-rc.7",
+    "@angular/compiler-cli": "~9.0.0-rc.7",
+    "@angular/language-service": "~9.0.0-rc.7",
     "@cypress/webpack-preprocessor": "^4.1.0",
     "@types/jest": "^24.0.13",
-    "@types/node": "~12.6.8",
-    "codelyzer": "^5.0.0",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^5.1.2",
     "concurrently": "^4.1.0",
     "cypress": "^3.4.1",
     "cypress-commands": "^0.2.0",
@@ -63,6 +65,6 @@
     "ts-loader": "^6.0.4",
     "ts-node": "^8.3.0",
     "tslint": "~5.17.0",
-    "typescript": "~3.4.0"
+    "typescript": "~3.6.4"
   }
 }

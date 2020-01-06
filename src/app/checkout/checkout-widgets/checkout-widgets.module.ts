@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core"
 import { CommonModule } from '@angular/common'
-import { MatButtonModule } from '@angular/material'
+import { MatButtonModule } from '@angular/material/button'
 
 import { DynamicFormModule } from 'src/app/shared/dynamic-form/dynamic-form.module'
 import { CheckoutDataModule } from '../checkout-data/checkout-data.module'

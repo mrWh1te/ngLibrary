@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core'
-import { MatSnackBarModule } from '@angular/material'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 import { StoreModule } from '@ngrx/store'
 import { EffectsModule } from '@ngrx/effects'

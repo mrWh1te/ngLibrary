@@ -1,6 +1,7 @@
 import { NgModule } from "@angular/core"
 import { CommonModule } from '@angular/common'
-import { MatIconModule, MatBadgeModule } from '@angular/material'
+import { MatIconModule } from '@angular/material/icon'
+import { MatBadgeModule } from '@angular/material/badge'
 import { FlexLayoutModule } from '@angular/flex-layout'
 
 import { CartDataModule } from '../cart-data/cart-data.module'
