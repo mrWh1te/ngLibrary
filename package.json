@@ -12,7 +12,8 @@
     "unit-tests:coverage": "jest --config ./jest/app.config.js --coverage",
     "cypress": "./node_modules/.bin/cypress open",
     "e2e": "./node_modules/.bin/cypress run",
-    "build:e2e:fixtures": "./node_modules/.bin/ts-node ./cypress/support/scripts/simplify-open-library-books-json.ts"
+    "build:e2e:fixtures": "./node_modules/.bin/ts-node ./cypress/support/scripts/simplify-open-library-books-json.ts",
+    "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points"
   },
   "greenkeeper": {
     "ignore": [
