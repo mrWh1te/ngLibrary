@@ -1,5 +1,13 @@
-import { Component, Input, Output, EventEmitter, ViewChild, ElementRef, ChangeDetectionStrategy } from "@angular/core"
-import { MatIcon } from '@angular/material'
+import { 
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ViewChild,
+  ElementRef,
+  ChangeDetectionStrategy
+} from "@angular/core"
+import { MatIcon } from '@angular/material/icon'
 
 import { Observable } from 'rxjs'
 
