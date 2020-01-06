@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core"
 import { CommonModule } from '@angular/common'
-import { MatIconModule } from '@angular/material'
+import { MatIconModule } from '@angular/material/icon'
 import { FlexLayoutModule } from '@angular/flex-layout'
 
 import { ModalComponent } from './modal/modal.component'

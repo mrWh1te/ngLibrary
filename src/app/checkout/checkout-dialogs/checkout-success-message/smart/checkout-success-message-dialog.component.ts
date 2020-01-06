@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from "@angular/core"
-import { MatDialogRef } from '@angular/material'
+import { MatDialogRef } from '@angular/material/dialog'
 
 import { Store, select } from '@ngrx/store'
 import { Observable } from 'rxjs'

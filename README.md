@@ -12,6 +12,8 @@ Have fun!
 
 The app itself is pretty simple. It's two pages: home & checkout. In terms of features, it has a Shopping Cart (UI as a Basket), Books, a basic local storage cache, a Selected Book area, a basic Form to Checkout, and a Dialog (modal) for a success message on Checkout.
 
+The app was built from fresh with Angular v8 and later updated to Angular v9 rc7.
+
 These are the main dependencies of this app: `@angular/cdk`, `@angular/flex-layout`, `@angular/material`, `@ngrx/store`, `@ngrx/effects`, `@ngrx/entity`, `@ngrx/router-store`, `@ngrx/store-devtools`, and `ngrx-store-localstorage`. It follows a Single-Source of Truth for the application state by using NgRX's Store. It uses `flex-layout` to lay out components programmatically, de-coupling the layout portion of styling UI. Angular's `Material` was used for the form's inputs and main header toolbar. The drop-down for the Cart is powered by the CDK's `Overlay`. 
 
 ## CI & CD
