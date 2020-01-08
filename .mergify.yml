@@ -14,7 +14,7 @@ pull_request_rules:
       - status-success=Travis CI - Pull Request
       - status-success=Travis CI - Branch
       - status-success=greenkeeper/verify
-      - conflict=false
+      -conflict
     actions:
       merge:
         method: merge
@@ -25,7 +25,7 @@ pull_request_rules:
       - author=dependabot[bot]
       - status-success=Travis CI - Pull Request
       - status-success=Travis CI - Branch
-      - conflict=false
+      -conflict
     actions:
       merge:
         method: merge
