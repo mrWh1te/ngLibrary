@@ -2,8 +2,6 @@ pull_request_rules:
   - name: automatic merge when GitHub branch protection passes
     conditions:
       - base=master
-      - author!=greenkeeper[bot]
-      - author!=dependabot[bot]
       - label=automerge
     actions:
       merge:
