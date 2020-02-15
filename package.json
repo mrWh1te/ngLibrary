@@ -15,7 +15,8 @@
     "build:e2e:fixtures": "./node_modules/.bin/ts-node ./cypress/support/scripts/simplify-open-library-books-json.ts",
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook -o dist/ngLibrary/storybook",
+    "build-demo": "ng build --prod && npm run build-storybook"
   },
   "greenkeeper": {
     "ignore": [
