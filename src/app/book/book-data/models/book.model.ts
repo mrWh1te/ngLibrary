@@ -1,4 +1,17 @@
-export class Book {
+export interface BookInterface {
+  id: number
+  isbn: string
+  title?: string
+  author?: string
+  genre?: string
+  summary?: string
+  description?: string
+  released?: Date
+  cover?: {small: string, medium: string, large: string}
+  authors?: {name: string}[]
+}
+
+export class Book implements BookInterface {
 
   constructor(
     public id: number,
