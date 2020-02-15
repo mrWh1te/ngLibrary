@@ -65,6 +65,12 @@ You'll need it to run the Angular Development server and build the Production ve
 
 To run a development server locally (so you can see the app running), run `ng serve`. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Storybook
+
+This project has a separate [Storybook app](http://nglibrary-demo.netlify.com/storybook) that demonstrates all of the UI components. If you're new to Storybook, I recommend reading [the offical Introduction](https://storybook.js.org/docs/basics/introduction/).
+
+Storybook is a powerful tool in the "UI first development" approach. Along with the useful pattern of separating smart logic from UI, with two different components, this method can be quite effective in reducing development time by iterating over the UI first then building the smart logic once, and only once.
+
 ## Books Seed
 
 There is a `books-isbns.seed.json` which has an array of ISBN-10 strings representing all the books listed in the App. All of those ISBN's were copied from OpenLibrary.org. If you add or remove ISBN's from the Seed, you need to run the `build:e2e:fixtures` script like so:
