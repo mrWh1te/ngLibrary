@@ -24,14 +24,14 @@ storiesOf('Book/SelectedBookUiComponent', module)
     })
   )
   .addDecorator(withKnobs)
-  .add('Broken Image Example', () => {
+  .add('Cat Image Example', () => {
     const book = object('Book', {
       id: 5,
       isbn: 'isbn-example',
       title: 'Book Title',
       author: 'Book Author',
       cover: {
-        large: ''
+        large: 'https://placekitten.com/250/400'
       }
     })
 
@@ -43,14 +43,14 @@ storiesOf('Book/SelectedBookUiComponent', module)
       }
     }
   })
-  .add('Cat Image Example', () => {
+  .add('Broken Image Example', () => {
     const book = object('Book', {
       id: 5,
       isbn: 'isbn-example',
       title: 'Book Title',
       author: 'Book Author',
       cover: {
-        large: 'https://placekitten.com/250/400'
+        large: ''
       }
     })
 

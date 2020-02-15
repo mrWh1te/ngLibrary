@@ -47,14 +47,6 @@ storiesOf('Books/BooksUiComponent', module)
     })
   )
   .addDecorator(withKnobs)
-  .add('0 Books Example', () => {
-    return {
-      template,
-      props: {
-        books: object('Books', [])
-      }
-    }
-  })
   .add('3 Book Example', () => {
     return {
       template,
@@ -62,6 +54,14 @@ storiesOf('Books/BooksUiComponent', module)
         books: object('Books', [
           book1, book2, book3
         ])
+      }
+    }
+  })
+  .add('0 Books Example', () => {
+    return {
+      template,
+      props: {
+        books: object('Books', [])
       }
     }
   });

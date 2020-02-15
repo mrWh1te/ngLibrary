@@ -24,25 +24,6 @@ storiesOf('Book/BookUiComponent', module)
     })
   )
   .addDecorator(withKnobs)
-  .add('Broken Image Example', () => {
-    const book = object('Book', {
-      id: 5,
-      isbn: 'isbn-example',
-      title: 'title',
-      author: 'author',
-      genre: 'genre',
-      summary: 'example summary',
-      description: 'example description',
-    })
-
-    return {
-      template,
-      props: {
-        book,
-        bookClicked
-      }
-    }
-  })
   .add('Cat Image Example', () => {
     const book = object('Book', {
       id: 5,
@@ -55,6 +36,25 @@ storiesOf('Book/BookUiComponent', module)
       cover: {
         medium: 'https://placekitten.com/200/286'
       }
+    })
+
+    return {
+      template,
+      props: {
+        book,
+        bookClicked
+      }
+    }
+  })
+  .add('Broken Image Example', () => {
+    const book = object('Book', {
+      id: 5,
+      isbn: 'isbn-example',
+      title: 'title',
+      author: 'author',
+      genre: 'genre',
+      summary: 'example summary',
+      description: 'example description',
     })
 
     return {
