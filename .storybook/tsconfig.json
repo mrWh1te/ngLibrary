@@ -1,0 +1,18 @@
+{
+  "extends": "../tsconfig.app.json",
+  "compilerOptions": {
+    "types": [
+      "node"
+    ]
+  },
+  "exclude": [
+    "../cypress/**/*.spec.ts",
+    "../src/**/*.spec.ts"
+  ],
+  "include": [
+    "../src/**/*"
+  ],
+  "files": [
+    "./typings.d.ts"
+  ]
+}

@@ -5,5 +5,8 @@
     <ng-container *ngFor="let book of books">
       <book [book]="book" fxFlex="0 0 17.6%" fxFlex.lt-md="0 0 44%" fxFlex.lt-sm="0 0 100%"></book>
     </ng-container>
+    <div *ngIf="books.length === 0">
+      No Books Yet
+    </div>
   </section>
 </article>
