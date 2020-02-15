@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/mrWh1te/ngLibrary.svg?branch=master)](https://travis-ci.com/mrWh1te/ngLibrary) [![Greenkeeper badge](https://badges.greenkeeper.io/mrWh1te/ngLibrary.svg)](https://greenkeeper.io/) [![Mergify Status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/mrWh1te/ngLibrary&style=flat)](https://mergify.io) [![Netlify Status](https://api.netlify.com/api/v1/badges/c41968d0-1b4e-4a0d-91a3-bdfec3f32305/deploy-status)](https://app.netlify.com/sites/nglibrary-demo/deploys)
 
-[Demo](http://nglibrary-demo.netlify.com)
+[Demo](http://nglibrary-demo.netlify.com) - [Storybook Demo](http://nglibrary-demo.netlify.com/storybook)
 
 This is a simple app that pretends to be an online gateway into checking out books from your local library. It follows best practices established by community leaders in Angular, RxJS, NgRX and beyond (including a tiny bit by me).
 
@@ -64,6 +64,12 @@ You'll need it to run the Angular Development server and build the Production ve
 ## Development server
 
 To run a development server locally (so you can see the app running), run `ng serve`. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Storybook
+
+This project has a separate [Storybook app](http://nglibrary-demo.netlify.com/storybook) that demonstrates all of the UI components. If you're new to Storybook, I recommend reading [the offical Introduction](https://storybook.js.org/docs/basics/introduction/).
+
+Storybook can be part of a "UI first development" approach. It's useful for organizations that have a firm grasp of the problem they are trying to solve, but have yet to figure out the exact details pertaining to the solution. In building the UI components first, team members can iterate on the UI with product, business, design, and more, before every writing any smart business logic. This allows teams to explore solutions in the UI layer before investing further resources. This cuts down iterations in building new features, while reducing the dev work to writing the business logic only once.
 
 ## Books Seed
 
