@@ -16,7 +16,7 @@ const bookClicked = action('Book Clicked')
 const template = `<book-ui [book]="book" (onSelect)="bookClicked()" style="max-width: 175px;margin: 0 auto;display:block;"></book-ui>`
 
 // Stories
-storiesOf('Book/BookUiComponent', module)
+storiesOf('Book/Book', module)
   .addDecorator(
     moduleMetadata({
       declarations: [BookUiComponent],

@@ -16,7 +16,7 @@ const onAddToBasket = action('Book Added to Basket')
 const template = `<selected-book-ui [selectedBook]="book" (onAddToBasket)="onAddToBasket()" style="max-width: 250px;margin: 0 auto;display:block;"></selected-book-ui>`
 
 // Stories
-storiesOf('Book/SelectedBookUiComponent', module)
+storiesOf('Book/Selected Book', module)
   .addDecorator(
     moduleMetadata({
       declarations: [SelectedBookUiComponent],

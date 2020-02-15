@@ -13,7 +13,6 @@ import { BookUiComponent } from '../../../../../book/book-widgets/widgets/book/u
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { Store } from '@ngrx/store'
 
-
 // Data
 const book1 = {
   id: 1,
@@ -38,7 +37,7 @@ const book3 = {
 const template = `<books-ui [books]="books" style="display:block; width:100%; height:100%;"></books-ui>`
 
 // Stories
-storiesOf('Books/BooksUiComponent', module)
+storiesOf('Books/Books', module)
   .addDecorator(
     moduleMetadata({
       declarations: [BooksUiComponent, BookUiComponent, BookComponent],

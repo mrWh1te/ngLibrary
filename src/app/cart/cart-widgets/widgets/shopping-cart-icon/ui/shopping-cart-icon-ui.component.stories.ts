@@ -37,7 +37,7 @@ class MockDropDownComponent {
 class MockShoppingCartComponent {}
 
 // Stories
-storiesOf('Cart/ShoppingCartIconUiComponent', module)
+storiesOf('Cart/Shopping Cart Icon', module)
   .addDecorator(
     moduleMetadata({
       declarations: [ShoppingCartIconUiComponent, MockDropDownComponent, MockShoppingCartComponent],
