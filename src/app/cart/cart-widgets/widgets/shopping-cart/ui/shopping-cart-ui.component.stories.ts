@@ -84,7 +84,7 @@ storiesOf('Cart/Shopping Cart', module)
       }
     }
   })
-  .add('Checkout (default) Example', () => {
+  .add('Checkout (default UI) Example', () => {
     const books = object('Books', [
       book1, book2, book3
     ])
