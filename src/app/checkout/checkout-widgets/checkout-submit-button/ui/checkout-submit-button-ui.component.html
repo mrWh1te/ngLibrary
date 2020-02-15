@@ -3,7 +3,8 @@
     mat-raised-button
     class="primary"
     (click)="onSubmit.emit()"
-    [disabled]="isDisabled">
+    [disabled]="isDisabled"
+    [style.color]="fontColor ? fontColor : 'rgba(0,0,0,.87)'">
     Checkout
   </button>
 </div>

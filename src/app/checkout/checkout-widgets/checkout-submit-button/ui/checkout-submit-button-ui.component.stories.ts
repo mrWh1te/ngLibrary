@@ -1,6 +1,6 @@
 // Storybook dependencies
 import { moduleMetadata, storiesOf } from '@storybook/angular'
-import { withKnobs, boolean, number } from '@storybook/addon-knobs'
+import { withKnobs, boolean, number, color } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 
 // Component Storybooking
@@ -14,8 +14,8 @@ const onSubmit = action('Submit Button Click')
 
 // Template
 const template = `
-  <div style="padding-top: 40px;">
-    <checkout-submit-button-ui [isDisabled]="isDisabled" (onSubmit)="onSubmit()" style="max-width: 175px;margin: 0 auto;display:block;"></checkout-submit-button-ui>
+  <div style="padding-top: 40px; text-align: center;">
+    <checkout-submit-button-ui [isDisabled]="isDisabled" [fontColor]="fontColor" (onSubmit)="onSubmit()" style="display:inline-block;"></checkout-submit-button-ui>
   </div>
 `
 
@@ -30,12 +30,14 @@ storiesOf('Checkout/Submit Button', module)
   .addDecorator(withKnobs)
   .add('Example', () => {
     const isDisabled = boolean('Is Disabled', false)
+    const fontColor = color('Button Font Color', 'rgba(0,0,0,.87)')
 
     return {
       template,
       props: {
         // Knobs
         isDisabled,
+        fontColor,
         // Actions
         onSubmit
       }

@@ -9,4 +9,6 @@ import { Component, Output, EventEmitter, Input, ChangeDetectionStrategy } from 
 export class CheckoutSubmitButtonUiComponent {
   @Output() onSubmit: EventEmitter<any> = new EventEmitter<any>()
   @Input() isDisabled: boolean
+
+  @Input() fontColor: string
 }
