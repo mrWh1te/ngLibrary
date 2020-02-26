@@ -1,18 +1,70 @@
 # ngLibrary
 
-[![Build Status](https://travis-ci.com/mrWh1te/ngLibrary.svg?branch=master)](https://travis-ci.com/mrWh1te/ngLibrary) [![Greenkeeper badge](https://badges.greenkeeper.io/mrWh1te/ngLibrary.svg)](https://greenkeeper.io/) [![Mergify Status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/mrWh1te/ngLibrary&style=flat)](https://mergify.io) [![Netlify Status](https://api.netlify.com/api/v1/badges/c41968d0-1b4e-4a0d-91a3-bdfec3f32305/deploy-status)](https://app.netlify.com/sites/nglibrary-demo/deploys)
+[![Build Status](https://travis-ci.com/mrWh1te/ngLibrary.svg?branch=master)](https://travis-ci.com/mrWh1te/ngLibrary) 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mrWh1te/ngLibrary.svg)](https://greenkeeper.io/) 
+[![Mergify Status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/mrWh1te/ngLibrary&style=flat)](https://mergify.io) 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c41968d0-1b4e-4a0d-91a3-bdfec3f32305/deploy-status)](https://app.netlify.com/sites/nglibrary-demo/deploys)
 
-[Demo](http://nglibrary-demo.netlify.com) - [Storybook Demo](http://nglibrary-demo.netlify.com/storybook)
+[App Demo](http://nglibrary-demo.netlify.com) - [App's Storybook](http://nglibrary-demo.netlify.com/storybook)
 
-This is a simple app that pretends to be an online gateway into checking out books from your local library. It follows best practices established by community leaders in Angular, RxJS, NgRX and beyond (including a tiny bit by me).
+This simple app is a pretend online gateway, to check out books from your local library.
+
+It uses advanced architecture to manage complexity of Enterprise applications through the use of best coding patterns established by community leaders in Angular, RxJS, NgRX and beyond (including a tiny bit by me).
 
 Have fun!
 
-## Overview
+## App Overview
 
-The app itself is pretty simple. It's two pages: home & checkout. In terms of features, it has a Shopping Cart (UI as a Basket), Books, a basic local storage cache, a Selected Book area, a basic Form to Checkout, and a Dialog (modal) for a success message on Checkout.
+The UX and UI are simple. This project's focus is on a strong coding foundation that promotes healthy Single Page Application growth. It helps maintain Developer Experience while reducing risk by strongly separating concerns. 
 
-The app was built from fresh with Angular v8 and later updated to Angular v9 rc7.
+The app has two pages:
+
+### Home Page
+You can add books to your Basket. There are validation rules as to what you can and cannot add. For example, you cannot add the same book twice. There's a dropdown menu to remove books from your Basket, by clicking the Basket icon in the top nav. When you are ready to Checkout, click the navigation icon at the far right.
+
+### Checkout Page
+Displays the Basket's contents and provides a form to reserve these books for "pickup". The form has basic validation rules and will give you helpful feedback in getting it right. Now since this is a pretend app, there is no actual reservations occuring, when you submit the form.
+
+## Code Overview
+This project is guided by these primary values:
+1) Single Responsibility Principle (SRP)
+    - separate concerns, reduce code risks
+2) Minimal Time to Interactive (TTI)
+    - speed, latency, big O complexity
+
+The coding patterns focus first on reducing high cost code risks, then focuses on minimizing Time to Interactive for a smooth User Experience.
+
+### Single Responsiblity Principle
+This project favors Composition. The code has strongly separated concerns into small singular purposed units that are composed as an application. This reduces some high cost code risks such as having a piece of code that becomes costly to remove, through entanglement with other codes, but causes a problem in Production as it's not scaling to demand, costing the business. Being able to delete or replace that piece of code quickly, is important like in a formula one car race, the pit stop crew replaces broken parts as fast as possible, to get their team's car back on track to win the game!
+
+When the code is highly composable, the application becomes more affordably flexible. For example, it's easy in this project to change which page is the home page, where various components go, changing the layout and how data/logic is loaded per page. It's all highly separated, and somewhat composable, which affords cheaper flexibility in making drastic changes to an advanced web application.
+
+Also, it's much easier to cover small pieces of code in testing. Unit-testing becomes powerful when paired with enough E2E testing, in this design.  
+
+#### SRP Derived Patterns
+When it comes to separating the application, the first step is by domain, as in Domain Driven Development (DDD). Each domain is like a different type of data, so in this project, the domains are *book*, *books*, *cart* and *checkout*.
+
+The next level of separation depends on the size of the application. For sites with many pages with many features, it's best to break each domain down into the single features, but that will be unnecessary for most web apps. Once the proper scaffolding is in place, there are three main module types:
+
+1) Data Modules
+    - Data Reducers, Actions, Effects, Selectors, Models, Services
+2) Component Modules
+    - Smart/Container, Dumb/UI Components
+3) View Modules
+    - View Components (ie Pages), Routing
+
+None of these are required per domain. It's on a "as needed basis" coding pattern to provide an additional layer of separation that will give room to the app to grow with the code. It's simple enough to manage cross-module dependencies too that goes up (#3 to #1). View Modules' View Components will use HTML/CSS and Container/UI Components so they import Component Modules. Each Component Module imports Data Modules, depending on the data/business needs of their Components. Data Modules import what they need to provide data and the business logic to interact with it. That's about it. 
+
+This pattern can grow with the needs of the app, by adding an additional layer ie breaking Component Modules into Sub-Component Modules (ie Component-Dialog Modules). But preferarbly, if the app is going to be massive in pages & features, to include an additional layer of separation between Modules and Domains, ie Domain Features.
+
+### Minimal Time to Interactive
+User Experience is crucial to every app. If a market is saturated, usually the app with the best User Experience wins out. Everyone enjoys an intuitive, fun animated, app. So this project's code is focused on minimizing TTI by managing factors that effect app performance like bundle sizes, big O complexity, misuse of DOM elements, poor FPS in animations, and so forth. We want the app to be ready for the User to experience, to interact with, as soon as possible, every step of the way. That's how we'll not let the competition ever out pace us.
+
+#### Minimal TTI Derived Patterns
+
+[Storybook](https://storybook.js.org/) has been setup as an example to demonstrate the feasibility of *UI first development*, as a means to reduce development time in building new features. If your team is writing smart/business logic over and over again while building new features, it's highly recommended to try building the UI components first, so your development team can build the more complex business logic once.
+
+The app is running Angular v9.
 
 These are the main dependencies of this app: `@angular/cdk`, `@angular/flex-layout`, `@angular/material`, `@ngrx/store`, `@ngrx/effects`, `@ngrx/entity`, `@ngrx/router-store`, `@ngrx/store-devtools`, and `ngrx-store-localstorage`. It follows a Single-Source of Truth for the application state by using NgRX's Store. It uses `flex-layout` to lay out components programmatically, de-coupling the layout portion of styling UI. Angular's `Material` was used for the form's inputs and main header toolbar. The drop-down for the Cart is powered by the CDK's `Overlay`. 
 

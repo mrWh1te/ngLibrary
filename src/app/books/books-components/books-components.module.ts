@@ -4,16 +4,16 @@ import { FlexLayoutModule } from '@angular/flex-layout'
 
 import { BooksDataModule } from '../books-data/books-data.module'
 
-import { BooksComponent } from './widgets/books/smart/books.component'
-import { BooksUiComponent } from './widgets/books/ui/books-ui.component'
-import { BookWidgetsModule } from 'src/app/book/book-widgets/book-widgets.module'
+import { BooksComponent } from './components/books/smart/books.component'
+import { BooksUiComponent } from './components/books/ui/books-ui.component'
+import { BookComponentsModule } from '../../book/book-components/book-components.module'
 
 @NgModule({
   imports: [
     CommonModule,
     FlexLayoutModule,
     BooksDataModule,
-    BookWidgetsModule
+    BookComponentsModule
   ],
   declarations: [
     // Smart
@@ -25,8 +25,8 @@ import { BookWidgetsModule } from 'src/app/book/book-widgets/book-widgets.module
     BooksComponent
   ]
 })
-export class BooksWidgetsModule {
+export class BooksComponentsModule {
   constructor() {
-    console.log('[BooksWidgetsModule] constructor()')
+    console.log('[BooksComponentsModule] constructor()')
   }
 }

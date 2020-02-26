@@ -6,7 +6,7 @@ import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatIconModule } from '@angular/material/icon'
 
 import { LayoutViewComponent } from './views/layout/layout-view.component'
-import { CartWidgetsModule } from 'src/app/cart/cart-widgets/cart-widgets.module'
+import { CartComponentsModule } from 'src/app/cart/cart-components/cart-components.module'
 
 @NgModule({
   imports: [
@@ -15,7 +15,7 @@ import { CartWidgetsModule } from 'src/app/cart/cart-widgets/cart-widgets.module
     FlexLayoutModule,
     MatToolbarModule,
     MatIconModule,
-    CartWidgetsModule,
+    CartComponentsModule,
   ],
   declarations: [
     // Views
