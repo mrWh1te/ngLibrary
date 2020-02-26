@@ -3,7 +3,9 @@
 [![Build Status](https://travis-ci.com/mrWh1te/ngLibrary.svg?branch=master)](https://travis-ci.com/mrWh1te/ngLibrary) 
 [![Greenkeeper badge](https://badges.greenkeeper.io/mrWh1te/ngLibrary.svg)](https://greenkeeper.io/) 
 [![Mergify Status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/mrWh1te/ngLibrary&style=flat)](https://mergify.io) 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c41968d0-1b4e-4a0d-91a3-bdfec3f32305/deploy-status)](https://app.netlify.com/sites/nglibrary-demo/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c41968d0-1b4e-4a0d-91a3-bdfec3f32305/deploy-status)](https://app.netlify.com/sites/nglibrary-demo/deploys) 
+
+<img src="https://repository-images.githubusercontent.com/189280438/c0b58800-a72d-11e9-9bc5-b725f0fc4e66" align="right" width="120" />
 
 [App Demo](http://nglibrary-demo.netlify.com) - [App's Storybook](http://nglibrary-demo.netlify.com/storybook)
 
