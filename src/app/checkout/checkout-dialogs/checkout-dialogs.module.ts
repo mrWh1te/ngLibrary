@@ -7,7 +7,7 @@ import { CheckoutSuccessMessageDialogComponent } from './checkout-success-messag
 import { CheckoutSuccessMessageDialogUiComponent } from './checkout-success-message/ui/checkout-success-message-dialog-ui.component'
 
 /**
- * @description   Necessary code separation other-wise circular dependency between CheckoutDataModule & CheckoutWidgetsModule
+ * @description   Necessary code separation other-wise circular dependency between CheckoutDataModule & CheckoutComponentsModule
  */
 @NgModule({
   imports: [

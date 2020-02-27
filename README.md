@@ -100,7 +100,7 @@ There are two core values that guide this repo.
 To accomplish that, we follow the best practices & principles established by Angular community leaders and core contributors in regards to the dependencies we use. From that, we follow particular coding patterns to maintain our values. These include, but are not limited too: 
 
 1) Separation of business logic and UI while leveraging the `onPush` change detection strategy
-2) Multiple Types of Modules per Domain (Views/Routing, Widgets, Data, etc)
+2) Multiple Types of Modules per Domain (Views/Routing, Components, Data, etc)
 3) Unit & E2E testing
 4) Single Responsibilty Principle in Services, Effects, Actions, basically everything in various scopes (strong code separation)
 5) NgRX Store as Single Source of Truth in terms of upstream vs downstream logic
@@ -153,7 +153,7 @@ Also, we don't currently have a Cache-Busting mechanism in place for when you ad
 
 ## Code Scaffolding
 
-The main feature modules were separated into more modules based on type. The main three types are `views`, `widgets` and `data`. This is for our code extensibility value. By not grouping them all together in 1 module, we have greater code flexibility in adding and replacing components in various pages while only importing what we need (and reducing the possibility of circular dependencies). In the future, an article will be published on CopynPaste.me that dives into the reasoning behind the Scaffolding of this project, including the types of Modules.
+The main feature modules were separated into more modules based on type. The main three types are `views`, `components` and `data`. This is for our code extensibility value. By not grouping them all together in 1 module, we have greater code flexibility in adding and replacing components in various pages while only importing what we need (and reducing the possibility of circular dependencies). In the future, an article will be published on CopynPaste.me that dives into the reasoning behind the Scaffolding of this project, including the types of Modules.
 
 ## Build
 

@@ -8,8 +8,8 @@ import { BooksUiComponent } from './books-ui.component'
 
 // Component Dependency
 import { MatCardModule } from '@angular/material/card'
-import { BookComponent } from '../../../../../book/book-widgets/widgets/book/smart/book.component'
-import { BookUiComponent } from '../../../../../book/book-widgets/widgets/book/ui/book-ui.component'
+import { BookComponent } from '../../../../../book/book-components/components/book/smart/book.component'
+import { BookUiComponent } from '../../../../../book/book-components/components/book/ui/book-ui.component'
 import { FlexLayoutModule } from '@angular/flex-layout'
 import { Store } from '@ngrx/store'
 
