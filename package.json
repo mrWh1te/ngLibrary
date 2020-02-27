@@ -6,7 +6,8 @@
     "lint": "ng lint",
     "start": "ng serve",
     "build": "ng build",
-    "analyze": "ng build --prod --stats-json && webpack-bundle-analyzer ./dist/ngLibrary/stats-es2015.json",
+    "analyze": "ng build --prod --stats-json && webpack-bundle-analyzer -O -m static ./dist/ngLibrary/stats-es2015.json",
+    "move-analysis-report": "cp report.html dist/ngLibrary/report.html",
     "tests": "npm run unit-tests && npm run e2e",
     "unit-tests": "jest --config ./jest/app.config.js",
     "unit-tests:watch": "jest --config ./jest/app.config.js --watch",
@@ -17,7 +18,7 @@
     "postinstall": "ngcc --properties es2015 browser module main --first-only --create-ivy-entry-points",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o dist/ngLibrary/storybook",
-    "build-demo": "ng build --prod && npm run build-storybook"
+    "build-demo": "npm run analyze && npm run move-analysis-report && npm run build-storybook"
   },
   "greenkeeper": {
     "ignore": [
