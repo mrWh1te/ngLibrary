@@ -6,6 +6,7 @@
     "lint": "ng lint",
     "start": "ng serve",
     "build": "ng build",
+    "analyze": "ng build --prod --stats-json && webpack-bundle-analyzer ./dist/ngLibrary/stats-es2015.json",
     "tests": "npm run unit-tests && npm run e2e",
     "unit-tests": "jest --config ./jest/app.config.js",
     "unit-tests:watch": "jest --config ./jest/app.config.js --watch",
@@ -76,6 +77,7 @@
     "ts-loader": "^6.0.4",
     "ts-node": "^8.3.0",
     "tslint": "~5.17.0",
-    "typescript": "~3.6.4"
+    "typescript": "~3.6.4",
+    "webpack-bundle-analyzer": "^3.6.0"
   }
 }
