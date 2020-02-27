@@ -11,58 +11,72 @@
 
 This simple app is a pretend online gateway, to check out books from your local library.
 
-It uses advanced architecture to manage complexity of Enterprise applications through the use of best coding patterns established by community leaders in Angular, RxJS, NgRX and beyond (including a tiny bit by me).
+It uses advanced architecture to manage large complexity, found in Enterprise applications, through the use of best coding patterns established by community leaders in Angular, CDK, RxJS, Angular Flex-Layout, NgRX, Angular Material, and beyond (including a tiny bit by me).
 
 Have fun!
 
 ## App Overview
 
-The UX and UI are simple. This project's focus is on a strong coding foundation that promotes healthy Single Page Application growth. It helps maintain Developer Experience while reducing risk by strongly separating concerns. 
+This project focuses on providing a strong coding foundation to promote healthy Single Page Application life cycle. These applications are like children, and in order for them to grow into healthy contributing members of society, we must provide them the necessary structure that promotes their individual growth.
 
-The app has two pages:
+The application has a simple UX & UI to magnify the clarity of the focused foundation. Therefore, it only has two pages:
 
 ### Home Page
-You can add books to your Basket. There are validation rules as to what you can and cannot add. For example, you cannot add the same book twice. There's a dropdown menu to remove books from your Basket, by clicking the Basket icon in the top nav. When you are ready to Checkout, click the navigation icon at the far right.
+A simple display of Book Inventory and whatever book is selected. You can a selected book to your Basket. When you are ready to reserve your books, click the navigation icon in the top-right corner.
 
 ### Checkout Page
-Displays the Basket's contents and provides a form to reserve these books for "pickup". The form has basic validation rules and will give you helpful feedback in getting it right. Now since this is a pretend app, there is no actual reservations occuring, when you submit the form.
+Displays the Basket's contents and provides a form to reserve these books for "pickup". This is a pretend app, therefore no actual reservations occur, when submitting the form.
 
 ## Code Overview
 This project is guided by these primary values:
 1) Single Responsibility Principle (SRP)
-    - separate concerns, reduce code risks
+    - separate concerns, reduce code risks, promote individual growth
 2) Minimal Time to Interactive (TTI)
-    - speed, latency, big O complexity
+    - loading initial and new pages
+3) Don't Reinvent the Wheel
+    - balance between DRY & WET code
 
 The coding patterns focus first on reducing high cost code risks, then focuses on minimizing Time to Interactive for a smooth User Experience.
 
 ### Single Responsiblity Principle
-This project favors Composition. The code has strongly separated concerns into small singular purposed units that are composed as an application. This reduces some high cost code risks such as having a piece of code that becomes costly to remove, through entanglement with other codes, but causes a problem in Production as it's not scaling to demand, costing the business. Being able to delete or replace that piece of code quickly, is important like in a formula one car race, the pit stop crew replaces broken parts as fast as possible, to get their team's car back on track to win the game!
+This project favors *composition* in its application architecture. Therefore, the code is a composition of separated concerns into primarily small single purposed units. This pragmatic approach breaks down the complexity of large scale Single Page Applications, into manageable bite size pieces.
 
-When the code is highly composable, the application becomes more affordably flexible. For example, it's easy in this project to change which page is the home page, where various components go, changing the layout and how data/logic is loaded per page. It's all highly separated, and somewhat composable, which affords cheaper flexibility in making drastic changes to an advanced web application.
+This reduces risks involved in project development, efforts in maintaining, developing, fixing features, while promoting flexibility and growth. The application will not hinder the code's development, and the code will not falter the application's growth.
 
-Also, it's much easier to cover small pieces of code in testing. Unit-testing becomes powerful when paired with enough E2E testing, in this design.  
+It's like in a formula one car race, the pit stop crew hastily replaces broken parts, to get their team back in the game as fast as possible!  
 
-#### SRP Derived Patterns
-When it comes to separating the application, the first step is by domain, as in Domain Driven Development (DDD). Each domain is like a different type of data, so in this project, the domains are *book*, *books*, *cart* and *checkout*.
+#### Scaffolding & Modules for Composing an App
+When it comes to separating the application, the first step is by domain, as in [Domain Driven Design (DDD)](https://en.wikipedia.org/wiki/Domain-driven_design). ngLibrary has the following domains: *book*, *books*, *cart* and *checkout* used in its initial layer of [application scaffolding](/src/app).
 
-The next level of separation depends on the size of the application. For sites with many pages with many features, it's best to break each domain down into the single features, but that will be unnecessary for most web apps. Once the proper scaffolding is in place, there are three main module types:
+From there, ngLibrary adds an additional layer of folders for splitting code into the following main module types:
 
 1) Data Modules
     - Data Reducers, Actions, Effects, Selectors, Models, Services
 2) Component Modules
-    - Smart/Container, Dumb/UI Components
+    - Smart/Container Components, Dumb/UI Components
 3) View Modules
-    - View Components (ie Pages), Routing
+    - View Components (ie Pages or pieces of a Page), Routing
 
-None of these are required per domain. It's on a "as needed basis" coding pattern to provide an additional layer of separation that will give room to the app to grow with the code. It's simple enough to manage cross-module dependencies too that goes up (#3 to #1). View Modules' View Components will use HTML/CSS and Container/UI Components so they import Component Modules. Each Component Module imports Data Modules, depending on the data/business needs of their Components. Data Modules import what they need to provide data and the business logic to interact with it. That's about it. 
+None of these are required for any one domain. It's an "as needed basis" coding pattern to provide an additional layers of separation that gives more room for each piece to grow. The cross-module dependencies follow a simple pattern. View Modules' View Components use HTML/CSS and Smart/UI Components, so they'll import the Component Modules. Component Modules import Data Modules, depending on the data/business needs of their Components. Data Modules might import other Data Modules that its depends on.
 
-This pattern can grow with the needs of the app, by adding an additional layer ie breaking Component Modules into Sub-Component Modules (ie Component-Dialog Modules). But preferarbly, if the app is going to be massive in pages & features, to include an additional layer of separation between Modules and Domains, ie Domain Features.
+#### Component Layers for Composing an App Page
+
+Layout -> View -> Smart -> UI
 
 ### Minimal Time to Interactive
 User Experience is crucial to every app. If a market is saturated, usually the app with the best User Experience wins out. Everyone enjoys an intuitive, fun animated, app. So this project's code is focused on minimizing TTI by managing factors that effect app performance like bundle sizes, big O complexity, misuse of DOM elements, poor FPS in animations, and so forth. We want the app to be ready for the User to experience, to interact with, as soon as possible, every step of the way. That's how we'll not let the competition ever out pace us.
 
 #### Minimal TTI Derived Patterns
+lazy loading pages, minimal initial bundle patterns, shared module (DX vs bundle sizes)
+
+### Managing more Complexity
+For sites with many pages with many features, ie the app has a wrapper to customize it on a country by country basis. For that kind of complexity, it's best to break each domains into further folders with an additional layer (on as needed basis) ie single features. Making code more singular purposed, smaller through division, will facilitate in breaking down project complexity into more easier bite size pieces.
+
+WIP
+
+This pattern can grow with the needs of the app, by adding an additional layer ie breaking Component Modules into Sub-Component Modules (ie Component-Dialog Modules). But preferably, if the app is going to be massive in pages & features, to include an additional layer of separation between Modules and Domains, ie Domain Features.
+
+### Storybook
 
 [Storybook](https://storybook.js.org/) has been setup as an example to demonstrate the feasibility of *UI first development*, as a means to reduce development time in building new features. If your team is writing smart/business logic over and over again while building new features, it's highly recommended to try building the UI components first, so your development team can build the more complex business logic once.
 
