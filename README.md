@@ -5,7 +5,7 @@
 [![Mergify Status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/mrWh1te/ngLibrary&style=flat)](https://mergify.io) 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c41968d0-1b4e-4a0d-91a3-bdfec3f32305/deploy-status)](https://app.netlify.com/sites/nglibrary-demo/deploys) 
 
-<img src="https://repository-images.githubusercontent.com/189280438/c0b58800-a72d-11e9-9bc5-b725f0fc4e66" align="right" width="120" />
+<img src="https://repository-images.githubusercontent.com/189280438/c0b58800-a72d-11e9-9bc5-b725f0fc4e66" align="right" width="125" />
 
 [App Demo](http://nglibrary-demo.netlify.com) - [App's Storybook](http://nglibrary-demo.netlify.com/storybook)
 
@@ -69,9 +69,29 @@ None of these are required for any one domain. It's on an "as needed basis" codi
 #### Component Layers for Composing an App Page
 Setting aside the root module (`AppModule`) and how's that composed, let's consider how ngLibrary composes its pages. It uses multiple components in layers:
 
-<center>Layout Component → View Component → Smart Component → UI Component</center>
+<center>Layout Component → View Component → Smart Component(s) → UI Component(s)</center>
 
-ngLibrary, given its simple UX/UI, has only one Layout so only one Layout
+> Note: View Components can use UI Components directly, bypassing Smart Components. For example, a simple HTML based `BlockUIComponent` might not need a Smart Component.
+
+#### Layout Components
+The Layout is used at the root module level (`AppModule`). The composition of an app's pages is within the `Routes` of the [App Module's Routing Module](/src/app/app-routing.module.ts). The sole purpose of the Layout module is to provide the layout components that are full fledged templates, with designated areas (router-outlets) for View components.
+
+This level of separation loosely couples your layout(s) with the rest of your application. Therefore it changing it for all pages, for a few, without disrupting the app, is affordable.
+
+#### View Components
+View Components are dedicated to staging areas of a web page. This separation enables projects to move Views across pages, while providing structure for separating UI styling, and dedicating space for the use of Smart & UI components. This increases code predictability, decreasing effort to maintain, grow, adapt the application.
+
+You can learn more about View Components with this [official ngLibrary tutorial](https://copynpaste.me/de-couple-pages-components-styles) on them.
+
+#### Smart Components
+Smart Components are mostly used in View Components. They are what bring to life the dynamic UI Components, by handling their events (output) and providing necessary data (input). Smart Components `templates` are embedded, since they only declare their respective UI component. 
+
+For example, see ngLibrary's [ShoppingCartComponent](/src/app/cart/cart-components/components/shopping-cart/smart/shopping-cart.component.ts).
+
+#### UI Components
+UI Components focus on pieces of the User's Interface. This could be a list, a list item, a logo, and so on so forth. They mostly have one more Angular decorated Inputs and Outputs. So if a User clicks some where in an UI component, the component can output that event for a Smart component to handle. This separates the business logic from the UI.
+
+Whether or not you're familiar with [Storybook](https://storybook.js.org/), you can add a Storybook app to your project with ease, to demonstrate ALL of your UI components, in an interactive manner. It's worth checking out!
 
 ### Minimal Time to Interactive
 User Experience is crucial to every app. If a market is saturated, usually the app with the best User Experience wins out. Everyone enjoys an intuitive, fun animated, app. So this project's code is focused on minimizing TTI by managing factors that effect app performance like bundle sizes, big O complexity, misuse of DOM elements, poor FPS in animations, and so forth. We want the app to be ready for the User to experience, to interact with, as soon as possible, every step of the way. That's how we'll not let the competition ever out pace us.
@@ -85,10 +105,6 @@ For sites with many pages with many features, ie the app has a wrapper to custom
 WIP
 
 This pattern can grow with the needs of the app, by adding an additional layer ie breaking Component Modules into Sub-Component Modules (ie Component-Dialog Modules). But preferably, if the app is going to be massive in pages & features, to include an additional layer of separation between Modules and Domains, ie Domain Features.
-
-### Storybook
-
-[Storybook](https://storybook.js.org/) has been setup as an example to demonstrate the feasibility of *UI first development*, as a means to reduce development time in building new features. If your team is writing smart/business logic over and over again while building new features, it's highly recommended to try building the UI components first, so your development team can build the more complex business logic once.
 
 The app is running Angular v9.
 
