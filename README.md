@@ -9,59 +9,69 @@
 
 [App Demo](http://nglibrary-demo.netlify.com) - [App's Storybook](http://nglibrary-demo.netlify.com/storybook)
 
-This simple app is a pretend online gateway, to check out books from your local library.
+This simple app is a pretend gateway, to check out books from your local library.
 
-It uses advanced architecture to manage large complexity, found in Enterprise applications, through the use of best coding patterns established by community leaders in Angular, CDK, RxJS, Angular Flex-Layout, NgRX, Angular Material, and beyond (including a tiny bit by me).
+It uses advanced architecture to breakdown complexity found in Enterprise applications, through the use of the best coding patterns established by community leaders in Angular, CDK, RxJS, Angular Flex-Layout, NgRX, Angular Material, and a tiny bit by [Michael Lage](https://github.com/mrWh1te).
 
 Have fun!
 
 ## App Overview
 
-This project focuses on providing a strong coding foundation to promote healthy Single Page Application life cycle. These applications are like children, and in order for them to grow into healthy contributing members of society, we must provide them the necessary structure that promotes their individual growth.
+This project focuses on providing a strong coding foundation to promote a healthy Single Page Application life cycle. Complex applications are like children, and in order for them to grow into healthy contributing members of society, we must provide them the necessary structure and boundaries to promote their individual growth.
 
-The application has a simple UX & UI to magnify the clarity of the focused foundation. Therefore, it only has two pages:
+The application has a simple UX & UI to focus on the coding foundation. It only has two pages:
 
 ### Home Page
-A simple display of Book Inventory and whatever book is selected. You can a selected book to your Basket. When you are ready to reserve your books, click the navigation icon in the top-right corner.
+Has two sections. One, a simple display of Inventory for available Books. Two, an area to see greater detail of a book selected in Inventory. You can add a selected book to your Basket. When you are ready to reserve your books, click the navigation icon in the top-right corner to head to the Checkout page.
 
 ### Checkout Page
-Displays the Basket's contents and provides a form to reserve these books for "pickup". This is a pretend app, therefore no actual reservations occur, when submitting the form.
+Has three sections. One, a display of the Basket's contents. Two, a form to reserve the books for "pickup". Finally, three, the actual form submit button. This is a pretend app, therefore no actual reservations occur, no real API calls are made when submitting the form.
+
+> Note: The app uses OpenLibrary.org's API for Books' data: title, cover images, etc.
 
 ## Code Overview
-This project is guided by these primary values:
+This project is guided by these core values:
 1) Single Responsibility Principle (SRP)
     - separate concerns, reduce code risks, promote individual growth
 2) Minimal Time to Interactive (TTI)
     - loading initial and new pages
 3) Don't Reinvent the Wheel
-    - balance between DRY & WET code
+    - code reusability by balancing DRY & WET programming principles
 
-The coding patterns focus first on reducing high cost code risks, then focuses on minimizing Time to Interactive for a smooth User Experience.
+The coding patterns focus first on reducing high cost code risks, then focuses on minimizing Time to Interactive for a smooth User Experience, then reusing code (ie components) when applicable.
 
 ### Single Responsiblity Principle
-This project favors *composition* in its application architecture. Therefore, the code is a composition of separated concerns into primarily small single purposed units. This pragmatic approach breaks down the complexity of large scale Single Page Applications, into manageable bite size pieces.
+This project favors *composition* in its application architecture. Therefore, the app is a composite of single purposed units of code, derived from separating the app's primary concerns. This approach breaks down the complexity of large scale Single Page Applications, into manageable bite size pieces.
 
-This reduces risks involved in project development, efforts in maintaining, developing, fixing features, while promoting flexibility and growth. The application will not hinder the code's development, and the code will not falter the application's growth.
+This reduces risks involved in project development, efforts in maintaining, developing, fixing features, while promoting flexibility in the application's direction of growth. The application will not hinder the code's development, and the code will not falter the application's growth.
 
-It's like in a formula one car race, the pit stop crew hastily replaces broken parts, to get their team back in the game as fast as possible!  
+It's like in a formula one car race, the pit stop crew hastily replaces broken parts, to get their team back in the game as fast as possible! The car is a composite of replaceable parts.
 
 #### Scaffolding & Modules for Composing an App
-When it comes to separating the application, the first step is by domain, as in [Domain Driven Design (DDD)](https://en.wikipedia.org/wiki/Domain-driven_design). ngLibrary has the following domains: *book*, *books*, *cart* and *checkout* used in its initial layer of [application scaffolding](/src/app).
+When it comes to separating the application into parts, the first step is by domain, as in [Domain Driven Design (DDD)](https://en.wikipedia.org/wiki/Domain-driven_design). ngLibrary has the following domains: *book*, *books*, *cart* and *checkout* used in its initial layer of [application scaffolding](/src/app).
 
-From there, ngLibrary adds an additional layer of folders for splitting code into the following main module types:
+From there, ngLibrary separates further into smaller units by splitting domain code into the following main modules:
 
-1) Data Modules
-    - Data Reducers, Actions, Effects, Selectors, Models, Services
-2) Component Modules
-    - Smart/Container Components, Dumb/UI Components
-3) View Modules
-    - View Components (ie Pages or pieces of a Page), Routing
+1) Data Module
+    - Data & Business Logic ie
+        - Data Reducers, Actions, Effects, Selectors, Models, Services
+2) Component Module
+    - Web Components both Smart & UI
+        - Smart/Container Components, Dumb/UI Components
+3) View Module
+    - Components for Pages & Views with Routing
+        - View Components, Routing Module
 
-None of these are required for any one domain. It's an "as needed basis" coding pattern to provide an additional layers of separation that gives more room for each piece to grow. The cross-module dependencies follow a simple pattern. View Modules' View Components use HTML/CSS and Smart/UI Components, so they'll import the Component Modules. Component Modules import Data Modules, depending on the data/business needs of their Components. Data Modules might import other Data Modules that its depends on.
+None of these are required for any one domain. It's on an "as needed basis" coding pattern to provide an additional layers of separation to give more individual room for each piece to grow. The cross-module dependencies between them, follow a simple pattern too. View Modules' View Components use HTML/CSS and Smart/UI Components, so they'll import the Component Modules. Component Modules import Smart components rely on Data and Business logic so they import the necessary Data Modules, depending on the data/business needs of their Components. Data Modules might import other Data Modules that its depends on. It's usually a single direction going up.
+
+> Note: It can become necessary, as a domain grows with the app, to separate a Component Module into multiple Sub-Component Modules, ie: Modal-Components Module, a Card-Components Module, etc.
 
 #### Component Layers for Composing an App Page
+Setting aside the root module (`AppModule`) and how's that composed, let's consider how ngLibrary composes its pages. It uses multiple components in layers:
 
-Layout -> View -> Smart -> UI
+<center>Layout Component → View Component → Smart Component → UI Component</center>
+
+ngLibrary, given its simple UX/UI, has only one Layout so only one Layout
 
 ### Minimal Time to Interactive
 User Experience is crucial to every app. If a market is saturated, usually the app with the best User Experience wins out. Everyone enjoys an intuitive, fun animated, app. So this project's code is focused on minimizing TTI by managing factors that effect app performance like bundle sizes, big O complexity, misuse of DOM elements, poor FPS in animations, and so forth. We want the app to be ready for the User to experience, to interact with, as soon as possible, every step of the way. That's how we'll not let the competition ever out pace us.

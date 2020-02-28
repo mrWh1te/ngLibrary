@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core'
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router'
 
-import { LayoutViewComponent } from './layout/layout-views/views/layout/layout-view.component'
+import { LayoutComponent } from './layouts/components/layout/layout.component'
 
 export const RootRoutes: Routes = [
   {
     path: '',
-    component: LayoutViewComponent,
+    component: LayoutComponent,
     children: [      
       {
         path: '',
