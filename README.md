@@ -107,14 +107,14 @@ The non-boilerplate code of the App Module is it's Routing Module ie [AppRouting
 > Note: [Guess.js](https://guess-js.github.io/) is an inspiring project that creates an app's preloading strategy based on collected Analytical data. Read the [Angular docs](https://guess-js.github.io/docs/angular) for more.
 
 #### Core Module
-This module follows the popular practice in the Angular community. It focuses on providing global services for the entire app. If you have an `Injectable` service, that all or many components across most pages, than it could be beneficial to include it here. For example, the application's root state could be setup here.
+This module follows the popular pattern in the Angular community. It focuses on providing global services for the entire app. If you have an `Injectable` service, that all or many components across most pages, than it could be beneficial to include it here. For example, the application's root state could be setup here.
 
-ngLibrary uses [NgRx](https://ngrx.io/) for its application state's needs. NgRx is an amazing module that works fantastically with Angular. When it comes to Enterprise development, it is often, a go-to solution.
+ngLibrary uses [NgRx](https://ngrx.io/) for its application state's needs. NgRx is an amazing module that works fantastically with Angular. There are other amazing application state solutions ([Akita](https://netbasal.gitbook.io/akita/), [NGXS](https://www.ngxs.io/), [MobX](https://github.com/mobxjs/mobx-angular), Multi-Directional with [RxJS](https://rxjs-dev.firebaseapp.com/) just to name a few) out there that will fit with the underlying architecture, but may require a few tweaks to the described Data Modules. Either way, NgRx is often a go-to solution, when building Enterprise applications. It's based on the popular [Redux design pattern](https://redux.js.org/introduction/three-principles/).
 
-One of the patterns used in ngLibrary is of having an empty root state provided in `CoreModule`. Therefore every app feature is a separated [NgRx store feature](https://ngrx.io/guide/store/reducers#register-feature-state) that are lazily loaded in various Data Modules, on an as needed basis, given the module separation pattern. Therefore, the `CoreModule` focuses on the initial setup of a blank Store, and, in addition, any helpful [Meta Reducers](https://ngrx.io/guide/store/metareducers).
+One of the patterns used in ngLibrary is of having an empty root state provided in `CoreModule`. Therefore every app feature is a separated [NgRx store feature](https://ngrx.io/guide/store/reducers#register-feature-state). They can be lazily loaded or part of the initial bundle. Therefore, the `CoreModule` focuses on an initial setup of a blank Store, to not restrict app growth, while providing any helper Store [Meta Reducers](https://ngrx.io/guide/store/metareducers), anything necessary for an app feature to run.
 
-#### Initial Bundle
-lazy loading pages, minimal initial bundle patterns, shared module (DX vs bundle sizes)
+#### Shared Module
+shared module (DX vs bundle sizes)
 
 ### Managing more Complexity
 For sites with many pages with many features, ie the app has a wrapper to customize it on a country by country basis. For that kind of complexity, it's best to break each domains into further folders with an additional layer (on as needed basis) ie single features. Making code more singular purposed, smaller through division, will facilitate in breaking down project complexity into more easier bite size pieces.
