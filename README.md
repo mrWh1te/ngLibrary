@@ -33,8 +33,8 @@ This project is guided by these core values:
     - separate concerns, reduce code risks, promote individual growth
 2) Minimal Time to Interactive (TTI)
     - loading initial and new pages
-3) Don't Reinvent the Wheel
-    - code reusability by balancing DRY & WET programming principles
+3) Good Developer Experience (DX)
+    - balance DRY & WET programming principles, don't reinvent the wheel
 
 The coding patterns focus first on reducing high cost code risks, then focuses on minimizing Time to Interactive for a smooth User Experience, then reusing code (ie components) when applicable.
 
@@ -64,7 +64,7 @@ None of these are required for any one domain. It's on an "as needed basis" codi
 
 > Note: It can become necessary, as a domain grows with the app, to separate a Component Module into multiple Sub-Component Modules, ie: Modal-Components Module, a Card-Components Module, etc.
 
-#### Component Layers for Composing an App Page
+### Component Layers for Composing an App Page
 Setting aside the root module (`AppModule`) and how's that composed, let's consider how ngLibrary composes its pages. It uses multiple components in layers:
 
 <center>Layout Component → View Component → Smart Component(s) → UI Component(s)</center>
@@ -91,15 +91,27 @@ UI Components focus on pieces of the User's Interface. This could be a list, a l
 
 Whether or not you're familiar with [Storybook](https://storybook.js.org/), you can add a Storybook app to your project with ease, to demonstrate ALL of your UI components, in an interactive manner. It's worth checking out!
 
-#### App Module
-
-#### Core Module
-
-
 ### Minimal Time to Interactive
 User Experience is crucial to every app. So this project's code focuses on minimizing TTI by managing factors that effect app performance like bundle sizes. We want the app to be ready for the User to experience, to interact with, as soon as possible, every step of the way.
 
-#### Minimal TTI Derived Patterns
+### Minimal TTI Derived Patterns
+ngLibrary slightly favors minimal bundles for lowest TTI over the Developer Experience. The root module (`AppModule`) is nothing more than the app's container, like a car's chassis. It's a minimal approach to keep the initial load as fast as possible, while keeping doors open for application's change in direction. Therefore, this container is a place for separated pieces, to be put together in a composition of web site pages.
+
+#### App Module
+The root module focuses on importing only what is necessary to build the Layout of the home page. This minimizes initial TTI, while maintaining strong Developer Experience (DX) by not restraining what the foundational app module must do for the app. All those things it can do, are separated out into importable modules for composing.
+
+Less is more when it comes to the root [AppComponent](/src/app/app.component.ts) and [AppModule](/src/app/app.module.ts)!
+
+The non-boilerplate code of the App Module is it's Routing Module ie [AppRoutingModule](/src/app/app-routing.module.ts). That's where the pages are composed with Layout components and View components (lazily). The lazily loading pattern, popular in the Angular community, creates separate bundles for those pages. That minimizes TTI of the initial page load. Then to optimize the TTI of subsequent page loads, a `preloadingStrategy` is added. That minimizes TTI for subsequent page loads.
+
+> Note: [Guess.js](https://guess-js.github.io/) is an inspiring project that creates an app's preloading strategy based on collected Analytical data. Read the [Angular docs](https://guess-js.github.io/docs/angular) for more.
+
+#### Core Module
+This module follows the popular practice in the Angular community. It focuses on providing global services for the entire app. If you have an `Injectable` service, that all or many components across most pages, than it could be beneficial to include it here. For example, the application's root state could be setup here.
+
+ngLibrary uses [NgRx](https://ngrx.io/) for its application state's needs. NgRx is an amazing module that works fantastically with Angular. When it comes to Enterprise development, it is often, a go-to solution.
+
+One of the patterns used in ngLibrary is of having an empty root state provided in `CoreModule`. Therefore every app feature is a separated [NgRx store feature](https://ngrx.io/guide/store/reducers#register-feature-state) that are lazily loaded in various Data Modules, on an as needed basis, given the module separation pattern. Therefore, the `CoreModule` focuses on the initial setup of a blank Store, and, in addition, any helpful [Meta Reducers](https://ngrx.io/guide/store/metareducers).
 
 #### Initial Bundle
 lazy loading pages, minimal initial bundle patterns, shared module (DX vs bundle sizes)
@@ -113,7 +125,7 @@ This pattern can grow with the needs of the app, by adding an additional layer i
 
 The app is running Angular v9.
 
-These are the main dependencies of this app: `@angular/cdk`, `@angular/flex-layout`, `@angular/material`, `@ngrx/store`, `@ngrx/effects`, `@ngrx/entity`, `@ngrx/router-store`, `@ngrx/store-devtools`, and `ngrx-store-localstorage`. It follows a Single-Source of Truth for the application state by using NgRX's Store. It uses `flex-layout` to lay out components programmatically, de-coupling the layout portion of styling UI. Angular's `Material` was used for the form's inputs and main header toolbar. The drop-down for the Cart is powered by the CDK's `Overlay`. 
+These are the main dependencies of this app: `@angular/cdk`, `@angular/flex-layout`, `@angular/material`, `@ngrx/store`, `@ngrx/effects`, `@ngrx/entity`, `@ngrx/router-store`, `@ngrx/store-devtools`, and `ngrx-store-localstorage`. It follows a Single-Source of Truth for the application state by using NgRx's Store. It uses `flex-layout` to lay out components programmatically, de-coupling the layout portion of styling UI. Angular's `Material` was used for the form's inputs and main header toolbar. The drop-down for the Cart is powered by the CDK's `Overlay`. 
 
 ## CI & CD
 
@@ -134,8 +146,8 @@ To accomplish that, we follow the best practices & principles established by Ang
 2) Multiple Types of Modules per Domain (Views/Routing, Components, Data, etc)
 3) Unit & E2E testing
 4) Single Responsibilty Principle in Services, Effects, Actions, basically everything in various scopes (strong code separation)
-5) NgRX Store as Single Source of Truth in terms of upstream vs downstream logic
-6) Not everything needs to be in NgRX Store. If various parts of an app need to effect something like a component, then that should be in the store, otherwise if its isolated to the component itself, it isn't beneficial to go through all the work in adding it to the store.
+5) NgRx Store as Single Source of Truth in terms of upstream vs downstream logic
+6) Not everything needs to be in NgRx Store. If various parts of an app need to effect something like a component, then that should be in the store, otherwise if its isolated to the component itself, it isn't beneficial to go through all the work in adding it to the store.
 7) Lazy load modules not required for initial root route 
 8) Have a /shared folder for reusuable & self-contained modules
 9) Reactive architecture that takes advantage of the the `async` pipe instead of opening observables as subscriptions
