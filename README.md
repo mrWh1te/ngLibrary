@@ -155,13 +155,13 @@ Whether or not you're familiar with [Storybook](https://storybook.js.org/), you 
 
 ## Continuous Integration
 
-Continuous Integration is setup with [TravisCI](https://travis-ci.com). It runs on pushed branches & pull requests. [Greenkeeper](https://greenkeeper.io/) runs in the background to update new dependencies automatically. [Mergify](https://mergify.io) automatically merges pull-requests labeled *automerge*, once all criteria is met (tests passing, etc).
+Continuous Integration is setup with [TravisCI](https://travis-ci.com). It runs on pushed branches & pull requests. [Greenkeeper](https://greenkeeper.io/) runs in the background to test new dependencies automatically. [Mergify](https://mergify.io) runs in the background to automatically merge pull-requests labeled *automerge*, or for any of the bots such as Greenkeeper.
 
 ## Continuous Deployment
 
 Continuous Deployment is setup with [Netlify](https://netlify.com). It automatically deploys the latest PROD build from the `master` branch. See the live [Demo](http://nglibrary-demo.netlify.com). 
 
-Netlify automatically deploys Pull-Request builds in various Staging sub-domains! Therefore, while reviewing code in a PR, devs can actually test that version of the code before merging.
+Netlify automatically deploys latest Pull-Request builds to a Staging environment, accessible by an unique sub-domain (linked in the Github PR)! Therefore, while reviewing code in a PR, devs can actually test its latest version of the code live, before merging.
 
 ## Local Development
 
