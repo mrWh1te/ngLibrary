@@ -119,9 +119,9 @@ ngLibrary uses [NgRx](https://ngrx.io/) for its application state's needs. NgRx 
 To get the app started, `CoreModule` provides an empty root state. Therefore every app feature can be included in a lazily loaded bundle as a separated [NgRx store feature](https://ngrx.io/guide/store/reducers#register-feature-state). Therefore, the `CoreModule` focuses on an initial setup of a Store for running features, while providing any helper Store [Meta Reducers](https://ngrx.io/guide/store/metareducers), and all global services to the app.
 
 #### Shared Folder
-ngLibrary provides a single directory called `shared` for reusable separated modules that have components, pipes, services, etc that are helpful across multiple pages or features. 
+ngLibrary provides a single directory called `shared` for reusable separated modules that have components, pipes, services, grouped by unifying purpose that are helpful across multiple pages or features. This particular approach is helpful in minimizing bundles further, but with [Angular Ivy](https://angular.io/guide/ivy), has become less important, 
 
-It is possible to provide an unified `SharedModule`.
+For an easier Developer Experience, all Shared functionality can exist under one roof, an unified `SharedModule`. It may lead to slightly bigger bundles, but the Developer Experience benefits may be worth it. Depends on your project and team's needs.
 
 ### Managing more Complexity
 For some sites, as the number of pages grows, and many features are added, it becomes necessary to deal with any overbaring complexity. There are other layers of separation a project can elect:
