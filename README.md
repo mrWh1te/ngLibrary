@@ -132,7 +132,7 @@ For some sites, as the number of pages grows, and many features are added, it be
     - Modal-Components Module, a Card-Components Module, etc.
 
 ## Code Summary
-Breaking down complexity into reusable simple patterns not only provides the benefits mentioned, but it makes the code predictability. When navigating folders, things are carefully encapsulated, clear in purpose, and with designated single purpose pieces of code, the code becomes predictable by type.
+Breaking down complexity into reusable simple patterns not only provides the benefits mentioned, but it makes the code predictability too. When navigating folders, things are carefully encapsulated, with clear purpose, making the journey to the code needed easier, given the predictability from the compositional organization.
 
 The increase in code predictability decreases effort to maintain, grow, fix and adapt an application.
 
