@@ -2,17 +2,17 @@ import { NgModule } from "@angular/core"
 import { FlexLayoutModule } from '@angular/flex-layout'
 
 import { CheckoutRoutingModule } from './checkout-routing.module'
-import { CartWidgetsModule } from 'src/app/cart/cart-widgets/cart-widgets.module'
+import { CartComponentsModule } from 'src/app/cart/cart-components/cart-components.module'
 
 import { CheckoutViewComponent } from './views/checkout/checkout-view.component'
-import { CheckoutWidgetsModule } from '../checkout-widgets/checkout-widgets.module'
+import { CheckoutComponentsModule } from '../checkout-components/checkout-components.module'
 
 @NgModule({
   imports: [
     FlexLayoutModule,
     CheckoutRoutingModule,
-    CartWidgetsModule,
-    CheckoutWidgetsModule
+    CheckoutComponentsModule,
+    CartComponentsModule
   ],
   declarations: [
     CheckoutViewComponent

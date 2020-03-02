@@ -5,7 +5,7 @@ import { Component, ViewEncapsulation, ChangeDetectionStrategy } from "@angular/
   templateUrl: './checkout-view.component.html',
   styleUrls: [
     './checkout-view.component.scss',
-    './../../../../cart/cart-widgets/widgets/shopping-cart/ui/shopping-cart-checkout.scss'
+    './../../../../cart/cart-components/components/shopping-cart/ui/shopping-cart-checkout.scss'
   ],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush

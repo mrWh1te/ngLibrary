@@ -7,10 +7,10 @@ import { FlexLayoutModule } from '@angular/flex-layout'
 import { CartDataModule } from '../cart-data/cart-data.module'
 import { DropDownModule } from 'src/app/shared/drop-down/drop-down.module'
 
-import { ShoppingCartIconComponent } from './widgets/shopping-cart-icon/smart/shopping-cart-icon.component'
-import { ShoppingCartIconUiComponent } from './widgets/shopping-cart-icon/ui/shopping-cart-icon-ui.component'
-import { ShoppingCartComponent } from './widgets/shopping-cart/smart/shopping-cart.component'
-import { ShoppingCartUiComponent } from './widgets/shopping-cart/ui/shopping-cart-ui.component'
+import { ShoppingCartIconComponent } from './components/shopping-cart-icon/smart/shopping-cart-icon.component'
+import { ShoppingCartIconUiComponent } from './components/shopping-cart-icon/ui/shopping-cart-icon-ui.component'
+import { ShoppingCartComponent } from './components/shopping-cart/smart/shopping-cart.component'
+import { ShoppingCartUiComponent } from './components/shopping-cart/ui/shopping-cart-ui.component'
 
 @NgModule({
   imports: [
@@ -34,8 +34,8 @@ import { ShoppingCartUiComponent } from './widgets/shopping-cart/ui/shopping-car
     ShoppingCartComponent
   ]
 })
-export class CartWidgetsModule {
+export class CartComponentsModule {
   constructor() {
-    console.log('[CartWidgetsModule] constructor()')
+    console.log('[CartComponentsModule] constructor()')
   }
 }
