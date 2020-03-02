@@ -106,7 +106,7 @@ The root module focuses on importing only what is necessary to build the Layout 
 
 Less is more when it comes to the root [AppComponent](/src/app/app.component.ts) and [AppModule](/src/app/app.module.ts)!
 
-The non-boilerplate code of the App Module is it's Routing Module ie [AppRoutingModule](/src/app/app-routing.module.ts). It's where the pages are composed with Layout and View components, using a popular coding pattern in the Angular community to break down an application into separate bundles for lazy loading. That minimizes Time to Interactive (TTI) of the initial page load by reducing the intial bundle size. Then to optimize the Time to Interactive (TTI) of subsequent page loads, a `preloadingStrategy` is added, to preload the additional bundles for the other pages, to make subsequent page loads even faster than the first.
+The main code of the App Module is in it's Routing Module ie [AppRoutingModule](/src/app/app-routing.module.ts). It's where the pages are composed with Layout and View components, using a popular coding pattern in the Angular community to break down an application into separate bundles for lazy loading. That minimizes Time to Interactive (TTI) of the initial page load by reducing the intial bundle size. Then to optimize the Time to Interactive (TTI) of subsequent page loads, a `preloadingStrategy` is added, to preload the additional bundles for the other pages, to make subsequent page loads even faster than the first.
 
 > Note: [Guess.js](https://guess-js.github.io/) is an inspiring project that creates an app's preloading strategy based on collected Analytical data. Read the [Angular docs](https://guess-js.github.io/docs/angular) for more.
 
