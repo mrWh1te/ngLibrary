@@ -71,7 +71,7 @@ Setting aside the app's foundation (ie `AppModule`), ngLibrary follows a simple 
 
 <center>Layout Component → View Component(s) → Smart Component(s) → UI Component(s)</center>
 
-> Note: View Components may directly use UI Components. They do *not* require Smart Components.
+> Note: View Components may directly use UI Components. UI Components do *not* require Smart Components, for using.
 
 #### Layout Components
 The Layout is primarily used at the root module level (`AppModule`). The sole purpose of the Layout module is to provide layout components, as self-reliant templates, to *layout* designated areas (router-outlets) for View components. It's a necessary ingredient in the composition of an application page.
@@ -84,27 +84,28 @@ View Components are simple components focused on their template's Smart & UI Com
 You can learn more about View Components with this official ngLibrary [tutorial on View Components](https://copynpaste.me/de-couple-pages-components-styles).
 
 #### Smart Components
-Smart Components are mostly used in View Components. They are what bring to life the dynamic UI Components, by handling their events (output) and data (input). Smart Components `templates` are embedded, as they declare their respective UI component only.
+Smart Components are mostly used in View Components' templates. They are what bring to life, dynamic UI Components, by handling their events (output) and data (input). Smart Components' `templates` are embedded since they are simply their respective UI component.
 
-For example, see ngLibrary's [ShoppingCartComponent](/src/app/cart/cart-components/components/shopping-cart/smart/shopping-cart.component.ts). It handles the data (books in the shopping cart) and the events (removing a book from the cart) of the Shopping Cart UI.
+For example, see ngLibrary's [ShoppingCartComponent](/src/app/cart/cart-components/components/shopping-cart/smart/shopping-cart.component.ts). It handles the data (which books are in the shopping cart) and the events (removing a book from the shopping cart) of the Shopping Cart UI Component.
 
 ### Minimal Time to Interactive
-User Experience is crucial to every app. This project is no different. It's code focuses on minimizing Time to Interactive by managing factors that effect app performance, such as DOM rendering & bundle sizes. By following these patterns, the app's performance is strong yielding smooth an User Experience.
+User Experience is crucial to every app. This project is no different. It's code focuses on minimizing Time to Interactive by managing factors that effect it, such as DOM rendering performance & bundle sizes. By following these patterns, the app's performance will yield a smooth User Experience.
 
 ### Minimal TTI Derived Patterns
-The root module (`AppModule`) is nothing more than an app's container, like a car's chassis. It's a minimal approach to keep the initial bundle as small as possible, another piece of the compositional app recipe. Therefore, this container is a place for separated pieces, to be put together in a composition of web site pages. The app's chassis.
 
 #### UI Components
 UI Components focus on single pieces of the User Interface. This could be a list, a list item, a logo, a comment, and so forth. They mostly have one or more Angular decorated Inputs and/or Outputs. The outputs are for handling events in the UI (ie User clicks something) and the inputs are providing data. This provides a single purpose component that focuses on the UI. 
 
-The popular Smart/UI Components pattern has the added benefit of being compatible with the `onPush` Change Detection Strategy, for Reactive Architecture rendering speed. 
+The popular Smart/UI Components pattern has the added benefit of being compatible with the `onPush` Change Detection Strategy, for Reactive Architecture. This gives the application performance benefits with rendering the DOM, minimizing TTI in page specific features.
 
 > Note: All components in this architecture will work with the `onPush` Change Detection Strategy so it's highly recommended its applied to each component, for fastest DOM rendering.
 
 #### App Module
-The root module focuses on importing only what is necessary to build the Layout of the home page. This minimizes initial Time to Interactive by minimizing the initial bundle to only what's necessary to load the base app, while maintaining strong Developer Experience (DX) by not restraining what the root app module must do for the app. All those things it can do, are separated out into importable modules for composing.
+The root module (`AppModule`) is nothing more than the app's container, like a car's chassis, a basic skeleton, or floor to build the car on. It's a minimal piece that keeps the initial bundle as small as possible. Therefore, this container is a place for separated parts, to be assembled together in a composition of web site pages.
 
-Less is more when it comes to the root [AppComponent](/src/app/app.component.ts) and [AppModule](/src/app/app.module.ts)!
+The root module imports only what is necessary to build the Layout of the home page. This minimizes initial Time to Interactive of the initial page load by keeping the initial bundle loaded, as small as possible.
+
+Here are ngLibrary's [AppModule](/src/app/app.module.ts) and [AppComponent](/src/app/app.component.ts)! They are very simple, almost copypasta.
 
 The main code of the App Module is in it's Routing Module ie [AppRoutingModule](/src/app/app-routing.module.ts). It's where the pages are composed with Layout and View components, using a popular coding pattern in the Angular community to break down an application into separate bundles for lazy loading. That minimizes Time to Interactive (TTI) of the initial page load by reducing the intial bundle size. Then to optimize the Time to Interactive (TTI) of subsequent page loads, a `preloadingStrategy` is added, to preload the additional bundles for the other pages, to make subsequent page loads even faster than the first.
 
