@@ -124,9 +124,12 @@ ngLibrary provides a single directory called `shared` for reusable separated mod
 For an easier Developer Experience, all Shared functionality can exist under one roof, an unified `SharedModule`. It may lead to slightly bigger bundles, but the Developer Experience benefits may be worth it. Depends on your project and team's needs.
 
 ### Managing more Complexity
-For some sites, as the number of pages grows, and many features are added, it becomes necessary to deal with any overbaring complexity. There are other layers of separation a project can elect:
-    - break down each domain into further folders for each feature than break those into Modules
-    - break down a Component Module into Sub-Compoennt Modules, ie: Modal-Components Module, a Card-Components Module, etc.
+For some sites, as the number of pages grows, and many features are added, it becomes necessary to deal with the additional complexity in new ways. There are other layers of separation a project can add, to maintain the core values:
+
+- Break down Domains into sub-folders for features
+    - Shopping Cart, Checkout Form, etc
+- Break down Component Modules into Sub-Component Modules
+    - Modal-Components Module, a Card-Components Module, etc.
 
 ## Code Summary
 Breaking down complexity into reusable simple patterns not only provides the benefits mentioned, but it makes the code predictability. When navigating folders, things are carefully encapsulated, clear in purpose, and with designated single purpose pieces of code, the code becomes predictable by type.
