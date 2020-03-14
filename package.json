@@ -56,7 +56,7 @@
     "@angular/language-service": "~9.0.0",
     "@babel/core": "^7.8.4",
     "@cypress/webpack-preprocessor": "^4.1.0",
-    "@storybook/addon-actions": "^5.3.13",
+    "@storybook/addon-actions": "^5.3.17",
     "@storybook/addon-knobs": "^5.3.13",
     "@storybook/addon-links": "^5.3.13",
     "@storybook/addon-notes": "^5.3.13",
