@@ -43,7 +43,7 @@
     "@ngrx/router-store": "^8.6.0",
     "@ngrx/store": "^8.6.0",
     "@ngrx/store-devtools": "^8.6.0",
-    "ngrx-store-localstorage": "^8.0.0",
+    "ngrx-store-localstorage": "^9.0.0",
     "npm": "^6.13.4",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
