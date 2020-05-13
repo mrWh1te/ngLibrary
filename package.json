@@ -46,7 +46,7 @@
     "ngrx-store-localstorage": "^9.0.0",
     "npm": "^6.13.4",
     "rxjs": "~6.5.4",
-    "tslib": "^1.10.0",
+    "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
