@@ -7,7 +7,7 @@
 
 <img src="https://repository-images.githubusercontent.com/189280438/c0b58800-a72d-11e9-9bc5-b725f0fc4e66" align="right" width="125" />
 
-[App Demo](http://nglibrary-demo.netlify.com) - [App's Storybook](http://nglibrary-demo.netlify.com/storybook) - [App's Bundles' Analytical Report](http://nglibrary-demo.netlify.com/report.html)
+[App Demo](https://nglibrary-demo.netlify.app/) - [App's Storybook](https://nglibrary-demo.netlify.app/storybook) - [App's Bundles' Analytical Report](https://nglibrary-demo.netlify.app/report.html)
 
 "Reserve books" from your local library in this pretend Angular Single Page Application.
 
@@ -155,7 +155,7 @@ Whether or not you're familiar with [Storybook](https://storybook.js.org/), you 
 
 ## Continuous Integration
 
-Continuous Integration is setup with [TravisCI](https://travis-ci.com). It runs on pushed branches & pull requests. [Greenkeeper](https://greenkeeper.io/) runs in the background to test new dependencies automatically. [Mergify](https://mergify.io) runs in the background to automatically merge pull-requests labeled *automerge*, or for any of the bots such as Greenkeeper.
+Continuous Integration is setup with [TravisCI](https://travis-ci.com). It runs on pushed branches & pull requests. [Github Actions](https://github.com/features/actions) are used to automatically create PR's for updating npm dependencies. [Synk](https://snyk.io/) runs in the background to test and fix publicly discovered vulnerabilities. [Mergify](https://mergify.io) runs in the background to automatically merge pull-requests labeled *automerge*, or for the bots, Dependabot, Synk, etc.
 
 ## Continuous Deployment
 

@@ -9,6 +9,7 @@
     "analyze": "ng build --prod --stats-json && webpack-bundle-analyzer -O -m static ./dist/ngLibrary/stats-es2015.json",
     "move-analysis-report": "cp report.html dist/ngLibrary/report.html",
     "tests": "npm run unit-tests && npm run e2e",
+    "test": "npm run tests",
     "unit-tests": "jest --config ./jest/app.config.js",
     "unit-tests:watch": "jest --config ./jest/app.config.js --watch",
     "unit-tests:coverage": "jest --config ./jest/app.config.js --coverage",

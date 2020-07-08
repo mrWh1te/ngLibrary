@@ -34,7 +34,7 @@ describe('BooksComponent', () => {
 
     configureTests(configure).then(testBed => {
       // Setting up Store service for spying (testing)
-      store = testBed.get(Store)
+      store = testBed.inject(Store)
       spyOn(store, 'dispatch').and.callThrough()
 
       // actually create an instance of the component and run initial bootstrap
