@@ -176,23 +176,24 @@ $ npm i -g @angular/cli
 
 You'll need it to run the Angular Development server and build the Production version with AoT.
 
+### Development server
+
+To run a development server locally (so you can see the app running, run tests), run:
+
+```
+$ ng serve
+```
+Then navigate to `http://localhost:4200/` in your browser. The app will automatically reload if you change any of the source files.
+
 ### Testing
 
 E2E tests are built with [Cypress](https://cypress.io) and unit-tests are built with [Jest](https://jestjs.io/).
 
 Run the tests with this command:
 ```
-$ npm run test
+$ npm test
 ```
-
-### Development server
-
-To run a development server locally (so you can see the app running), run:
-
-```
-$ ng serve
-```
-Then navigate to `http://localhost:4200/` in your browser. The app will automatically reload if you change any of the source files.
+*requires a local development server running
 
 ### Books Seed
 
