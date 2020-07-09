@@ -144,7 +144,6 @@ In not re-inventing the wheel, ngLibrary uses these libraries in building its fo
 - `@ngrx/store`
 - `@ngrx/effects`
 - `@ngrx/entity`
-- `ngrx-store-localstorage`
 
 [Angular Flex-layout](https://github.com/angular/flex-layout) separates out the layout portion of CSS styling from the CSS code, with programmable directives in the HTML. [Angular Material](https://material.angular.io/) is used for the header toolbar and form. Finally, the drop-down for the Header Basket is powered by the [CDK's Overlay](https://material.angular.io/cdk/overlay/overview). 
 
