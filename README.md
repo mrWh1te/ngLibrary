@@ -149,15 +149,15 @@ In not re-inventing the wheel, ngLibrary uses these libraries in building its fo
 
 ## Storybook
 
-Whether or not you're familiar with [Storybook](https://storybook.js.org/), you can [add a Storybook app](https://storybook.js.org/docs/guides/quick-start-guide/) to your project with ease, to demonstrate ALL of your UI components, in an interactive manner. Check out ngLibrary's [Storybook](nglibrary-demo.netlify.com/storybook/) for a live demo!
+Whether or not you're familiar with [Storybook](https://storybook.js.org/), you can [add a Storybook app](https://storybook.js.org/docs/guides/quick-start-guide/) to your project with ease, to demonstrate ALL of your UI components, in an interactive manner. Check out ngLibrary's [Storybook](nglibrary-demo.netlify.app/storybook/) for a live demo!
 
 ## Continuous Integration
 
-Continuous Integration is setup with [TravisCI](https://travis-ci.com). It runs on pushed branches & pull requests. [Github Actions](https://github.com/features/actions) are used to automatically create PR's for updating npm dependencies. [Synk](https://snyk.io/) runs in the background to test and fix publicly discovered vulnerabilities. [Mergify](https://mergify.io) runs in the background to automatically merge pull-requests labeled *automerge*, or for the bots, Dependabot, Synk, etc.
+Continuous Integration is setup with [TravisCI](https://travis-ci.com). It runs on pushed branches & pull requests. [Synk](https://snyk.io/) runs in the background to keep app dependencies up to date, and fix discovered vulnerabilities. [Mergify](https://mergify.io) runs in the background to automatically merge pull-requests labeled *automerge*, or for the bots, Dependabot & Synk.
 
 ## Continuous Deployment
 
-Continuous Deployment is setup with [Netlify](https://netlify.com). It automatically deploys the latest PROD build from the `master` branch. See the live [Demo](http://nglibrary-demo.netlify.com). 
+Continuous Deployment is setup with [Netlify](https://netlify.com). It automatically deploys the latest PROD build from the `master` branch. See the live [Demo](http://nglibrary-demo.netlify.app). 
 
 Netlify automatically deploys latest Pull-Request builds to a Staging environment, accessible by an unique sub-domain (linked in the Github PR)! Therefore, while reviewing code in a PR, devs can actually test its latest version of the code live, before merging.
 
