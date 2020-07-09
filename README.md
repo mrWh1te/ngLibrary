@@ -1,13 +1,12 @@
 # ngLibrary
 
 [![Build Status](https://travis-ci.com/mrWh1te/ngLibrary.svg?branch=master)](https://travis-ci.com/mrWh1te/ngLibrary) 
-[![Greenkeeper badge](https://badges.greenkeeper.io/mrWh1te/ngLibrary.svg)](https://greenkeeper.io/) 
 [![Mergify Status](https://img.shields.io/endpoint.svg?url=https://gh.mergify.io/badges/mrWh1te/ngLibrary&style=flat)](https://mergify.io) 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c41968d0-1b4e-4a0d-91a3-bdfec3f32305/deploy-status)](https://app.netlify.com/sites/nglibrary-demo/deploys) 
 
 <img src="https://repository-images.githubusercontent.com/189280438/c0b58800-a72d-11e9-9bc5-b725f0fc4e66" align="right" width="125" />
 
-[App Demo](http://nglibrary-demo.netlify.com) - [App's Storybook](http://nglibrary-demo.netlify.com/storybook) - [App's Bundles' Analytical Report](http://nglibrary-demo.netlify.com/report.html)
+[App Demo](https://nglibrary-demo.netlify.app/) - [App's Storybook](https://nglibrary-demo.netlify.app/storybook) - [App's Bundles' Analytical Report](https://nglibrary-demo.netlify.app/report.html)
 
 "Reserve books" from your local library in this pretend Angular Single Page Application.
 
@@ -145,21 +144,20 @@ In not re-inventing the wheel, ngLibrary uses these libraries in building its fo
 - `@ngrx/store`
 - `@ngrx/effects`
 - `@ngrx/entity`
-- `ngrx-store-localstorage`
 
 [Angular Flex-layout](https://github.com/angular/flex-layout) separates out the layout portion of CSS styling from the CSS code, with programmable directives in the HTML. [Angular Material](https://material.angular.io/) is used for the header toolbar and form. Finally, the drop-down for the Header Basket is powered by the [CDK's Overlay](https://material.angular.io/cdk/overlay/overview). 
 
 ## Storybook
 
-Whether or not you're familiar with [Storybook](https://storybook.js.org/), you can [add a Storybook app](https://storybook.js.org/docs/guides/quick-start-guide/) to your project with ease, to demonstrate ALL of your UI components, in an interactive manner. Check out ngLibrary's [Storybook](nglibrary-demo.netlify.com/storybook/) for a live demo!
+Whether or not you're familiar with [Storybook](https://storybook.js.org/), you can [add a Storybook app](https://storybook.js.org/docs/guides/quick-start-guide/) to your project with ease, to demonstrate ALL of your UI components, in an interactive manner. Check out ngLibrary's [Storybook](nglibrary-demo.netlify.app/storybook/) for a live demo!
 
 ## Continuous Integration
 
-Continuous Integration is setup with [TravisCI](https://travis-ci.com). It runs on pushed branches & pull requests. [Greenkeeper](https://greenkeeper.io/) runs in the background to test new dependencies automatically. [Mergify](https://mergify.io) runs in the background to automatically merge pull-requests labeled *automerge*, or for any of the bots such as Greenkeeper.
+Continuous Integration is setup with [TravisCI](https://travis-ci.com). It runs on pushed branches & pull requests. [Synk](https://snyk.io/) runs in the background to keep app dependencies up to date, and fix discovered vulnerabilities. [Mergify](https://mergify.io) runs in the background to automatically merge pull-requests labeled *automerge*, or for the bots, Dependabot & Synk.
 
 ## Continuous Deployment
 
-Continuous Deployment is setup with [Netlify](https://netlify.com). It automatically deploys the latest PROD build from the `master` branch. See the live [Demo](http://nglibrary-demo.netlify.com). 
+Continuous Deployment is setup with [Netlify](https://netlify.com). It automatically deploys the latest PROD build from the `master` branch. See the live [Demo](http://nglibrary-demo.netlify.app). 
 
 Netlify automatically deploys latest Pull-Request builds to a Staging environment, accessible by an unique sub-domain (linked in the Github PR)! Therefore, while reviewing code in a PR, devs can actually test its latest version of the code live, before merging.
 
@@ -177,23 +175,24 @@ $ npm i -g @angular/cli
 
 You'll need it to run the Angular Development server and build the Production version with AoT.
 
+### Development server
+
+To run a development server locally (so you can see the app running, run tests), run:
+
+```
+$ ng serve
+```
+Then navigate to `http://localhost:4200/` in your browser. The app will automatically reload if you change any of the source files.
+
 ### Testing
 
 E2E tests are built with [Cypress](https://cypress.io) and unit-tests are built with [Jest](https://jestjs.io/).
 
 Run the tests with this command:
 ```
-$ npm run test
+$ npm test
 ```
-
-### Development server
-
-To run a development server locally (so you can see the app running), run:
-
-```
-$ ng serve
-```
-Then navigate to `http://localhost:4200/` in your browser. The app will automatically reload if you change any of the source files.
+*requires a local development server running
 
 ### Books Seed
 

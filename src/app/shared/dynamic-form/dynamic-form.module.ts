@@ -42,10 +42,6 @@ import { FormButtonSubmitComponent } from './ui/dynamic-form-inputs/form-button-
   ],
   providers: [
     DynamicFormService
-  ],
-  entryComponents: [
-    FormInputTextComponent,
-    FormButtonSubmitComponent
   ]
 })
 export class DynamicFormModule {}

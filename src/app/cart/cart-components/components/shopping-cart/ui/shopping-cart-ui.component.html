@@ -27,7 +27,11 @@
         </div>
         <div fxFlex="1 1 100%" fxLayout="column" fxLayoutAlign="center">
           <div class="title"><b>{{book.title}}</b></div>
-          <div class="author">by: {{book.authors[0].name}}</div>
+          <div class="author">by: 
+            <span *ngIf="book.authors">
+              {{book.authors[0].name}}
+            </span>
+          </div>
         </div>
       </li>
     </ul>

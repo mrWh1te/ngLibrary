@@ -4,14 +4,15 @@ import { HttpClientModule } from '@angular/common/http'
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
-import { StoreModule } from '@ngrx/store'
+import { StoreModule, USER_PROVIDED_META_REDUCERS } from '@ngrx/store'
 import { EffectsModule } from '@ngrx/effects'
 import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router-store'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools'
 
 import { reducers } from './reducers/root.reducers'
-import { metaReducers } from './reducers/meta.reducers'
+import { metaReducersFactory } from './reducers/meta.reducers'
 import { RouterSimpleStateSerializer } from './serializers/router-state.serializer'
+import { LocalStorageService } from './services/local-storage.service'
 
 /**
  * @name  CoreModule
@@ -23,19 +24,25 @@ import { RouterSimpleStateSerializer } from './serializers/router-state.serializ
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    StoreModule.forRoot(reducers, { metaReducers }),
+    StoreModule.forRoot(reducers),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       maxAge: 20,
       logOnly: environment.production
     }),
-//     !environment.production ? StoreDevtoolsModule.instrument({
-//       maxAge: 20,
-//       logOnly: environment.production
-//     }) : [],
     StoreRouterConnectingModule.forRoot()
   ],
-  providers: [{ provide: RouterStateSerializer, useClass: RouterSimpleStateSerializer }],
+  providers: [
+    { 
+      provide: RouterStateSerializer,
+      useClass: RouterSimpleStateSerializer
+    },
+    {
+      provide: USER_PROVIDED_META_REDUCERS,
+      deps: [LocalStorageService],
+      useFactory: metaReducersFactory
+    }
+  ],
   exports: [
     BrowserModule,
     BrowserAnimationsModule,

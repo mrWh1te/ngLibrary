@@ -1,26 +1,14 @@
-import { ActionReducer, MetaReducer } from '@ngrx/store'
-
-import { localStorageSync } from 'ngrx-store-localstorage'
+import { MetaReducer } from '@ngrx/store'
 
 import { RootState } from './root.state'
 
-export function logger(reducer: ActionReducer<any>): ActionReducer<any> {
-  return function(state, action) {
-    const currentState = state
-    const nextState = reducer(currentState, action)
+import { actionStatesLogger } from './action-states-logger.meta-reducer'
+import { syncStateWithLocalStorageMetaReducer } from './sync-state-with-local-storage.meta-reducer'
+import { LocalStorageService } from '../services/local-storage.service'
 
-    console.group(action.type)
-    console.log(`%c prev state`, `color: #9E9E9E; font-weight: bold`, state)
-    console.log(`%c action`, `color: #03A9F4; font-weight: bold`, action)
-    console.log(`%c next state`, `color: #4CAF50; font-weight: bold`, nextState)
-    console.groupEnd()
-
-    return nextState
-  }
-}
-
-export function localStorageBackupReducer(reducer: ActionReducer<any>): ActionReducer<any> {
-  return localStorageSync({keys: ['books', 'cart'], rehydrate: true})(reducer)
-}
-
-export const metaReducers: MetaReducer<RootState>[] = [logger, localStorageBackupReducer]
+/**
+ * @description   Using a function to return the meta reducers array for leveraging Angular Dependency Injection (LocalStorageService)
+ * @param storageService 
+ */
+export const metaReducersFactory = (storageService: LocalStorageService): MetaReducer<RootState>[] => 
+  [actionStatesLogger, syncStateWithLocalStorageMetaReducer(['books', 'cart', 'checkout'], storageService)]

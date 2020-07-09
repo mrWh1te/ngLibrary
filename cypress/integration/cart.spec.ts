@@ -5,6 +5,7 @@ describe('Cart', function() {
 
   beforeEach(() => {
     cy.clearLocalStorage()
+    sessionStorage.clear()
   })
 
   it('Users should be able to add any book to their Basket then Remove it to show an Empty message', () => {

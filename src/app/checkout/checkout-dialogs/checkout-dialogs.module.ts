@@ -20,9 +20,6 @@ import { CheckoutSuccessMessageDialogUiComponent } from './checkout-success-mess
   ],
   exports: [
     CheckoutSuccessMessageDialogComponent
-  ],
-  entryComponents: [
-    CheckoutSuccessMessageDialogComponent
   ]
 })
 export class CheckoutDialogsModule {

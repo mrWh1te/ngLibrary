@@ -9,7 +9,7 @@
       <h5 *ngIf="selectedBook.authors">Author: {{selectedBook.authors[0].name}}</h5>
     </section>
     <div fxLayoutAlign="center center" class="add-to-basket-btn-container" fxLayout="row">
-      <button mat-raised-button color="primary" (click)="onAddToBasket.emit()" fxFlex="100%">
+      <button mat-raised-button color="accent" (click)="onAddToBasket.emit()" fxFlex="100%">
         <span>Add</span><span fxHide.lt-sm> to Basket</span>
       </button>
     </div>

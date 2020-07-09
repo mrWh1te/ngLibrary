@@ -7,6 +7,7 @@ describe('Books', function() {
 
   beforeEach(() => {
     cy.clearLocalStorage()
+    sessionStorage.clear()
   })
 
   it('Should contain the word "Inventory"', () => {
