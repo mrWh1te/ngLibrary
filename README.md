@@ -10,11 +10,14 @@
 
 "Reserve books" from your local library in this pretend Angular Single Page Application.
 
-It uses robust architecture to breakdown complexity, found in Enterprise applications, with the best coding patterns established by community leaders in Angular, CDK, RxJS, Angular Flex-Layout, NgRX, Angular Material, and a little bit by me, [Michael Lage](https://github.com/mrWh1te).
+It lays down robust reactive architecture that breaks down complexity, found in Enterprise applications, with the best coding patterns established by community leaders in Angular, CDK, RxJS, Angular Flex-Layout, NgRX, Angular Material, and a little bit by [Michael Lage](https://github.com/mrWh1te).
 
 Have fun!
 
 > Complex applications are like children, in that they need a strong foundation and structure, to grow strong and healthy.
+
+Example Apps using this architecture:
+ - [ngExcel](https://github.com/mrWh1te/ngExcel)
 
 ## User Experience
 
