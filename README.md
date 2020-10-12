@@ -6,7 +6,7 @@
 
 <img src="https://repository-images.githubusercontent.com/189280438/c0b58800-a72d-11e9-9bc5-b725f0fc4e66" align="right" width="125" />
 
-[App Demo](https://nglibrary-demo.netlify.app/) - [App's Storybook](https://nglibrary-demo.netlify.app/storybook) - [App's Bundles' Analytical Report](https://nglibrary-demo.netlify.app/report.html)
+[App Demo](https://nglibrary-demo.netlify.app/) - [App's Storybook](https://nglibrary-demo.netlify.app/storybook) - [App's Bundles' Analytical Report](https://nglibrary-demo.netlify.app/report.html) - [App's Documentation](https://nglibrary-demo.netlify.app/docs)
 
 "Reserve books" from your local library in this pretend Angular Single Page Application.
 
@@ -153,6 +153,12 @@ In not re-inventing the wheel, ngLibrary uses these libraries in building its fo
 ## Storybook
 
 Whether or not you're familiar with [Storybook](https://storybook.js.org/), you can [add a Storybook app](https://storybook.js.org/docs/guides/quick-start-guide/) to your project with ease, to demonstrate ALL of your UI components, in an interactive manner. Check out ngLibrary's [Storybook](nglibrary-demo.netlify.app/storybook/) for a live demo!
+
+## Compodoc
+
+A statically generated Documentation site based on the app's Modules, Components, Injectables, Pipes, code comments, markdown files and more with [Compodoc](https://compodoc.app/). It's built for Angular. It generates insightful graphs of your App's Modules and Routes.
+
+Here is [ngLibrary's Documentation](nglibrary-demo.netlify.app/docs)
 
 ## Continuous Integration
 
