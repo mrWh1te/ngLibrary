@@ -6,7 +6,7 @@
 
 <img src="https://repository-images.githubusercontent.com/189280438/c0b58800-a72d-11e9-9bc5-b725f0fc4e66" align="right" width="125" />
 
-[App Demo](https://nglibrary-demo.netlify.app/) - [App's Storybook](https://nglibrary-demo.netlify.app/storybook) - [App's Bundles' Analytical Report](https://nglibrary-demo.netlify.app/report.html) - [App's Documentation](https://nglibrary-demo.netlify.app/docs)
+[App Demo](https://nglibrary-demo.netlify.app/) - [App Storybook](https://nglibrary-demo.netlify.app/storybook) - [App Bundles' Analytical Report](https://nglibrary-demo.netlify.app/report.html) - [App Documentation](https://nglibrary-demo.netlify.app/docs)
 
 "Reserve books" from your local library in this pretend Angular Single Page Application.
 
