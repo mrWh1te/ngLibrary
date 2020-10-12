@@ -156,9 +156,11 @@ Whether or not you're familiar with [Storybook](https://storybook.js.org/), you 
 
 ## Compodoc
 
-A statically generated Documentation site based on the app's Modules, Components, Injectables, Pipes, code comments, markdown files and more with [Compodoc](https://compodoc.app/). It's built for Angular. It generates insightful graphs of your App's Modules and Routes.
+A statically generated Documentation site based on the app's Modules, Components, Injectables, Pipes, code comments, markdown files and more with [Compodoc](https://compodoc.app/).
 
-Here is [ngLibrary's Documentation](nglibrary-demo.netlify.app/docs)
+Compodoc is a turn-key solution for generating documentation for an Angular app. It reads your code to generate helpful documentation for it, including insightful graphs of your [App's Modules](https://nglibrary-demo.netlify.app/docs/modules.html) and [Routes](https://nglibrary-demo.netlify.app/docs/routes.html).
+
+Here is [ngLibrary's Documentation](https://nglibrary-demo.netlify.app/docs).
 
 ## Continuous Integration
 
