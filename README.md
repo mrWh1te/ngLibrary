@@ -83,7 +83,7 @@ This level of separation makes it simpler to reuse & change an application's pag
 #### View Components
 View Components are simple components focused on their template's Smart & UI Components. This component separates pages, and parts of pages from features and routed pages, while providing structure for changing UI style. 
 
-You can learn more about View Components with this official ngLibrary [tutorial on View Components](https://copynpaste.me/de-couple-pages-components-styles).
+You can learn more about View Components with this official ngLibrary [tutorial on View Components](https://www.lage.tech/de-couple-pages-from-components-and-styles/).
 
 #### Smart Components
 Smart Components are mostly used in View Components' templates. They are what bring to life, dynamic UI Components, by handling their events (output) and data (input). Smart Components' `templates` are embedded since they are simply their respective UI component.
