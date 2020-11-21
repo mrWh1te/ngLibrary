@@ -22,7 +22,7 @@
     "build-demo": "npm run analyze && npm run move-analysis-report && npm run build-storybook && npm run build-docs",
     "build-docs": "npx compodoc src -p tsconfig.base.json -d ./dist/ngLibrary/docs -n ngLibrary-Documentation",
     "serve-docs": "npx compodoc -s -p tsconfig.base.json -d ./dist/ngLibrary/docs -n ngLibrary-Documentation -w",
-    "chromatic": "chromatic --project-token CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes"
+    "chromatic": "chromatic --project-token $CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes"
   },
   "greenkeeper": {
     "ignore": [
