@@ -154,7 +154,7 @@ In not re-inventing the wheel, ngLibrary uses these libraries in building its fo
 
 Whether or not you're familiar with [Storybook](https://storybook.js.org/), you can [add a Storybook app](https://storybook.js.org/docs/guides/quick-start-guide/) to your project with ease, to demonstrate ALL of your UI components, in an interactive manner to empower your team's development flow. 
 
-ngLibrary is using [Chromatic](https://chromatic.com) for its visual testing, storybook deployments, pull-request reviews and more! Here is ngLibrary's live [Chromatic Library](https://www.chromatic.com/builds?appId=5fb95727810b370021e8aa7f&branch=master) and [Storybook](https://master--5fb95727810b370021e8aa7f.chromatic.com).
+ngLibrary is using [Chromatic](https://chromatic.com) for its visual testing, storybook deployments, pull-request reviews and more! Here is ngLibrary's live [Chromatic Library](https://chromatic.com/library?appId=5fb95727810b370021e8aa7f&branch=master) and [Storybook](https://master--5fb95727810b370021e8aa7f.chromatic.com).
 
 ## Compodoc
 
