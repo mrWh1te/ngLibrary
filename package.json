@@ -69,6 +69,7 @@
     "@types/jest": "^25.1.0",
     "@types/node": "~13.9.5",
     "babel-loader": "^8.0.6",
+    "chromatic": "^5.4.0",
     "codelyzer": "^5.1.2",
     "concurrently": "^5.0.2",
     "cypress": "^4.10.0",
