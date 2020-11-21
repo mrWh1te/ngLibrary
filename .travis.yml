@@ -9,12 +9,12 @@ addons:
 cache: npm
 install:
   - export NG_CLI_ANALYTICS=ci
-  # - npm i
   - npm ci
 jobs:
   include:
    - name: 'Chromatic Deployment'
      script: chromatic --project-token ${CHROMATIC_PROJECT_TOKEN} --exit-zero-on-changes
-script:
-  - ng build --prod
-  - jest --config ./jest/app.config.js --runInBand && concurrently -k -s first "./node_modules/spa-http-server/bin/http-server ./dist/ngLibrary -a localhost -p 4200 --push-state" "./node_modules/cypress/bin/cypress run --record"
+   - name: 'Jest & Cypress Testing'
+     script:
+       - ng build --prod
+       - jest --config ./jest/app.config.js --runInBand && concurrently -k -s first "./node_modules/spa-http-server/bin/http-server ./dist/ngLibrary -a localhost -p 4200 --push-state" "./node_modules/cypress/bin/cypress run --record"
