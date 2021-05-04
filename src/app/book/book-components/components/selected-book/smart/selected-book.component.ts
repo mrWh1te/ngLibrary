@@ -4,13 +4,13 @@ import { Store, select } from '@ngrx/store'
 import { Observable, combineLatest } from 'rxjs'
 import { map } from 'rxjs/operators'
 
-import { Book } from 'src/app/book/book-data/models/book.model'
-import { selectActiveBookId, selectBooksCacheEntities } from 'src/app/books/books-data/selectors/books-cache.selectors'
-import { selectedBookAddToCartBtnClick } from 'src/app/book/book-data/actions/book.actions'
+import { Book } from '../../../../book-data/models/book.model'
+import { selectedBookAddToCartBtnClick } from '../../../../book-data/actions/book.actions'
+import { selectActiveBookId, selectBooksCacheEntities } from '../../../../../books/books-data/selectors/books-cache.selectors'
 
 @Component({
   selector: 'selected-book',
-  template: `<selected-book-ui 
+  template: `<selected-book-ui
     [selectedBook]="selectedBook$ | async"
     (onAddToBasket)="addToBasket()"></selected-book-ui>`,
     changeDetection: ChangeDetectionStrategy.OnPush
@@ -27,7 +27,7 @@ export class SelectedBookComponent {
     )
   }
 
-  addToBasket(): void {    
+  addToBasket(): void {
     this.store.dispatch(selectedBookAddToCartBtnClick())
   }
 }

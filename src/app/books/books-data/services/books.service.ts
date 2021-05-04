@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
 import { map } from 'rxjs/operators'
 
-import { Book } from 'src/app/book/book-data/models/book.model'
+import { Book } from '../../../book/book-data/models/book.model'
 
 @Injectable()
 export class BooksService {
@@ -28,7 +28,7 @@ export class BooksService {
             if (responseObjectKey[0] === 'I' && responseObjectKey[1] === 'S' && responseObjectKey[2] === 'B' && responseObjectKey[3] === 'N' && responseObjectKey[4] === ':') {
               isbn = responseObjectKey.substr(5)
             }
-            
+
             const book = books.find(book => book.isbn === isbn)
 
             normalizedResponse.push({

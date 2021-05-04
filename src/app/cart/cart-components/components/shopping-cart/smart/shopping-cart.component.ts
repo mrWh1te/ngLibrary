@@ -4,14 +4,14 @@ import { Store, select } from '@ngrx/store'
 import { Observable } from 'rxjs'
 import { withLatestFrom, map } from 'rxjs/operators'
 
-import { Book } from 'src/app/book/book-data/models/book.model'
-import { selectCartStatusBookIds } from 'src/app/cart/cart-data/selectors/cart-status.selectors'
-import { selectBooksCacheEntities } from 'src/app/books/books-data/selectors/books-cache.selectors'
-import { removeBookFromCart } from 'src/app/cart/cart-data/actions/cart.actions'
+import { Book } from '../../../../../book/book-data/models/book.model'
+import { selectCartStatusBookIds } from '../../../../../cart/cart-data/selectors/cart-status.selectors'
+import { selectBooksCacheEntities } from '../../../../../books/books-data/selectors/books-cache.selectors'
+import { removeBookFromCart } from '../../../../../cart/cart-data/actions/cart.actions'
 
 @Component({
   selector: 'shopping-cart',
-  template: `<shopping-cart-ui 
+  template: `<shopping-cart-ui
     [ui]="ui"
     [books]="cartBooks$ | async"
     (onClickRemove)="removeFromCart($event)"></shopping-cart-ui>`,
