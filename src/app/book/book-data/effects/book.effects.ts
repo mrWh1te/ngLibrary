@@ -6,8 +6,8 @@ import { select, Store } from '@ngrx/store'
 import { withLatestFrom, map } from 'rxjs/operators'
 
 import * as bookActions from '../actions/book.actions'
-import { selectActiveBookId } from 'src/app/books/books-data/selectors/books-cache.selectors'
-import { attemptToAddBookToCart } from 'src/app/cart/cart-data/actions/cart.actions'
+import { selectActiveBookId } from '../../../books/books-data/selectors/books-cache.selectors'
+import { attemptToAddBookToCart } from '../../../cart/cart-data/actions/cart.actions'
 
 
 @Injectable()

@@ -9,11 +9,11 @@ import { Store, select } from '@ngrx/store'
 
 import * as checkoutActions from '../actions/checkout.actions'
 import { selectCheckoutRequestUser } from '../selectors/checkout-request.selectors'
-import { selectCartStatusBookIds } from 'src/app/cart/cart-data/selectors/cart-status.selectors'
+import { selectCartStatusBookIds } from '../../../cart/cart-data/selectors/cart-status.selectors'
 import { CheckoutService } from '../services/checkout.service'
 import { CheckoutSuccessMessageDialogComponent } from '../../checkout-dialogs/checkout-success-message/smart/checkout-success-message-dialog.component'
-import { clearCart } from 'src/app/cart/cart-data/actions/cart.actions'
-import { clearBookSelected } from 'src/app/book/book-data/actions/book.actions'
+import { clearCart } from '../../../cart/cart-data/actions/cart.actions'
+import { clearBookSelected } from '../../../book/book-data/actions/book.actions'
 
 @Injectable()
 export class CheckoutEffects {
@@ -57,5 +57,5 @@ export class CheckoutEffects {
     ofType(checkoutActions.checkoutComplete),
     tap(() => this.router.navigateByUrl('/'))
   ), {dispatch: false})
-  
+
 }

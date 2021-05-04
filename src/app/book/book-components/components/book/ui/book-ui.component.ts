@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from "@angular/core"
 
-import { Book } from 'src/app/book/book-data/models/book.model'
+import { Book } from '../../../../book-data/models/book.model'
 
 @Component({
   selector: 'book-ui',

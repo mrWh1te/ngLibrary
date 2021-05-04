@@ -6,10 +6,10 @@ import { Store, select } from '@ngrx/store'
 import { Observable } from 'rxjs'
 import { map, take } from 'rxjs/operators'
 
-import { DynamicFormConfig } from 'src/app/shared/dynamic-form/models/dynamic-form-config.model'
-import { checkoutUpdateUserInfo } from 'src/app/checkout/checkout-data/actions/checkout.actions'
-import { User } from 'src/app/checkout/checkout-data/models/user.model'
-import { selectCheckoutRequestUser } from 'src/app/checkout/checkout-data/selectors/checkout-request.selectors'
+import { DynamicFormConfig } from '../../../../../shared/dynamic-form/models/dynamic-form-config.model'
+import { checkoutUpdateUserInfo } from '../../../../checkout-data/actions/checkout.actions'
+import { User } from '../../../../checkout-data/models/user.model'
+import { selectCheckoutRequestUser } from '../../../../checkout-data/selectors/checkout-request.selectors'
 
 @Component({
   selector: 'checkout-user-form',

@@ -5,7 +5,7 @@ import { MatBadgeModule } from '@angular/material/badge'
 import { FlexLayoutModule } from '@angular/flex-layout'
 
 import { CartDataModule } from '../cart-data/cart-data.module'
-import { DropDownModule } from 'src/app/shared/drop-down/drop-down.module'
+import { DropDownModule } from '../../shared/drop-down/drop-down.module'
 
 import { ShoppingCartIconComponent } from './components/shopping-cart-icon/smart/shopping-cart-icon.component'
 import { ShoppingCartIconUiComponent } from './components/shopping-cart-icon/ui/shopping-cart-icon-ui.component'

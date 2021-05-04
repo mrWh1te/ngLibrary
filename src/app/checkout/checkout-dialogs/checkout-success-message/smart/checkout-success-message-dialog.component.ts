@@ -5,10 +5,10 @@ import { Store, select } from '@ngrx/store'
 import { Observable } from 'rxjs'
 import { map, take } from 'rxjs/operators'
 
-import { User } from 'src/app/checkout/checkout-data/models/user.model'
-import { selectCheckoutRequestUser } from 'src/app/checkout/checkout-data/selectors/checkout-request.selectors'
-import { selectCartStatusBooksCount } from 'src/app/cart/cart-data/selectors/cart-status.selectors'
-import { checkoutComplete } from 'src/app/checkout/checkout-data/actions/checkout.actions'
+import { User } from '../../../checkout-data/models/user.model'
+import { selectCheckoutRequestUser } from '../../../checkout-data/selectors/checkout-request.selectors'
+import { checkoutComplete } from '../../../checkout-data/actions/checkout.actions'
+import { selectCartStatusBooksCount } from '../../../../cart/cart-data/selectors/cart-status.selectors'
 
 @Component({
   selector: 'checkout-success-message',
@@ -34,7 +34,7 @@ export class CheckoutSuccessMessageDialogComponent {
       select(selectCheckoutRequestUser),
       take(1), // data won't change until we clear, and we won't care about that so
       map(user => User.fromJson(user))
-    )    
+    )
     this.numberOfBooks$ = store.pipe(
       select(selectCartStatusBooksCount),
       take(1)

@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter, Input, ChangeDetectionStrategy } from "@angular/core"
 
-import { User } from 'src/app/checkout/checkout-data/models/user.model'
+import { User } from '../../../checkout-data/models/user.model'
 
 @Component({
   selector: 'checkout-success-message-dialog-ui',

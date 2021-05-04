@@ -4,9 +4,9 @@ import { Store, select } from '@ngrx/store'
 import { Observable, combineLatest } from 'rxjs'
 import { map } from 'rxjs/operators'
 
-import { selectCartStatusBooksCount } from 'src/app/cart/cart-data/selectors/cart-status.selectors'
-import { selectCheckoutRequestUser } from 'src/app/checkout/checkout-data/selectors/checkout-request.selectors'
-import { checkoutSubmit } from 'src/app/checkout/checkout-data/actions/checkout.actions'
+import { selectCartStatusBooksCount } from '../../../../../cart/cart-data/selectors/cart-status.selectors'
+import { selectCheckoutRequestUser } from '../../../../checkout-data/selectors/checkout-request.selectors'
+import { checkoutSubmit } from '../../../../../checkout/checkout-data/actions/checkout.actions'
 
 /**
  * @description   A lot of work went into de-coupling this main form Submit button
